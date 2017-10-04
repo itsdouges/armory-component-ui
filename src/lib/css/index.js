@@ -10,7 +10,9 @@ export function prefix (key: string, value: string): { [key: string]: string } {
     [key]: value,
   };
 
-  vendors.forEach((vendor) => (obj[`${vendor}${upperFirst(key)}`] = value));
+  vendors.forEach((vendor) => {
+    obj[`${vendor}${upperFirst(key)}`] = value;
+  });
 
   return obj;
 }

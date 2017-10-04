@@ -5,13 +5,18 @@
   "exclude": [
     "src/**/*.spec.js",
     "dist",
-    "dist-embeds",
     "flow",
     "flow-typed",
     "scripts",
     "test",
     "config",
-    "src/flowTypes.js"
+    "src/flowTypes.js",
+    "docs",
+    "stories",
+    "webpack.config.js",
+    ".storybook",
+    ".postcssrc.js",
+    ".eslintrc.js"
   ],
   "require": [
     "babel-register"
