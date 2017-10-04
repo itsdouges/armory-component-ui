@@ -1,0 +1,78 @@
+{
+    "id": 229,
+    "tier": 2,
+    "order": 0,
+    "name": "Inscription",
+    "description": "Gain a boon upon casting a <c=@abilitytype>glyph</c> based on your attunement. <c=@abilitytype>Glyphs</c> gain reduced recharge.",
+    "slot": "Major",
+    "facts": [
+        {
+            "text": "Apply Buff/Condition",
+            "type": "PrefixedBuff",
+            "icon": "https://render.guildwars2.com/file/2FA9DF9D6BC17839BBEA14723F1C53D645DDB5E1/102852.png",
+            "duration": 10,
+            "status": "Might",
+            "description": "Increased outgoing damage; stacks intensity.",
+            "apply_count": 1,
+            "prefix": {
+                "text": "Apply Buff/Condition",
+                "icon": "https://render.guildwars2.com/file/1C91E9C799469ACC6EAF1ACD4B0AD8ACAB0C69A2/103035.png",
+                "status": "Fire Attunement",
+                "description": "Cast fire spells."
+            }
+        },
+        {
+            "text": "Apply Buff/Condition",
+            "type": "PrefixedBuff",
+            "icon": "https://render.guildwars2.com/file/F69996772B9E18FD18AD0AABAB25D7E3FC42F261/102835.png",
+            "duration": 10,
+            "status": "Regeneration",
+            "description": "Gain health every second; stacks duration.",
+            "apply_count": 1,
+            "prefix": {
+                "text": "Apply Buff/Condition",
+                "icon": "https://render.guildwars2.com/file/737E1B9F7855B9F5D3DE1C990CD42118EF3D1C92/102820.png",
+                "status": "Water Attunement",
+                "description": "Cast water spells."
+            }
+        },
+        {
+            "text": "Apply Buff/Condition",
+            "type": "PrefixedBuff",
+            "icon": "https://render.guildwars2.com/file/20CFC14967E67F7A3FD4A4B8722B4CF5B8565E11/102836.png",
+            "duration": 10,
+            "status": "Swiftness",
+            "description": "Movement speed increased by 33%; stacks duration.",
+            "apply_count": 1,
+            "prefix": {
+                "text": "Apply Buff/Condition",
+                "icon": "https://render.guildwars2.com/file/4857F59020DE3B0950B9C91F3D234A1C1932984A/103048.png",
+                "status": "Air Attunement",
+                "description": "Cast air spells."
+            }
+        },
+        {
+            "text": "Apply Buff/Condition",
+            "type": "PrefixedBuff",
+            "icon": "https://render.guildwars2.com/file/CD77D1FAB7B270223538A8F8ECDA1CFB044D65F4/102834.png",
+            "duration": 3,
+            "status": "Protection",
+            "description": "Incoming damage decreased by 33%; stacks duration.",
+            "apply_count": 1,
+            "prefix": {
+                "text": "Apply Buff/Condition",
+                "icon": "https://render.guildwars2.com/file/4B8056D9BD080DC8E74AE6A57B2B383A2D4265C9/102870.png",
+                "status": "Earth Attunement",
+                "description": "Cast earth spells."
+            }
+        },
+        {
+            "text": "Recharge Reduced",
+            "type": "Percent",
+            "icon": "https://render.guildwars2.com/file/AAB7C5387A08367C2F023F19FEE70E1556AD4375/1770202.png",
+            "percent": 20
+        }
+    ],
+    "specialization": 41,
+    "icon": "https://render.guildwars2.com/file/0157D1D40CF9B505B907DB95149F767A6FDB09DD/1012273.png"
+}

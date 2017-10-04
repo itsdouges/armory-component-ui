@@ -1,0 +1,43 @@
+@import './base.less';
+
+@placeholderColor: @_gray;
+@placeholderColorLight: @_lightgray;
+
+@keyframes loading {
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 0.8;
+  }
+}
+
+@keyframes busy {
+  from {
+    opacity: 0.2;
+  }
+
+  to {
+    opacity: 0.5;
+  }
+}
+
+.loadingAnimation() {
+  background: @placeholderColor;
+  color: @placeholderColor;
+  text-shadow: none;
+  border-radius: 2px;
+  animation-name: loading;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  opacity: 0.5;
+}
+
+.busyAnimation() {
+  animation-name: busy;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}

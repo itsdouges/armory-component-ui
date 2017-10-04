@@ -1,0 +1,19 @@
+@import './base.less';
+
+@boxShadow: fade(@_black, 25%);
+
+.high {
+  box-shadow: 0 4px 20px 5px fade(@_black, 20%);
+}
+
+.medium {
+  box-shadow: 0 1px 5px @boxShadow;
+}
+
+.mediumBottomOnly {
+  box-shadow: 0 3px 5px -2px @boxShadow;
+}
+
+.low {
+  box-shadow: 0 1px 3px @boxShadow;
+}

@@ -1,0 +1,79 @@
+@import '~common/styles/base.less';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: @background;
+  overflow-x: hidden;
+  color: @text;
+  font-size: 16px;
+  .secondaryFont();
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+h2, h3, h4 {
+  margin: 0;
+  font-weight: normal;
+  .primaryFont();
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 1em 0.5em 0.1em 0.5em;
+}
+
+h3 {
+  font-size: 1.7em;
+  margin: 0 0.5em;
+}
+
+h4 {
+  font-size: 1.5em;
+}
+
+hr {
+  margin: 0;
+  border: 0;
+  height: 1px;
+  background: @hr;
+}
+
+a {
+  color: @text;
+  text-decoration: none;
+  font-weight: 100;
+  .transition(color);
+}
+
+ol,
+ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a:hover {
+  color: @primary;
+}

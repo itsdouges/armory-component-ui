@@ -1,0 +1,40 @@
+{
+    "name": "Strong Back Brace",
+    "description": "This equipment goes under armor and can hold an additional upgrade.",
+    "type": "Back",
+    "level": 0,
+    "rarity": "Basic",
+    "vendor_value": 16,
+    "default_skin": 2329,
+    "game_types": [
+        "Activity",
+        "Wvw",
+        "Dungeon",
+        "Pve"
+    ],
+    "flags": [
+        "SoulbindOnAcquire",
+        "SoulBindOnUse"
+    ],
+    "restrictions": [],
+    "id": 56,
+    "chat_link": "[&AgE4AAAA]",
+    "icon": "https://render.guildwars2.com/file/03B65C435B15EB2C10E04F3454B03718AAF3AE90/61004.png",
+    "details": {
+        "infusion_slots": [],
+        "infix_upgrade": {
+            "id": 142,
+            "attributes": [
+                {
+                    "attribute": "Power",
+                    "modifier": 5
+                },
+                {
+                    "attribute": "Precision",
+                    "modifier": 3
+                }
+            ]
+        },
+        "secondary_suffix_item_id": ""
+    }
+}

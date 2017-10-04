@@ -1,0 +1,34 @@
+// @flow
+
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
+
+import Item from '../Item';
+import actions from '../../reducers/actions';
+
+export const selector = createSelector(
+  (state, props) => state.items[props.id],
+  (item) => ({
+    item,
+  })
+);
+
+export default connect(selector, {
+  fetch: actions.fetchItems,
+})(
+class Gw2Item extends Component<*> {
+  props: {
+    id: number,
+    fetch: ([number]) => void,
+  };
+
+  componentWillMount () {
+    this.props.fetch([this.props.id]);
+  }
+
+  render () {
+    return <Item {...this.props} />;
+  }
+}
+);

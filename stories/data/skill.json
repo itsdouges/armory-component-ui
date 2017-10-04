@@ -1,0 +1,33 @@
+{
+    "name": "Whirling Strike",
+    "facts": [
+        {
+            "text": "Range",
+            "type": "Range",
+            "icon": "https://render.guildwars2.com/file/0AAB34BEB1C9F4A25EC612DDBEACF3E20B2810FA/156666.png",
+            "value": 150
+        },
+        {
+            "text": "Damage",
+            "type": "Damage",
+            "icon": "https://render.guildwars2.com/file/61AA4919C4A7990903241B680A69530121E994C7/156657.png",
+            "hit_count": 1,
+            "dmg_multiplier": 1
+        },
+        {
+            "text": "Number of Targets",
+            "type": "Number",
+            "icon": "https://render.guildwars2.com/file/BBE8191A494B0352259C10EADFDACCE177E6DA5B/1770208.png",
+            "value": 5
+        }
+    ],
+    "description": "Strike nearby foes, pushing them back.",
+    "icon": "https://render.guildwars2.com/file/3B72CF3E16A70F730DF1F897565A50147A4FCF7A/103490.png",
+    "type": "Profession",
+    "weapon_type": "None",
+    "professions": [],
+    "slot": "Profession_2",
+    "flags": [],
+    "id": 1167,
+    "chat_link": "[&Bo8EAAA=]"
+}

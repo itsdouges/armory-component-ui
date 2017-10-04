@@ -1,0 +1,10 @@
+{
+    "id": 10,
+    "name": "Magi Amulet",
+    "icon": "https://render.guildwars2.com/file/4D9C6F58C20F052359BA5D1D10B9E4B97ED5F012/66791.png",
+    "attributes": {
+        "Healing": 1200,
+        "Vitality": 900,
+        "Precision": 900
+    }
+}

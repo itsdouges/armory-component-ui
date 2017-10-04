@@ -1,0 +1,19 @@
+{
+    "id": 74,
+    "name": "Guild Banquet",
+    "description": "Spawns a banquet table, keg, and various other party items that players can eat and drink from. Lasts 1 hour.",
+    "build_time": 30,
+    "icon": "https://render.guildwars2.com/file/0E68EBF72001D55562174B0546035EE9704A20ED/1202623.png",
+    "type": "Consumable",
+    "required_level": 0,
+    "experience": 0,
+    "prerequisites": [],
+    "costs": [
+        {
+            "type": "Collectible",
+            "count": 500,
+            "name": "Guild Favor",
+            "item_id": 70701
+        }
+    ]
+}
