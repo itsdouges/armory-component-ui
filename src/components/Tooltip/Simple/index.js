@@ -7,4 +7,8 @@ const SimpleTooltip = ({ data }: { data: string }) => (
   <div className={styles.simple}>{data}</div>
 );
 
+SimpleTooltip.defaultProps = {
+  data: '',
+};
+
 export default SimpleTooltip;

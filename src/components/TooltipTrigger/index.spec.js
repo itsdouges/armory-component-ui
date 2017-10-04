@@ -1,8 +1,8 @@
+import proxyquire from 'proxyquire';
 import React from 'react';
-import _ from 'lodash';
 import { shallow } from 'enzyme';
 
-import { stubRedux, stubDecoratorWithArgs, describeConnect } from 'test/utils';
+import { stubRedux, stubDecoratorWithArgs } from '../../../test/utils';
 
 const sandbox = sinon.sandbox.create();
 const showTooltip = sandbox.spy();
@@ -12,22 +12,10 @@ const stubs = {
   'reducers/actions': { showTooltip },
 };
 
-const TooltipTrigger = proxyquire('common/components/TooltipTrigger', {
+const TooltipTrigger = proxyquire.noCallThru()('./', {
   ...stubRedux,
   ...stubs,
-});
-
-describeConnect('common/components/TooltipTrigger', stubs, (mstp, mdtp) => {
-  it('should not use map state to props', () => {
-    expect(mstp).to.equal(_.noop);
-  });
-
-  it('should pass down show tooltip', () => {
-    expect(mdtp).to.eql({
-      showTooltip,
-    });
-  });
-});
+}).default;
 
 describe('<TooltipTrigger />', () => {
   const props = {

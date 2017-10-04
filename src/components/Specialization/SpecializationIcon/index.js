@@ -6,24 +6,28 @@ import styles from './styles.less';
 import TooltipTrigger from '../../TooltipTrigger';
 
 type Props = {
-  data: {
-    error?: string,
-    name?: string,
-    background?: string,
-  },
+  error: string,
+  name: string,
+  background: string,
   className?: string,
 };
 
-const SpecializationIcon = ({ data, className }: Props) => (
-  <TooltipTrigger data={data.error || data.name}>
+const SpecializationIcon = ({ error, name, background, className }: Props) => (
+  <TooltipTrigger data={error || name}>
     <div
       className={cx(styles.bigIcon, className)}
-      style={{ backgroundImage: `url(${data.background || ''})` }}
+      style={{ backgroundImage: `url(${background || ''})` }}
     >
       <div className={styles.bigIconTop} />
       <div className={styles.bigIconBottom} />
     </div>
   </TooltipTrigger>
 );
+
+SpecializationIcon.defaultProps = {
+  error: '',
+  name: '',
+  background: '',
+};
 
 export default SpecializationIcon;

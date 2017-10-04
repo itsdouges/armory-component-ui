@@ -34,29 +34,26 @@ function getStyle (id = 0) {
   }
 }
 
-type MapProps = {
-  data: MapType,
+type MapProps = MapType & {
   className?: string,
 };
 
-const Map = ({ data, className }: MapProps) => (
-  <div className={cx(styles.root, className)} style={getStyle(data.id)}>
+const Map = ({ name, id, className }: MapProps) => (
+  <div className={cx(styles.root, className)} style={getStyle(id)}>
     <a
-      href={`https://wiki-${LANGUAGE}.guildwars2.com/wiki/${cleanName(data.name)}`}
+      href={`https://wiki-${LANGUAGE}.guildwars2.com/wiki/${cleanName(name)}`}
       // eslint-disable-next-line react/jsx-no-target-blank
       target="_blank"
       className={styles.name}
     >
-      {data.name && <span title={data.name}>{data.name}</span>}
+      {name && <span title={name}>{name}</span>}
     </a>
   </div>
 );
 
 Map.defaultProps = {
-  data: {
-    name: '',
-    id: 0,
-  },
+  name: '',
+  id: 0,
   className: '',
 };
 

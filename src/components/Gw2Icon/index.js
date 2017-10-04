@@ -1,6 +1,6 @@
 // @flow
 
-import type { IconProps } from 'common/components/Icon';
+import type { IconProps } from '../Icon';
 
 import React from 'react';
 import Icon from '../Icon';

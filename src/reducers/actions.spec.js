@@ -1,10 +1,12 @@
+import proxyquire from 'proxyquire';
+
 const sandbox = sinon.sandbox.create();
 const translate = sandbox.stub();
 const getFunc = sandbox.stub();
 const dispatch = sandbox.spy();
 const afterGetFunc = sandbox.stub();
 
-const actionsFactory = proxyquire('reducers/actions', {
+const actionsFactory = proxyquire.noCallThru()('./actions', {
   'i18n-react': {
     translate,
   },

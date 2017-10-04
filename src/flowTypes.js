@@ -185,23 +185,18 @@ export type AchievementCategories = {
 
 export type Achievements = {};
 
-type Gw2Data = {
-  error?: string,
-};
-
 export type CharactersList = Array<*>;
 
 export type Pets = {};
 
 export type Bags = Array<any>;
 
-export type Specialization = Gw2Data & {
+export type Specialization = {
   name: string,
   background: string,
+  error?: string,
   minor_traits: Array<number>,
   major_traits: Array<number>,
-  name?: string,
-  background?: string,
 };
 
 export type Specializations = {
@@ -237,7 +232,7 @@ export type Gw2PvpGame = {
 };
 
 export type Gw2Map = {
-  id: string,
+  id: number,
   name: string,
 };
 

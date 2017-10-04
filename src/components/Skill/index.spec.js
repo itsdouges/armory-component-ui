@@ -1,6 +1,7 @@
+import proxyquire from 'proxyquire';
 import React from 'react';
 import { shallow } from 'enzyme';
-import { stubComponent, stubStyles, stubI18n } from 'test/utils';
+import { stubComponent, stubStyles, stubI18n } from '../../../test/utils';
 
 const styles = stubStyles([
   'skill',
@@ -11,17 +12,17 @@ const TooltipTrigger = stubComponent('TooltipTrigger');
 const Icon = stubComponent('Icon');
 const EmptySkill = stubComponent('EmptySkill');
 
-const Skill = proxyquire('features/Character/components/Skill', {
+const Skill = proxyquire.noCallThru()('./', {
   ...stubI18n(translate),
-  'common/components/TooltipTrigger': TooltipTrigger,
-  'common/components/Icon': Icon,
+  '../TooltipTrigger': TooltipTrigger,
+  '../Icon': Icon,
   './Empty': EmptySkill,
   './styles.less': styles,
-  'common/components/ResourceLink': {
+  '../ResourceLink': {
     default: (props) => <div {...props} />,
     buildLink: () => '',
   },
-});
+}).default;
 
 describe('<Skill />', () => {
   describe('tooltip trigger', () => {

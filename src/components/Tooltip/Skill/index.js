@@ -9,16 +9,15 @@ import Background from '../Background';
 import SimpleTooltip from '../Simple';
 import parse from './parser';
 
-type Gw2Skill = {
+type Props = {
   name: string,
   description: string,
   title: string,
   facts: Array<any>,
+  skills: Array<Props>,
 };
 
-type SkillProps = Gw2Skill;
-
-const Skill = (data: SkillProps) => {
+const Skill = (data: Props) => {
   if (!data.name) {
     return <Background><SimpleTooltip data="Skill" /></Background>;
   }
@@ -27,7 +26,7 @@ const Skill = (data: SkillProps) => {
 
   return (
     <div>
-      {skills.map((skill) => <Skill key={skill.id} data={skill} />)}
+      {skills.map((skill) => <Skill key={skill.id} {...skill} />)}
 
       <Background className={styles.root}>
         <div className={styles.title}>{data.name}</div>
@@ -41,6 +40,14 @@ const Skill = (data: SkillProps) => {
       </Background>
     </div>
   );
+};
+
+Skill.defaultProps = {
+  name: '',
+  description: '',
+  title: '',
+  facts: [],
+  skills: [],
 };
 
 export default Skill;

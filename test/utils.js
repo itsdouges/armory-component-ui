@@ -2,7 +2,6 @@
 
 import React from 'react';
 import _ from 'lodash';
-import { shallow } from 'enzyme';
 
 export const stubComponent = (displayName: string) => {
   const component = ({ children }: any) => <div>{children}</div>;
@@ -29,27 +28,3 @@ export const stubI18n = (stub: any) => ({
     translate: stub,
   },
 });
-
-export function describeConnect (path: string, stubs: ?{}, expectations: (mstp: () => {}, mdtp: {}) => void) {
-  let mapStateToPropsExtracted;
-  let mapDispatchToPropsExatracted;
-
-  const extractor = (mapStateToProps, mapDispatchToProps) => () => {
-    mapStateToPropsExtracted = mapStateToProps || _.noop;
-    mapDispatchToPropsExatracted = mapDispatchToProps || {};
-    return stubComponent(path);
-  };
-
-  const StubComponent = global.proxyquire(path, {
-    ...stubs,
-    'react-redux': {
-      connect: extractor,
-    },
-  });
-
-  shallow(<StubComponent />);
-
-  describe('mapStateToProps', () => {
-    expectations(mapStateToPropsExtracted, mapDispatchToPropsExatracted);
-  });
-}

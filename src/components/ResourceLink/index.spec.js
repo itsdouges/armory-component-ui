@@ -1,14 +1,15 @@
 import React from 'react';
+import proxyquire from 'proxyquire';
 import { shallow } from 'enzyme';
-import { stubStyles } from 'test/utils';
-import LoadingStrip from 'common/components/LoadingStrip';
+import { stubStyles } from '../../../test/utils';
+import LoadingStrip from '../LoadingStrip';
 
 const styles = stubStyles([
   'root',
   'link',
 ]);
 
-const { buildLink, default: ResourceLink } = proxyquire('common/components/ResourceLink', {
+const { buildLink, default: ResourceLink } = proxyquire.noCallThru()('./', {
   'lib/i18n': { get: () => 'en' },
   './styles.less': styles,
 }, true);

@@ -1,6 +1,7 @@
+import proxyquire from 'proxyquire';
 import React from 'react';
 import { shallow } from 'enzyme';
-import { stubComponent, stubStyles } from 'test/utils';
+import { stubComponent, stubStyles } from '../../../test/utils';
 
 const styles = stubStyles([
   'root',
@@ -14,16 +15,16 @@ const colours = stubStyles([
 const TooltipTrigger = stubComponent('TooltipTrigger');
 const Icon = stubComponent('Icon');
 
-const Trait = proxyquire('features/Character/components/Trait', {
+const Trait = proxyquire.noCallThru()('./', {
   './styles.less': styles,
-  'common/components/TooltipTrigger': TooltipTrigger,
-  'common/components/Icon': Icon,
-  'common/styles/colours': colours,
-  'common/components/ResourceLink': {
+  '../TooltipTrigger': TooltipTrigger,
+  '../Icon': Icon,
+  '../../styles/colours': colours,
+  '../ResourceLink': {
     default: (props) => <div {...props} />,
     buildLink: () => '',
   },
-});
+}).default;
 
 describe('<Trait />', () => {
   describe('<Icon />', () => {

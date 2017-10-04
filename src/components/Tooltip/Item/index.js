@@ -44,13 +44,13 @@ function buildName (item, skin, upgrades, count) {
 }
 
 type Props = {
-  count?: number,
-  item: Object,
-  skin?: Object,
   name?: string,
-  upgrades?: Array,
+  count: number,
+  item: Object,
+  skin: Object,
+  upgrades: Array<*>,
   upgradeCounts: Object,
-  infusions: Array,
+  infusions: Array<*>,
   stats: Object,
   equipped?: boolean,
 };
@@ -177,6 +177,7 @@ const ItemsTooltip = ({
 };
 
 ItemsTooltip.defaultProps = {
+  count: 0,
   skin: {},
   upgrades: [],
   infusions: [],

@@ -6,8 +6,8 @@ import ArmoryBadge from '../src/components/ArmoryBadge';
 import Gold from '../src/components/Gold';
 import Icon from '../src/components/Icon';
 import PieChart from '../src/components/PieChart';
-import { Tooltip } from '../src/components/Tooltip';
-import Language from '../src/components/Language';
+import { BaseTooltip as Tooltip } from '../src/components/Tooltip';
+import LanguageProvider from '../src/components/LanguageProvider';
 
 import itemData from './data/item.json';
 import amuletData from './data/amulet.json';
@@ -142,40 +142,18 @@ storiesOf('Gw2Map', module)
   .add('not found', () => <App><Gw2Map id={112233} /></App>)
   .add('no map image', () => <App><Gw2Map id={23} /></App>);
 
-storiesOf('Language', module)
-  .add('en', () => (
+const makeLangApp = (lang) => (
+  <LanguageProvider lang={lang} key={lang}>
     <App>
-      <Language lang="en" />
       <Gw2Item id={80923} />
     </App>
-  ))
-  .add('fr', () => (
-    <App>
-      <Language lang="fr" />
-      <Gw2Item id={80923} />
-    </App>
-  ))
-  .add('zh', () => (
-    <App>
-      <Language lang="zh" />
-      <Gw2Item id={80923} />
-    </App>
-  ))
-  .add('ru', () => (
-    <App>
-      <Language lang="ru" />
-      <Gw2Item id={80923} />
-    </App>
-  ))
-  .add('es', () => (
-    <App>
-      <Language lang="es" />
-      <Gw2Item id={80923} />
-    </App>
-  ))
-  .add('de', () => (
-    <App>
-      <Language lang="de" />
-      <Gw2Item id={80923} />
-    </App>
-  ));
+  </LanguageProvider>
+);
+
+storiesOf('LanguageProvider', module)
+  .add('en', () => makeLangApp('en'))
+  .add('fr', () => makeLangApp('fr'))
+  .add('zh', () => makeLangApp('zh'))
+  .add('ru', () => makeLangApp('ru'))
+  .add('es', () => makeLangApp('es'))
+  .add('de', () => makeLangApp('de'));

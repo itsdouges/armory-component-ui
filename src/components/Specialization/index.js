@@ -8,8 +8,8 @@ import styles from './styles.less';
 import Trait from '../Trait';
 import SpecializationIcon from './SpecializationIcon';
 
-const getTrait = (id, traits, error) => (traits && traits[id]) || { error };
-const isActive = (id, activeTraits) => (activeTraits || []).indexOf(id) >= 0;
+const getTrait = (id, traits, error) => traits[id] || { error };
+const isActive = (id, activeTraits) => activeTraits.indexOf(id) >= 0;
 const layoutTraits = (ids, traits, activeTraits, error) => ids.map((id, index) =>
   <Trait
     key={id || index}
@@ -27,14 +27,14 @@ const emptyTraits = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 type Props = {
   traits: Traits,
-  activeTraits?: Array<number>,
+  activeTraits: Array<number>,
   specialization: SpecType,
 };
 
 const Specialization = ({ activeTraits, traits, specialization }: Props) => {
-  const minorTraits = specialization.minor_traits || emptyTraits;
-  const majorTraits = specialization.major_traits || emptyTraits;
-  const error = specialization.error && specialization.error;
+  const minorTraits = specialization.minor_traits;
+  const majorTraits = specialization.major_traits;
+  const error = specialization.error;
 
   return (
     <div className={styles.root}>
@@ -44,7 +44,7 @@ const Specialization = ({ activeTraits, traits, specialization }: Props) => {
       />
 
       <SpecializationIcon
-        data={specialization}
+        {...specialization}
         className={styles.bigIcon}
       />
 
@@ -84,7 +84,14 @@ const Specialization = ({ activeTraits, traits, specialization }: Props) => {
 };
 
 Specialization.defaultProps = {
-  specialization: {},
+  specialization: {
+    name: '',
+    background: '',
+    minor_traits: emptyTraits,
+    major_traits: emptyTraits,
+  },
+  traits: {},
+  activeTraits: [],
 };
 
 export default Specialization;

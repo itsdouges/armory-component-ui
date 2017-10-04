@@ -13,18 +13,18 @@ const middleware = [
   thunk,
 ];
 
-const store = createStore(rootReducer, composeEnhancers(
-  applyMiddleware(
-    ...middleware,
-  ),
-));
-
 type BaseProps = {
   children: Node,
 };
 
 const Base = ({ children }: BaseProps) => (
-  <Provider store={store}>
+  <Provider
+    store={createStore(rootReducer, composeEnhancers(
+      applyMiddleware(
+        ...middleware,
+      ),
+    ))}
+  >
     <span>
       {children}
       <Tooltip />

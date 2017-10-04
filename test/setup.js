@@ -14,7 +14,6 @@ addPath(path.join(__dirname, '..', '/src'));
   require.extensions[`.${extension}`] = noop;
 });
 
-global.__DEVELOPMENT__ = true;
 global.chai = require('chai');
 global.sinon = require('sinon');
 global.expect = require('chai').expect;
@@ -24,15 +23,3 @@ global.chai.should();
 global.chai.use(require('sinon-chai'));
 global.chai.use(require('chai-enzyme')());
 global.chai.use(require('chai-as-promised'));
-
-const proxyquire = require('proxyquire').noCallThru();
-
-global.proxyquire = (modulePath, stubs, disableDefaultAssignment, ...args) => {
-  const module = proxyquire(modulePath, stubs, ...args);
-
-  if (!disableDefaultAssignment && module.default) {
-    return module.default;
-  }
-
-  return module;
-};

@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import type { Traits, Specialization as SpecializationType } from 'flowTypes';
 
 import Specialization from '../Specialization';
 import actions from '../../reducers/actions';
@@ -20,12 +21,13 @@ export default connect(selector, {
   fetch: actions.fetchSpecializations,
   fetchTraits: actions.fetchTraits,
 })(
-class Gw2Title extends Component<*> {
+class Gw2Specialization extends Component<*> {
   props: {
     id: number,
-    traits: Array<number>,
+    traits: Traits,
     activeTraits?: Array<number>,
     fetch: ([number]) => void,
+    specialization: SpecializationType,
   };
 
   componentWillMount () {

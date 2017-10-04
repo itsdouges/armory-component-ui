@@ -35,7 +35,7 @@ export type Props = {
   className?: string,
 };
 
-export const Tooltip = (props: Props) => {
+export const BaseTooltip = (props: Props) => {
   const { tooltip, showBadge, className } = props;
 
   if (!tooltip || !tooltip.show) return null;
@@ -83,7 +83,7 @@ export const Tooltip = (props: Props) => {
 export default connect(selector, {
   showTooltip,
 })(
-  class ConnectedTooltip extends Component {
+  class ConnectedTooltip extends Component<Props> {
     props: Props;
 
     close = () => {
@@ -93,7 +93,7 @@ export default connect(selector, {
     render () {
       return (
         <MouseFollow onTouchEnd={this.close}>
-          <Tooltip {...this.props} />
+          <BaseTooltip {...this.props} />
         </MouseFollow>
       );
     }

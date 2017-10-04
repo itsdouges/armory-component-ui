@@ -1,5 +1,6 @@
 // @flow
 
+import type { Gw2Map as MapType } from 'flowTypes';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -8,7 +9,7 @@ import Map from '../Map';
 import actions from '../../reducers/actions';
 
 export const selector = createSelector(
-  (state, props) => state.maps[props.id],
+  (state, props) => state.maps[props.id] || {},
   (data) => ({
     data,
   })
@@ -21,6 +22,7 @@ class Gw2Map extends Component<*> {
   props: {
     id: number,
     fetch: ([number]) => void,
+    data: MapType,
   };
 
   componentWillMount () {
@@ -28,7 +30,7 @@ class Gw2Map extends Component<*> {
   }
 
   render () {
-    return <Map {...this.props} />;
+    return <Map {...this.props.data} id={this.props.id} />;
   }
 }
 );

@@ -1,3 +1,5 @@
+import proxyquire from 'proxyquire';
+
 const sandbox = sinon.sandbox.create();
 const axiosGet = sandbox.stub();
 const localStorage = {
@@ -11,7 +13,7 @@ const config = {
   },
 };
 
-const ls = proxyquire('lib/localStorage', {
+const ls = proxyquire.noCallThru()('./', {
   'lz-string': {
     compressToUTF16: (value) => value,
     decompressFromUTF16: (value) => value,
@@ -19,7 +21,7 @@ const ls = proxyquire('lib/localStorage', {
   axios: {
     get: axiosGet,
   },
-  config,
+  '../../config': config,
 });
 
 describe('gw2a local storage', () => {

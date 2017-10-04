@@ -76,7 +76,7 @@ const Fact = ({ data }: FactProps) => {
       content = (
         <div className={styles.center}>
           <Icon src={data.icon} size="mini" />
-          {data.text}: {extractDamage(data)}
+          {markup(data.text)}: {extractDamage(data)}
         </div>
       );
       break;
@@ -91,7 +91,7 @@ const Fact = ({ data }: FactProps) => {
       content = (
         <div className={styles.center}>
           <Icon src={data.icon} size="mini" />
-          {data.text}: {extractSubText(data)}
+          {markup(data.text)}: {extractSubText(data)}
         </div>
       );
       break;
@@ -132,7 +132,7 @@ const Fact = ({ data }: FactProps) => {
       content = (
         <div className={styles.center}>
           <Icon src={data.icon} size="mini" />
-          {data.text}: {`${data.duration}s`}
+          {markup(data.text)}: {`${data.duration}s`}
         </div>
       );
       break;
