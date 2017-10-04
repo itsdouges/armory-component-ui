@@ -1,7 +1,7 @@
 {
   "name": "armory-component-ui",
   "version": "0.0.0",
-  "private": true,
+  "description": "Common components and features for GW2Armory.com and GW2AEmbeds.",
   "pre-commit": [
     "test"
   ],
