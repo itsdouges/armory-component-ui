@@ -21,3 +21,9 @@ npm install armory-component-ui --save
 #### `<Gw2Icon />`
 
 ### Helpers
+
+#### `gw2Reducer`
+
+#### `gw2Actions`
+
+#### `parseMarkup`

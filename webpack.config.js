@@ -54,14 +54,14 @@ const baseConfig = {
         loader: 'url-loader',
         options: {
           limit: Infinity,
-          name: 'assets/[name].[ext]',
+          name: '[name].[ext]',
         },
       },
       {
         test: /\.(eot|ttf|woff|woff2)$/,
         loader: 'file-loader',
         options: {
-          name: 'assets/[name].[ext]',
+          name: '[name].[ext]',
         },
       },
     ],
@@ -71,7 +71,7 @@ const baseConfig = {
     new webpack.optimize.ModuleConcatenationPlugin(),
 
     new ExtractTextPlugin({
-      filename: 'assets/styles.css',
+      filename: 'styles.css',
       allChunks: true,
     }),
   ],

@@ -1,3 +1,32 @@
+@font-face {
+  font-family: 'Menomonia';
+  src: url('./../src/styles/fonts/menomonia.woff') format('woff'),
+       url('./../src/styles/fonts/menomonia.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./../src/styles/fonts/OpenSans-Light.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./../src/styles/fonts/OpenSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./../src/styles/fonts/OpenSans-SemiBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 .mapRoot {
   width: 200px;
   height: 100px;

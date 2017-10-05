@@ -1,16 +1,15 @@
 language: node_js
-node_js:
-  - "7.9.0"
-script:
-  - npm run test && npm run generateColourMap && npm run build
-deploy:
-  skip_cleanup: true
-  provider: script
-  script: bash scripts/deploy.sh
-  on:
-    all_branches: true
+dist: precise
+node_js: "8"
+script: npm run test && npm run build
 cache:
   yarn: true
   directories:
     - node_modules
+deploy:
+  provider: script
+  script: touch ~/.npmrc && echo "//registry.npmjs.org/:_authToken=${NPM_KEY}" >> ~/.npmrc && npm run publish
+  skip_cleanup: true
+  on:
+    tags: true
 after_success: npm run codecov

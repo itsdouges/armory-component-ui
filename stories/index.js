@@ -1,6 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
+// eslint-disable-next-line
+import 'style-loader!css-loader!./styles.css';
 import App from './App';
 import ArmoryBadge from '../src/components/ArmoryBadge';
 import Gold from '../src/components/Gold';
@@ -45,11 +47,6 @@ storiesOf('Icon', module)
   .add('xlarge', () => <Icon name="pie-blue.png" size="xlarge" />)
   .add('custom', () => <Icon name="pie-blue.png" sizePx={128} />);
 
-storiesOf('Gw2Icon', module)
-  .add('default', () =>
-    <Gw2Icon applyCount={4} count={2} name="leg-slot-icon.png" />
-);
-
 const dataValues = [{
   color: 'lightgreen',
   name: 'Sylvari',
@@ -64,36 +61,41 @@ storiesOf('PieChart', module)
   .add('default', () => <PieChart dataValues={dataValues} />)
   .add('custom size', () => <PieChart dataValues={dataValues} size={128} />);
 
-storiesOf('BasicTooltip', module)
+storiesOf('TooltipBasic', module)
   .add('text', () => <Tooltip tooltip={{ show: true, data: 'This is some text' }} />)
   .add('with badge', () => <Tooltip tooltip={{ show: true, data: 'This is some text' }} showBadge />)
   .add('error', () => <Tooltip tooltip={{ show: true, data: { error: 'An error happened!' } }} />)
   .add('empty', () => <Tooltip />);
 
-storiesOf('ItemsTooltip', module)
+storiesOf('TooltipItems', module)
   .add('default', () => <Tooltip tooltip={{ show: true, data: { item: itemData }, type: 'items' }} />)
   .add('equipped', () => <Tooltip tooltip={{ show: true, data: { item: itemData, equipped: true }, type: 'items' }} />)
   .add('with badge', () => <Tooltip tooltip={{ show: true, data: { item: itemData }, type: 'items' }} showBadge />);
 
-storiesOf('AmuletTooltip', module)
+storiesOf('TooltipAmulets', module)
   .add('default', () => <Tooltip tooltip={{ show: true, data: { item: amuletData }, type: 'amulets' }} />)
   .add('with badge', () => <Tooltip tooltip={{ show: true, data: { item: amuletData }, type: 'amulets' }} showBadge />);
 
-storiesOf('TraitsTooltip', module)
+storiesOf('TooltipTraits', module)
   .add('default', () => <Tooltip tooltip={{ show: true, data: traitData, type: 'trait' }} />)
   .add('with badge', () => <Tooltip tooltip={{ show: true, data: traitData, type: 'trait' }} showBadge />);
 
-storiesOf('SkillsTooltip', module)
+storiesOf('TooltipSkills', module)
   .add('default', () => <Tooltip tooltip={{ show: true, data: skillData, type: 'skill' }} />)
   .add('with badge', () => <Tooltip tooltip={{ show: true, data: skillData, type: 'skill' }} showBadge />);
 
-storiesOf('AchievementTooltip', module)
+storiesOf('TooltipAchievements', module)
   .add('default', () => <Tooltip tooltip={{ show: true, data: achievementData, type: 'achievement' }} />)
   .add('with badge', () => <Tooltip tooltip={{ show: true, data: achievementData, type: 'achievement' }} showBadge />);
 
-storiesOf('GuildUpgradeTooltip', module)
+storiesOf('TooltipGuildUpgrades', module)
   .add('default', () => <Tooltip tooltip={{ show: true, data: guildUpgradeData, type: 'guildUpgrade' }} />)
   .add('with badge', () => <Tooltip tooltip={{ show: true, data: guildUpgradeData, type: 'guildUpgrade' }} showBadge />);
+
+storiesOf('Gw2Icon', module)
+  .add('default', () =>
+    <Gw2Icon applyCount={4} count={2} name="leg-slot-icon.png" />
+);
 
 storiesOf('Gw2GuildUpgrade', module)
   .add('default', () => <App><Gw2GuildUpgrade id={38} /></App>)
