@@ -7,6 +7,13 @@ import './styles/fonts/opensans.ttf';
 import './styles/fonts/opensans-light.ttf';
 import './styles/fonts/opensans-semibold.ttf';
 
+// Utility Functions
+// NOTE: Reducers have to be imported first as
+// they dynamically create the action creators.
+export { default as reducers } from './reducers/index';
+export { default as actions } from './reducers/actions';
+export { markup } from './lib/gw2/parse';
+
 // Connected GW2 Components
 export { default as Gw2Skin } from './components/Gw2Skin';
 export { default as Gw2Title } from './components/Gw2Title';
@@ -32,8 +39,3 @@ export { default as LanguageProvider } from './components/LanguageProvider';
 export { default as PieChart } from './components/PieChart';
 export { default as Tooltip } from './components/Tooltip';
 export { default as TooltipTrigger } from './components/TooltipTrigger';
-
-// Utility Functions
-export { default as reducers } from './reducers/index';
-export { default as actions } from './reducers/actions';
-export { markup } from './lib/gw2/parse';

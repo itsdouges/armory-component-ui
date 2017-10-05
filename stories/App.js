@@ -13,12 +13,14 @@ const middleware = [
   thunk,
 ];
 
-type BaseProps = {
+type Props = {
   children: Node,
 };
 
-const Base = ({ children }: BaseProps) => (
+const App = ({ children }: Props) => (
   <Provider
+    // We're deliberately blowing away the store on rerenders
+    // for example purposes.
     store={createStore(combineReducers(reducers), composeEnhancers(
       applyMiddleware(
         ...middleware,
@@ -32,4 +34,4 @@ const Base = ({ children }: BaseProps) => (
   </Provider>
 );
 
-export default Base;
+export default App;
