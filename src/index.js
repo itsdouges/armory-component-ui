@@ -3,9 +3,9 @@
 // Fonts to include in package. Optionally required.
 import './styles/fonts/menomonia.woff';
 import './styles/fonts/menomonia.ttf';
-import './styles/fonts/OpenSans-Light.ttf';
-import './styles/fonts/OpenSans-Regular.ttf';
-import './styles/fonts/OpenSans-SemiBold.ttf';
+import './styles/fonts/opensans.ttf';
+import './styles/fonts/opensans-light.ttf';
+import './styles/fonts/opensans-semibold.ttf';
 
 // Connected GW2 Components
 export { default as Gw2Skin } from './components/Gw2Skin';
@@ -34,6 +34,6 @@ export { default as Tooltip } from './components/Tooltip';
 export { default as TooltipTrigger } from './components/TooltipTrigger';
 
 // Utility Functions
-export { default as gw2Reducer } from './reducers/index';
-export { default as gw2Actions } from './reducers/actions';
-export { markup as parseMarkup } from './lib/gw2/parse';
+export { default as reducers } from './reducers/index';
+export { default as actions } from './reducers/actions';
+export { markup } from './lib/gw2/parse';

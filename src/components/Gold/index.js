@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import cx from 'classnames';
 import colours from '../../styles/colours.less';
 import goldImg from './gold.png';
 import silverImg from './silver.png';
@@ -10,6 +11,7 @@ import styles from './styles.less';
 
 type Props = {
   coins: number,
+  className?: string,
 };
 
 function calc (coins) {
@@ -47,11 +49,11 @@ const Money = ({ money, type }: MoneyProps) => (
   </span>
 );
 
-const Gold = ({ coins, ...props }: Props) => {
+const Gold = ({ coins, className, ...props }: Props) => {
   const { gold, silver, copper } = calc(coins);
 
   return (
-    <div className={styles.root} {...props}>
+    <div className={cx(styles.root, className)} {...props}>
       {!!gold && <Money money={gold} type="gold" />}
       {!!silver && <Money money={silver} type="silver" />}
       {!!copper && <Money money={copper} type="copper" />}

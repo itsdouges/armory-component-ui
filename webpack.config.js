@@ -20,8 +20,6 @@ const baseConfig = {
     'classnames',
     'react',
     'react-redux',
-    'redux',
-    'redux-thunk',
     'lodash',
     /^lodash\/.+$/,
     'reselect',

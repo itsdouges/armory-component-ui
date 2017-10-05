@@ -2,10 +2,10 @@
 
 import type { Node } from 'react';
 import React from 'react';
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import rootReducer from '../src/reducers';
+import { reducers } from '../src';
 import Tooltip from '../src/components/Tooltip';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -19,7 +19,7 @@ type BaseProps = {
 
 const Base = ({ children }: BaseProps) => (
   <Provider
-    store={createStore(rootReducer, composeEnhancers(
+    store={createStore(combineReducers(reducers), composeEnhancers(
       applyMiddleware(
         ...middleware,
       ),

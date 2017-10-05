@@ -39,7 +39,6 @@ type Props = {
   upgradeCounts?: {},
   hide?: boolean,
   small?: boolean,
-  size?: 'micro' | 'small',
   tooltipType?: string,
   className?: string,
   tooltipTextOverride?: string,

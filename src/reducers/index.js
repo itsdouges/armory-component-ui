@@ -1,5 +1,3 @@
-import { combineReducers } from 'redux';
-
 const reducerModules = require.context('./', true, /.\.reducer\.js$/);
 
 /**
@@ -55,4 +53,4 @@ const reducers = Object.keys(definitions).reduce((acc, key) => {
   return acc;
 }, {});
 
-export default combineReducers(reducers);
+export default reducers;

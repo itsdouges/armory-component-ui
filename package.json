@@ -8,6 +8,7 @@
   "main": "dist/armory-component-ui.js",
   "module": "dist/armory-component-ui.module.js",
   "scripts": {
+    "start": "start-storybook -p 6006",
     "build": "rm -rf dist && webpack && cp package.json dist/package.json && cp README.md dist/README.md",
     "test": "npm run lint && npm run flow && npm run coverage",
     "flow": "flow",
@@ -21,7 +22,6 @@
     "preversion": "npm test",
     "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md",
     "postversion": "git push && git push --tags",
-    "storybook": "start-storybook -p 6006",
     "build-storybook": "rm -rf docs && build-storybook --output-dir docs"
   },
   "dependencies": {
@@ -37,8 +37,6 @@
     "lodash": "^4.x.x",
     "react": "^15.x.x | ^16.x.x",
     "react-redux": "^5.x.x",
-    "redux": "^3.x.x",
-    "redux-thunk": "^2.x.x",
     "reselect": "^3.x.x"
   },
   "devDependencies": {
