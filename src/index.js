@@ -37,5 +37,5 @@ export { default as ArmoryBadge } from './components/ArmoryBadge';
 export { default as Gold } from './components/Gold';
 export { default as LanguageProvider } from './components/LanguageProvider';
 export { default as PieChart } from './components/PieChart';
-export { default as Tooltip } from './components/Tooltip';
+export { default as Tooltip, BaseTooltip } from './components/Tooltip';
 export { default as TooltipTrigger } from './components/TooltipTrigger';

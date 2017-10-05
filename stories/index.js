@@ -4,12 +4,23 @@ import { storiesOf } from '@storybook/react';
 // eslint-disable-next-line
 import 'style-loader!css-loader!./styles.css';
 import App from './App';
-import ArmoryBadge from '../src/components/ArmoryBadge';
-import Gold from '../src/components/Gold';
-import Icon from '../src/components/Icon';
-import PieChart from '../src/components/PieChart';
-import { BaseTooltip as Tooltip } from '../src/components/Tooltip';
-import LanguageProvider from '../src/components/LanguageProvider';
+import {
+  ArmoryBadge,
+  Gold,
+  Icon,
+  PieChart,
+  BaseTooltip as Tooltip,
+  LanguageProvider,
+  Gw2Icon,
+  Gw2GuildUpgrade,
+  Gw2Item,
+  Gw2Map,
+  Gw2Skin,
+  Gw2Title,
+  Gw2Skill,
+  Gw2Trait,
+  Gw2Specialization,
+} from '../src';
 
 import itemData from './data/item.json';
 import amuletData from './data/amulet.json';
@@ -17,16 +28,6 @@ import traitData from './data/trait.json';
 import skillData from './data/skill.json';
 import achievementData from './data/achievement.json';
 import guildUpgradeData from './data/guildUpgrade.json';
-
-import Gw2Icon from '../src/components/Gw2Icon';
-import Gw2GuildUpgrade from '../src/components/Gw2GuildUpgrade';
-import Gw2Item from '../src/components/Gw2Item';
-import Gw2Map from '../src/components/Gw2Map';
-import Gw2Skin from '../src/components/Gw2Skin';
-import Gw2Title from '../src/components/Gw2Title';
-import Gw2Skill from '../src/components/Gw2Skill';
-import Gw2Trait from '../src/components/Gw2Trait';
-import Gw2Specialization from '../src/components/Gw2Specialization';
 
 storiesOf('ArmoryBadge', module)
   .add('default', () => <ArmoryBadge />);
