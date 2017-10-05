@@ -1,6 +1,11 @@
-# armory-component-ui
+# [armory-component-ui](https://github.com/madou/armory-component-ui)
 
-[![Build Status](https://travis-ci.org/madou/armory-component-ui.svg?branch=master)](https://travis-ci.org/madou/armory-component-ui) [![Dependencies](https://david-dm.org/madou/armory-component-ui.svg)](https://david-dm.org/madou/armory-component-ui) [![Dev Dependencies](https://david-dm.org/madou/armory-component-ui/dev-status.svg)](https://david-dm.org/madou/armory-component-ui?type=dev) [![codecov](https://codecov.io/gh/madou/armory-component-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/madou/armory-component-ui)
+[![NPM version](http://img.shields.io/npm/v/armory-component-ui.svg?style=flat-square)](https://www.npmjs.com/package/armory-component-ui)
+[![NPM downloads](http://img.shields.io/npm/dm/armory-component-ui.svg?style=flat-square)](https://www.npmjs.com/package/armory-component-ui)
+[![Build Status](http://img.shields.io/travis/madou/armory-component-ui/master.svg?style=flat-square)](https://travis-ci.org/madou/armory-component-ui)
+[![codecov](https://codecov.io/gh/madou/armory-component-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/madou/armory-component-ui)
+[![Dependency Status](http://img.shields.io/david/madou/armory-component-ui.svg?style=flat-square)](https://david-dm.org/madou/armory-component-ui)
+
 
 Common components and features for GW2Armory.com and GW2AEmbeds.
 
