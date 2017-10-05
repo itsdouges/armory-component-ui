@@ -5,11 +5,11 @@
   "pre-commit": [
     "test"
   ],
-  "main": "dist/armory-component-ui.js",
-  "module": "dist/armory-component-ui.module.js",
+  "main": "armory-component-ui.js",
+  "module": "src/index.js",
   "scripts": {
     "start": "start-storybook -p 6006",
-    "build": "rm -rf dist && webpack && cp package.json dist/package.json && cp README.md dist/README.md",
+    "build": "rm -rf dist && webpack && cp package.json dist/package.json && cp README.md dist/README.md && cp -r src dist/src",
     "test": "npm run lint && npm run flow && npm run coverage",
     "flow": "flow",
     "flowtypes": "rm -rf ./flow-typed && flow-typed install --overwrite --skip",
