@@ -5,10 +5,12 @@ cache:
   yarn: true
   directories:
     - node_modules
+before_deploy: cd dist
 deploy:
-  provider: script
-  script: touch ~/.npmrc && echo "//registry.npmjs.org/:_authToken=${NPM_KEY}" >> ~/.npmrc && npm run publish
+  provider: npm
   skip_cleanup: true
+  email: "laheen@gmail.com"
+  api_key: $NPM_KEY
   on:
     tags: true
 after_success: npm run codecov
