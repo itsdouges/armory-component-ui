@@ -5,7 +5,10 @@
   "pre-commit": [
     "test"
   ],
+  "main": "dist/armory-component-ui.js",
+  "module": "dist/armory-component-ui.es2015.js",
   "scripts": {
+    "build": "webpack",
     "test": "npm run lint && npm run flow && npm run coverage",
     "flow": "flow",
     "flowtypes": "rm -rf ./flow-typed && flow-typed install --overwrite --skip",
