@@ -4,4 +4,20 @@
 
 Common components and features for GW2Armory.com and GW2AEmbeds.
 
-> work in progress
+## Installation
+
+```bash
+npm install armory-component-ui --save
+```
+
+### Components
+
+#### `<ArmoryBadge />`
+
+#### `<Gold />`
+
+#### `<Gw2GuildUpgrade />`
+
+#### `<Gw2Icon />`
+
+### Helpers

@@ -32,9 +32,8 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: true,
-              localIdentName: '[path][name]__[local]--[hash:base64:5]',
+              localIdentName: '[path][name]__[local]',
               importLoaders: '1',
-              sourceMap: true,
             },
           },
           {
@@ -53,12 +52,7 @@ module.exports = {
               ],
             },
           },
-          {
-            loader: 'less-loader',
-            options: {
-              relativeUrls: true,
-            }
-          },
+          'less-loader',
         ],
       },
     ],

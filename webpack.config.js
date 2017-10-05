@@ -1,23 +1,18 @@
-import path from 'path';
-import autoprefixer from 'autoprefixer';
-import webpack from 'webpack';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import paths from './paths';
+const path = require('path');
+const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const merge = require('webpack-merge');
+const paths = require('./config/paths');
 
-module.exports = {
+const baseConfig = {
   bail: true,
 
   context: __dirname,
 
-  devtool: 'source-map',
-
-  entry: './src/index.js',
-
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'armory-component-ui.js',
-    library: 'armoryComponentUi',
-    libraryTarget: 'umd',
+    filename: '[name].js',
+    libraryTarget: 'commonjs-module',
   },
 
   externals: [
@@ -37,11 +32,6 @@ module.exports = {
 
     rules: [
       {
-        test: /\.js$/,
-        include: paths.appSrc,
-        loader: 'babel-loader',
-      },
-      {
         test: /\.(css|less)$/,
         include: [paths.appSrc, paths.appNodeModules],
         use: ExtractTextPlugin.extract({
@@ -51,26 +41,8 @@ module.exports = {
               loader: 'css-loader',
               options: {
                 modules: true,
-                minimize: true,
                 importLoaders: '1',
-                localIdentName: '[hash:base64:5]',
-                sourceMap: true,
-              },
-            },
-            {
-              loader: 'postcss-loader',
-              options: {
-                plugins: () => [
-                  autoprefixer({
-                    browsers: [
-                      '>1%',
-                      'last 4 versions',
-                      'Firefox ESR',
-                      'not ie < 9', // React doesn't support IE8 anyway
-                    ],
-                    flexbox: 'no-2009',
-                  }),
-                ],
+                localIdentName: '[hash:base64:4]',
               },
             },
             'less-loader',
@@ -78,12 +50,19 @@ module.exports = {
         }),
       },
       {
-        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        test: /\.(png|jpg|gif|svg)$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
+          limit: Infinity,
           name: 'assets/[name].[ext]',
-        }
+        },
+      },
+      {
+        test: /\.(eot|ttf|woff|woff2)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'assets/[name].[ext]',
+        },
       },
     ],
   },
@@ -91,13 +70,27 @@ module.exports = {
   plugins: [
     new webpack.optimize.ModuleConcatenationPlugin(),
 
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(true),
-    }),
-
     new ExtractTextPlugin({
-      filename: 'assets/[name].[contenthash:8].css',
+      filename: 'assets/styles.css',
       allChunks: true,
     }),
   ],
 };
+
+const compiledConfig = merge(baseConfig, {
+  entry: {
+    'armory-component-ui': './src/index.js',
+  },
+
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        include: paths.appSrc,
+        loader: 'babel-loader',
+      },
+    ],
+  },
+});
+
+module.exports = compiledConfig;
