@@ -312,7 +312,7 @@ const mapDispatchToProps = {
 
 connect(mapStateToProps, mapDispatchToProps)(
   class SomeSkill extends React.Component {
-    componentWillMount () {
+    componentDidMount () {
       this.props.fetch([1139, 5490, 5495]);
     }
 

@@ -30,7 +30,7 @@ class Gw2Specialization extends Component<*> {
     specialization: SpecializationType,
   };
 
-  componentWillMount () {
+  componentDidMount () {
     this.props.fetch([this.props.id]);
   }
 

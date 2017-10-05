@@ -26,7 +26,7 @@ class Gw2Skin extends Component<*> {
     fetch: ([number]) => void,
   };
 
-  componentWillMount () {
+  componentDidMount () {
     this.props.fetch([this.props.id]);
   }
 

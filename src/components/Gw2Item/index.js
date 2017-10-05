@@ -23,7 +23,7 @@ class Gw2Item extends Component<*> {
     fetch: ([number]) => void,
   };
 
-  componentWillMount () {
+  componentDidMount () {
     this.props.fetch([this.props.id]);
   }
 

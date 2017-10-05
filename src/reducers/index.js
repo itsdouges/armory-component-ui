@@ -1,7 +1,7 @@
 const reducerModules = require.context('./', true, /.\.reducer\.js$/);
 
 /**
- * Imports all [name].reducer.js found under src/features.
+ * Imports all [name].reducer.js found.
  *
  * Each [name]ed reducer requires at least one default state.
  *

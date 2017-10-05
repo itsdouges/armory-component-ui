@@ -23,7 +23,7 @@ class Gw2Skill extends Component<*> {
     fetch: ([number]) => void,
   };
 
-  componentWillMount () {
+  componentDidMount () {
     this.props.fetch([this.props.id]);
   }
 

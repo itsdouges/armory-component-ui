@@ -25,7 +25,7 @@ class Gw2Map extends Component<*> {
     data: MapType,
   };
 
-  componentWillMount () {
+  componentDidMount () {
     this.props.fetch([this.props.id]);
   }
 

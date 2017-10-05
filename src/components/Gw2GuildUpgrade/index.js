@@ -25,7 +25,7 @@ class Gw2GuildUpgrade extends Component<*> {
     fetch: ([number]) => void,
   };
 
-  componentWillMount () {
+  componentDidMount () {
     this.props.fetch([this.props.id]);
   }
 
