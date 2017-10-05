@@ -18,7 +18,6 @@
     "tdd": "npm run unit -- -w",
     "coverage": "BABEL_ENV=test nyc npm run unit",
     "codecov": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "publish": "cd dist && npm publish",
     "preversion": "npm test",
     "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md",
     "postversion": "git push && git push --tags",
