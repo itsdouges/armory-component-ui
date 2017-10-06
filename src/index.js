@@ -39,3 +39,4 @@ export { default as LanguageProvider } from './components/LanguageProvider';
 export { default as PieChart } from './components/PieChart';
 export { default as Tooltip, BaseTooltip } from './components/Tooltip';
 export { default as TooltipTrigger } from './components/TooltipTrigger';
+export { default as Icon } from './components/Icon';

@@ -30,7 +30,8 @@ import achievementData from './data/achievement.json';
 import guildUpgradeData from './data/guildUpgrade.json';
 
 storiesOf('ArmoryBadge', module)
-  .add('default', () => <ArmoryBadge />);
+  .add('default', () => <ArmoryBadge />)
+  .add('hotlink', () => <ArmoryBadge hotlink />);
 
 storiesOf('Gold', module)
   .add('lots of coins', () => <Gold coins={1123123} />)
