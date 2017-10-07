@@ -69,7 +69,8 @@ All the fonts are included in the package for you to use.
 
 ```javascript
 import { Gw2Skin } from 'armory-component-ui';
-<Gw2Skin id={23} />
+
+() => <Gw2Skin id={23} />
 ```
 
 | prop | type | description | required |
@@ -85,7 +86,8 @@ import { Gw2Skin } from 'armory-component-ui';
 
 ```javascript
 import { Gw2Title } from 'armory-component-ui';
-<Gw2Title id={44} />
+
+() => <Gw2Title id={44} />
 ```
 
 | prop | type | description | required |
@@ -96,7 +98,8 @@ import { Gw2Title } from 'armory-component-ui';
 
 ```javascript
 import { Gw2GuildUpgrade } from 'armory-component-ui';
-<Gw2GuildUpgrade id={44} />
+
+() => <Gw2GuildUpgrade id={44} />
 ```
 
 | prop | type | description | required |
@@ -107,13 +110,15 @@ import { Gw2GuildUpgrade } from 'armory-component-ui';
 
 ```javascript
 import { Gw2Item } from 'armory-component-ui';
-<Gw2Item
-  id={23}
-  count={4}
-  size={64}
-  inlineText="wiki"
-  equipped
-/>
+
+() =>
+  <Gw2Item
+    id={23}
+    count={4}
+    size={64}
+    inlineText="wiki"
+    equipped
+  />
 ```
 
 | prop | type | description | required |
@@ -134,7 +139,8 @@ import { Gw2Item } from 'armory-component-ui';
 
 ```javascript
 import { Gw2Map } from 'armory-component-ui';
-<Gw2Map id={549} />
+
+() => <Gw2Map id={549} />
 ```
 
 | prop | type | description | required |
@@ -146,7 +152,8 @@ import { Gw2Map } from 'armory-component-ui';
 
 ```javascript
 import { Gw2Skill } from 'armory-component-ui';
-<Gw2Skill id={5493} />
+
+() => <Gw2Skill id={5493} />
 ```
 
 | prop | type | description | required |
@@ -161,7 +168,8 @@ import { Gw2Skill } from 'armory-component-ui';
 
 ```javascript
 import { Gw2Specialization } from 'armory-component-ui';
-<Gw2Specialization id={56} activeTraits={[2177, 2061, 2138]} />
+
+() => <Gw2Specialization id={56} activeTraits={[2177, 2061, 2138]} />
 ```
 
 | prop | type | description | required |
@@ -173,7 +181,8 @@ import { Gw2Specialization } from 'armory-component-ui';
 
 ```javascript
 import { Gw2Trait } from 'armory-component-ui';
-<Gw2Trait id={229} />
+
+() => <Gw2Trait id={229} />
 ```
 
 | prop | type | description | required |
@@ -189,18 +198,21 @@ import { Gw2Trait } from 'armory-component-ui';
 
 ```javascript
 import { ArmoryBadge } from 'armory-component-ui';
-<ArmoryBadge />
+
+() => <ArmoryBadge hotlink />
 ```
 
 | prop | type | description | required |
 |-|-|-|-|
 | className | `string` | n/a | no |
+| hotlink | `boolean` | Enables the badge to have a link back to the armory. | no |
 
 #### `<Gold />`
 
 ```javascript
 import { Gold } from 'armory-component-ui';
-<Gold coins={12345} />
+
+() => <Gold coins={12345} />
 ```
 
 | prop | type | description | required |
@@ -225,17 +237,19 @@ import { LanguageProvider } from 'armory-component-ui';
 
 ```javascript
 import { PieChart } from 'armory-component-ui';
-<PieChart
-  dataValues={[{
-    color: 'lightgreen',
-    name: 'Sylvari',
-    value: 5455,
-  }, {
-    color: 'yellow',
-    name: 'Human',
-    value: 1000,
-  }]}
-/>
+
+() =>
+  <PieChart
+    dataValues={[{
+      color: 'lightgreen',
+      name: 'Sylvari',
+      value: 5455,
+    }, {
+      color: 'yellow',
+      name: 'Human',
+      value: 1000,
+    }]}
+  />
 ```
 
 | prop | type | description | required |
@@ -251,7 +265,8 @@ This will show the tooltip when appropriate for other components.
 
 ```javascript
 import { Tooltip } from 'armory-component-ui';
-<Tooltip />
+
+() => <Tooltip />
 ```
 
 #### `<TooltipTrigger />`
@@ -261,12 +276,14 @@ Hides the tooltip when mouse leave/touch end.
 
 ```javascript
 import { TooltipTrigger } from 'armory-component-ui';
-<TooltipTrigger
-  data="Cool Tooltip"
-  type="items"
->
-  <span>Hover Over Me</span>
-</TooltipTrigger>
+
+() =>
+  <TooltipTrigger
+    data="Cool Tooltip"
+    type="items"
+  >
+    <span>Hover Over Me</span>
+  </TooltipTrigger>
 ```
 
 | prop | type | description | required |
