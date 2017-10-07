@@ -124,6 +124,7 @@ import { Gw2Item } from 'armory-component-ui';
 | prop | type | description | required |
 |-|-|-|-|
 | id | `number` | n/a | yes |
+| statsId | `number` | Id of the stats the item should be assigned. | no |
 | count | `number` | Sets the count which affects the name for both the `<Tooltip />` and `inlineText`. | no |
 | tooltipTextOverride | `string` | Overrides the tooltip with custom text | no |
 | size | `number` | Custom size of the icon, e.g: `40` will result in a 40x40 icon. | no |
