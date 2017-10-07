@@ -5,7 +5,6 @@ const post = sandbox.stub();
 
 const { readCalculatedItemStats } = proxyquire.noPreserveCache()('./', {
   axios: { post },
-  '../i18n': { get: () => 'en' },
 });
 
 describe('gw2 service', () => {
