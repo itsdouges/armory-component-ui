@@ -1,14 +1,42 @@
 // @flow
 
+import type { Item as ItemType } from 'flowTypes';
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import get from 'lodash/get';
 
 import Item from '../Item';
-import actions from '../../reducers/actions';
+import actions, { fetchCalculatedItemStats } from '../../reducers/actions';
 
 export const selector = createSelector(
-  (state, props) => state.items[props.id],
+  (state, props) => {
+    const item = state.items[props.id];
+    const stat = get(state.calculatedItemStats, [props.id, props.statsId]);
+
+    if (item && item.details && !stat && props.statsId) {
+      // We have an item.
+      // We know we will have a stat, but just not yet.
+      return {
+        ...item,
+        name: `Loading... ${item.name}`,
+      };
+    }
+
+    if (item && stat && item.details) {
+      return {
+        ...item,
+        name: `${stat.name} ${item.name}`,
+        details: {
+          ...item.details,
+          infix_upgrade: stat,
+        },
+      };
+    }
+
+    return item;
+  },
   (item) => ({
     item,
   })
@@ -16,15 +44,37 @@ export const selector = createSelector(
 
 export default connect(selector, {
   fetch: actions.fetchItems,
+  fetchCalculatedItemStats,
 })(
 class Gw2Item extends Component<*> {
   props: {
     id: number,
-    fetch: ([number]) => void,
+    statsId?: number,
+    fetch: ([number]) => Promise<*>,
+    fetchCalculatedItemStats: (Array<Object>) => Promise<*>,
+    item?: ItemType,
   };
 
   componentDidMount () {
-    this.props.fetch([this.props.id]);
+    this.props.fetch([this.props.id])
+      .then(() => {
+        const { item, id, statsId } = this.props;
+        if (!item || !statsId) {
+          return;
+        }
+
+        const type = (item.details && item.details.type) || item.type;
+
+        const statsDef = {
+          id: statsId,
+          itemId: id,
+          type,
+          rarity: item.rarity,
+          level: item.level,
+        };
+
+        this.props.fetchCalculatedItemStats([statsDef]);
+      });
   }
 
   render () {

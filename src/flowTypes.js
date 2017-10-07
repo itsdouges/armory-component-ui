@@ -159,6 +159,18 @@ export type Worlds = {
 export type Maps = {
 };
 
+export type Item = {
+  icon: string,
+  name: string,
+  id: number,
+  rarity: string,
+  level: number,
+  type: string,
+  details: {
+    type: string,
+  },
+};
+
 export type Items = {
 };
 

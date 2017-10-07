@@ -209,3 +209,17 @@ export const readGuild = (guid: string) =>
     params: buildParams(),
   })
   .then(({ data }) => data);
+
+
+type StatDef = {
+  id: number,
+  type: string,
+  rarity: string,
+  level: number,
+};
+
+export const readCalculatedItemStats = (statDefs: Array<StatDef>) =>
+  axios.post('https://api.gw2armory.com/itemstats', statDefs, {
+    params: buildParams(),
+  })
+  .then(({ data }) => data);

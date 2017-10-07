@@ -108,8 +108,8 @@ const ItemsTooltip = ({
           </div>
         ))}
 
-        {stats && stats.attriburtes && Object.keys(stats.attriburtes).map((attribute) => {
-          const modifier = stats.attriburtes[attribute];
+        {stats && stats.attributes && Object.keys(stats.attributes).map((attribute) => {
+          const modifier = stats.attributes[attribute];
 
           return (
             <div key={attribute} className={colours.green}>

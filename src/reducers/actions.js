@@ -2,8 +2,10 @@ import upperFirst from 'lodash/upperFirst';
 import uniq from 'lodash/uniq';
 import T from 'i18n-react';
 import batchFunction from 'function-batch';
+import { readCalculatedItemStats } from '../lib/gw2';
 
 export const SHOW_TOOLTIP = 'SHOW_TOOLTIP';
+export const FETCH_CALCULATED_ITEMSTATS = 'FETCH_CALCULATED_ITEMSTATS';
 
 const actions = {};
 export default actions;
@@ -123,5 +125,22 @@ export function showTooltip (show, { type, data } = {}) {
       type,
       data,
     },
+  };
+}
+
+function fetchCalculatedItemStatsSuccess (stats) {
+  return {
+    type: FETCH_CALCULATED_ITEMSTATS,
+    payload: stats,
+  };
+}
+
+export function fetchCalculatedItemStats (statDef) {
+  return (dispatch) => {
+    return readCalculatedItemStats(statDef)
+      .then((stats) => dispatch(fetchCalculatedItemStatsSuccess(stats.map((stat, index) => ({
+        ...stat,
+        itemId: statDef[index].itemId,
+      })))));
   };
 }
