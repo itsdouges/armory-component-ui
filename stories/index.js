@@ -3,9 +3,11 @@ import { storiesOf } from '@storybook/react';
 
 // eslint-disable-next-line
 import 'style-loader!css-loader!./styles.css';
+
 import App from './App';
 import {
   ArmoryBadge,
+  persistToLocalStorage,
   Gold,
   Icon,
   PieChart,
@@ -21,6 +23,8 @@ import {
   Gw2Trait,
   Gw2Specialization,
 } from '../src';
+
+persistToLocalStorage(false);
 
 import itemData from './data/item.json';
 import amuletData from './data/amulet.json';

@@ -279,7 +279,7 @@ import { TooltipTrigger } from 'armory-component-ui';
 
 ### Helpers
 
-#### `reducers`
+#### `reducers: { [string]: Function }`
 
 Object of reducer functions, pass this into your combineReducers function.
 
@@ -299,7 +299,7 @@ const App = () => (
 );
 ```
 
-#### `actions`
+#### `actions: Object`
 
 Standard redux actions that fetch gw2 data.
 
@@ -356,8 +356,9 @@ connect(mapStateToProps, mapDispatchToProps)(
 | fetchTitles | `Array<number>` |
 | fetchTraits | `Array<number>` |
 | fetchWorlds | `Array<number>` |
+| fetchCalculatedItemStats | `Array<{ id: number, itemId: number, type: string, rarity: string, level: number }>` |
 
-#### `markup`
+#### `markup(string)`
 
 ```javascript
 import { markup } from 'armory-component-ui';
@@ -366,4 +367,16 @@ const text = 'Gain a boon upon casting a <c=@abilitytype>glyph</c> based on your
 
 markup(text);
 // <span dangerouslySetInnerHTML={{ __html: 'Gain a boon upon casting a <span class="abilitytype">glyph</span> based on your attunement. <span class="abilitytype">Glyphs</span> gain reduced recharge.' }}>
+```
+
+#### `persistToLocalStorage(boolean)`
+
+By default data will be persisted to local storage.
+You can turn this off by doing the following:
+
+```javascript
+import { persistToLocalStorage } from 'armory-component-ui';
+
+persistToLocalStorage(false);
+// Local storage data persistence is now turned off.
 ```

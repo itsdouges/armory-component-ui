@@ -12,6 +12,7 @@ import './styles/fonts/opensans-semibold.ttf';
 // they dynamically create the action creators.
 export { default as reducers } from './reducers/index';
 export { default as actions } from './reducers/actions';
+export { persistToLocalStorage } from './reducers/reducerFactory';
 export { markup } from './lib/gw2/parse';
 
 // Connected GW2 Components

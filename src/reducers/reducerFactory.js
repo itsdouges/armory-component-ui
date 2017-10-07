@@ -1,7 +1,11 @@
 import * as ls from '../lib/localStorage';
 import { generateActions } from './actions';
 
-const saveToLs = false;
+let saveToLs = true;
+
+export function persistToLocalStorage (enabled) {
+  saveToLs = enabled;
+}
 
 export default function gw2ReducerFactory (resourceName, getResource, {
   afterGet,
