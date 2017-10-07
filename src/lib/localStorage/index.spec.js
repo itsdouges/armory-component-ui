@@ -7,11 +7,6 @@ const localStorage = {
   removeItem: sandbox.spy(),
   setItem: sandbox.spy(),
 };
-const config = {
-  gw2: {
-    endpoint: 'https://api.gw2.com/',
-  },
-};
 
 const ls = proxyquire.noCallThru()('./', {
   'lz-string': {
@@ -21,7 +16,6 @@ const ls = proxyquire.noCallThru()('./', {
   axios: {
     get: axiosGet,
   },
-  '../../config': config,
 });
 
 describe('gw2a local storage', () => {
@@ -41,7 +35,7 @@ describe('gw2a local storage', () => {
 
       ls.initialise();
 
-      expect(axiosGet).to.have.been.calledWith('https://api.gw2.com/v2/build');
+      expect(axiosGet).to.have.been.calledWith('https://api.guildwars2.com/v2/build');
     });
 
     it('should set build id but NOT set clear ls key if not saved before', async () => {

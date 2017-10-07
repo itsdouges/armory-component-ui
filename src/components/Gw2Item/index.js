@@ -8,12 +8,12 @@ import { createSelector } from 'reselect';
 import get from 'lodash/get';
 
 import Item from '../Item';
-import actions, { fetchCalculatedItemStats } from '../../reducers/actions';
+import actions from '../../reducers/actions';
 
 export const selector = createSelector(
   (state, props) => {
     const item = state.items[props.id];
-    const stat = get(state.calculatedItemStats, [props.id, props.statsId]);
+    const stat = get(state.calculatedItemStats, `${props.id}${props.statsId}`);
 
     if (item && item.details && !stat && props.statsId) {
       // We have an item.
@@ -44,7 +44,7 @@ export const selector = createSelector(
 
 export default connect(selector, {
   fetch: actions.fetchItems,
-  fetchCalculatedItemStats,
+  fetchCalculatedItemStats: actions.fetchCalculatedItemStats,
 })(
 class Gw2Item extends Component<*> {
   props: {
@@ -58,7 +58,7 @@ class Gw2Item extends Component<*> {
   componentDidMount () {
     this.props.fetch([this.props.id])
       .then(() => {
-        const { item, id, statsId } = this.props;
+        const { item, id, statsId, fetchCalculatedItemStats } = this.props;
         if (!item || !statsId) {
           return;
         }
@@ -73,7 +73,7 @@ class Gw2Item extends Component<*> {
           level: item.level,
         };
 
-        this.props.fetchCalculatedItemStats([statsDef]);
+        fetchCalculatedItemStats([statsDef]);
       });
   }
 

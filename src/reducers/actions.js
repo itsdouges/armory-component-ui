@@ -2,7 +2,6 @@ import upperFirst from 'lodash/upperFirst';
 import uniq from 'lodash/uniq';
 import T from 'i18n-react';
 import batchFunction from 'function-batch';
-import { readCalculatedItemStats } from '../lib/gw2';
 
 export const SHOW_TOOLTIP = 'SHOW_TOOLTIP';
 export const FETCH_CALCULATED_ITEMSTATS = 'FETCH_CALCULATED_ITEMSTATS';
@@ -63,8 +62,11 @@ export function generateActions (resourceName, getResource, afterGet) {
     const store = getStore();
 
     const idsToFetch = uniq(ids.filter((id) => {
-      const isValidId = id && +id !== -1;
-      const isNotInStore = !store[resourceName][id] || store[resourceName][id].error;
+      // Sometimes we'll call with more complicated objects for the request
+      // We filter them, then pass them along to the service (for example lib/gw2/readCalculatedItemStats)
+      const actualId = typeof id === 'object' ? +id.id : +id;
+      const isValidId = actualId && actualId !== -1;
+      const isNotInStore = !store[resourceName][actualId] || !!store[resourceName][actualId].error;
       return isValidId && isNotInStore;
     }));
 
@@ -75,7 +77,7 @@ export function generateActions (resourceName, getResource, afterGet) {
     dispatch(actions[fetchingMethodName](true));
 
     const requests = [];
-    const idsToSlice = idsToFetch.concat([]);
+    const idsToSlice = [].concat(idsToFetch);
     while (idsToSlice.length) {
       const slicedIds = idsToSlice.splice(0, GW2API_REQUEST_LIMIT);
       requests.push(getResource(slicedIds));
@@ -125,22 +127,5 @@ export function showTooltip (show, { type, data } = {}) {
       type,
       data,
     },
-  };
-}
-
-function fetchCalculatedItemStatsSuccess (stats) {
-  return {
-    type: FETCH_CALCULATED_ITEMSTATS,
-    payload: stats,
-  };
-}
-
-export function fetchCalculatedItemStats (statDef) {
-  return (dispatch) => {
-    return readCalculatedItemStats(statDef)
-      .then((stats) => dispatch(fetchCalculatedItemStatsSuccess(stats.map((stat, index) => ({
-        ...stat,
-        itemId: statDef[index].itemId,
-      })))));
   };
 }

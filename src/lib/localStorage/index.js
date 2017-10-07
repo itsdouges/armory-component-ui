@@ -2,7 +2,6 @@
 
 import { compressToUTF16, decompressFromUTF16 } from 'lz-string';
 import axios from 'axios';
-import config from '../../config';
 
 const GW2_BUILD_KEY = 'GW2_BUILD';
 const CLEAR_LS_NEXT_LOAD_KEY = 'CLEAR_LS_NEXT_LOAD';
@@ -42,7 +41,7 @@ export function clearIfNewBuild (key: string) {
 }
 
 export function initialise () {
-  return axios.get(`${config.gw2.endpoint}v2/build`)
+  return axios.get('https://api.guildwars2.com/v2/build')
     .then(({ data }) => {
       const currentBuildId = `${data.id}`;
       const savedBuildId = get(GW2_BUILD_KEY);

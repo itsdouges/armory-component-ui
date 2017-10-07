@@ -2,12 +2,17 @@
 
 import axios from 'axios';
 import uniq from 'lodash/uniq';
-import config from '../../config';
 import { reduceById } from '../reduce';
 import { mapItemsToObject } from './parse';
 import { get as getLang } from '../i18n';
 
 const get = axios.get;
+
+const config = {
+  gw2: {
+    endpoint: 'https://api.guildwars2.com/',
+  },
+};
 
 const buildParams = (extra) => ({
   ...extra,
@@ -213,6 +218,7 @@ export const readGuild = (guid: string) =>
 
 type StatDef = {
   id: number,
+  itemId: number,
   type: string,
   rarity: string,
   level: number,
@@ -222,4 +228,12 @@ export const readCalculatedItemStats = (statDefs: Array<StatDef>) =>
   axios.post('https://api.gw2armory.com/itemstats', statDefs, {
     params: buildParams(),
   })
-  .then(({ data }) => data);
+  .then(({ data }) => data.reduce((obj, itemStat, index) => {
+    const itemId = statDefs[index].itemId;
+    // eslint-disable-next-line no-param-reassign
+    obj[`${itemId}${itemStat.id}`] = {
+      ...itemStat,
+      itemId: statDefs[index].itemId,
+    };
+    return obj;
+  }, {}));

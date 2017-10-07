@@ -1,27 +1,7 @@
-import merge from 'lodash/merge';
-import { FETCH_CALCULATED_ITEMSTATS } from './actions';
+import { readCalculatedItemStats } from '../lib/gw2';
+import createReducer from './reducerFactory';
 
-export const defaultState = {};
+const { defaultState, reducer } = createReducer('calculatedItemStats', readCalculatedItemStats);
 
-function reduceStats (stats) {
-  return stats.reduce((obj, stat) => {
-    const { itemId, ...data } = stat;
-    if (!obj[itemId]) {
-      // eslint-disable-next-line no-param-reassign
-      obj[itemId] = {};
-    }
-    // eslint-disable-next-line no-param-reassign
-    obj[itemId][data.id] = data;
-    return obj;
-  }, {});
-}
-
-export default (state, action) => {
-  switch (action.type) {
-    case FETCH_CALCULATED_ITEMSTATS:
-      return merge({}, state, reduceStats(action.payload));
-
-    default:
-      return state;
-  }
-};
+export { defaultState };
+export default reducer;

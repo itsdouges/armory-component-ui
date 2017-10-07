@@ -1,6 +1,7 @@
-import config from '../config';
 import * as ls from '../lib/localStorage';
 import { generateActions } from './actions';
+
+const saveToLs = false;
 
 export default function gw2ReducerFactory (resourceName, getResource, {
   afterGet,
@@ -26,7 +27,7 @@ export default function gw2ReducerFactory (resourceName, getResource, {
             ...action.payload.data,
           };
 
-          if (config.cache.saveToLs) {
+          if (saveToLs) {
             const saveState = {
               ...newState,
             };
