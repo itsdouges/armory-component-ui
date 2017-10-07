@@ -1,8 +1,8 @@
 // @flow
 
-import React from 'react';
+import type { Item as ItemType } from 'flowTypes';
+import React, { PureComponent } from 'react';
 import cx from 'classnames';
-import pure from 'recompose/pure';
 
 import TooltipTrigger from '../TooltipTrigger';
 import Gw2Icon from '../Gw2Icon';
@@ -25,11 +25,7 @@ type Props = {
   type?: string,
   busy?: boolean,
   name?: string,
-  item?: {
-    icon?: string,
-    name?: string,
-    id?: number,
-  },
+  item?: ItemType,
   skin?: {
     icon?: string,
   },
@@ -50,82 +46,85 @@ type Props = {
   inlineText?: string,
 };
 
-const Item = ({
-  type = '',
-  busy,
-  name,
-  item = {},
-  skin = {},
-  upgrades = [],
-  infusions = [],
-  stats = {},
-  upgradeCounts = {},
-  hide,
-  small,
-  tooltipType,
-  className,
-  inline,
-  tooltipTextOverride,
-  equipped,
-  count,
-  onClick,
-  size,
-  inlineText,
-  ...props
-}: Props) => {
-  if (hide) return null;
+export default class Item extends PureComponent<Props> {
+  props: Props;
 
-  // $FlowFixMe
-  const error = item && item.error;
-  const itemLoaded = !error && !!Object.keys(item).length;
-
-  let tooltipData;
-
-  if (error) {
-    tooltipData = error;
-  } else if (itemLoaded) {
-    tooltipData = {
+  render () {
+    const {
+      type = '',
+      busy,
       name,
-      item,
-      skin,
-      infusions,
-      upgrades,
-      upgradeCounts,
-      stats,
+      item = {},
+      skin = {},
+      upgrades = [],
+      infusions = [],
+      stats = {},
+      upgradeCounts = {},
+      hide,
+      small,
+      tooltipType,
+      className,
+      inline,
+      tooltipTextOverride,
       equipped,
       count,
-    };
-  } else {
-    tooltipData = name;
+      onClick,
+      size,
+      inlineText,
+      ...props
+    } = this.props;
+
+    if (hide) return null;
+    // $FlowFixMe
+    const error = item && item.error;
+    const itemLoaded = !error && !!Object.keys(item).length;
+
+    let tooltipData;
+
+    if (error) {
+      tooltipData = error;
+    } else if (itemLoaded) {
+      tooltipData = {
+        name,
+        item,
+        skin,
+        infusions,
+        upgrades,
+        upgradeCounts,
+        stats,
+        equipped,
+        count,
+      };
+    } else {
+      tooltipData = name;
+    }
+
+    return (
+      <TooltipTrigger
+        type={tooltipType || 'items'}
+        data={tooltipTextOverride || tooltipData}
+        {...props}
+      >
+        <ResourceLink text={item.name} href={buildLink(inlineText, item)}>
+          <Icon
+            name={type && `${type}-slot-icon.png`}
+            className={cx(styles.root, className, {
+              [styles.busy]: busy,
+              [styles.small]: small,
+              [styles.emptyBg]: !type && !itemLoaded,
+              [styles.inline]: inline,
+            })}
+            onClick={onClick}
+            sizePx={size}
+          >
+            <Gw2Icon
+              count={count}
+              className={styles.item}
+              src={skin.icon || item.icon || ''}
+            />
+          </Icon>
+        </ResourceLink>
+      </TooltipTrigger>
+    );
   }
-
-  return (
-    <TooltipTrigger
-      type={tooltipType || 'items'}
-      data={tooltipTextOverride || tooltipData}
-      {...props}
-    >
-      <ResourceLink text={item.name} href={buildLink(inlineText, item)}>
-        <Icon
-          name={type && `${type}-slot-icon.png`}
-          className={cx(styles.root, className, {
-            [styles.busy]: busy,
-            [styles.small]: small,
-            [styles.emptyBg]: !type && !itemLoaded,
-            [styles.inline]: inline,
-          })}
-          onClick={onClick}
-          sizePx={size}
-        >
-          <Gw2Icon
-            count={count}
-            className={styles.item}
-            src={skin.icon || item.icon || ''}
-          />
-        </Icon>
-      </ResourceLink>
-    </TooltipTrigger>
-  );
-};
-
-export default pure(Item);
+}

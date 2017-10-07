@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const merge = require('webpack-merge');
 const paths = require('./config/paths');
+const peerDependencies = require('./package.json').peerDependencies;
 
 const baseConfig = {
   bail: true,
@@ -15,15 +16,9 @@ const baseConfig = {
     libraryTarget: 'commonjs-module',
   },
 
-  externals: [
-    'axios',
-    'classnames',
-    'react',
-    'react-redux',
-    'lodash',
+  externals: Object.keys(peerDependencies).concat([
     /^lodash\/.+$/,
-    'reselect',
-  ],
+  ]),
 
   module: {
     strictExportPresence: true,

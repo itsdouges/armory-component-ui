@@ -22,7 +22,6 @@ flow/libdefs/
 [options]
 # Allow dynamic require statements
 module.ignore_non_literal_requires=true
-esproposal.decorators=ignore
 
 # Stub out less files so flow can import them
 module.name_mapper.extension='less' -> '<PROJECT_ROOT>/flow/CSSModule.js.flow'
