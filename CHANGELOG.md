@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
+### Added
+- Opt in hotlink for the armory badge
+- Calculated item stats sourced from gw2armory api
 
 ## [0.1.2][] - 2017-10-06
 ### Removed
