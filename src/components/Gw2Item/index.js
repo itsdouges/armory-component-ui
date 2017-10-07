@@ -25,9 +25,10 @@ export const selector = createSelector(
     }
 
     if (item && stat && item.details) {
+      const statName = stat.error ? '[ItemStatNotFound]' : stat.name;
       return {
         ...item,
-        name: `${stat.name} ${item.name}`,
+        name: `${statName} ${item.name}`,
         details: {
           ...item.details,
           infix_upgrade: stat,

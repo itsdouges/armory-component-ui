@@ -8,12 +8,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased][]
 ### Added
 - Skin to Gw2Item component
+- ReducerFactory error handling for complex objects
 
 ### Changed
 - Move all dependencie to peer deps
 
 ### Removed
 - Recompose dependency
+
+### Fixed
+- Gw2Item not handling invalid stats
 
 ## [0.2.0][] - 2017-10-07
 ### Added
