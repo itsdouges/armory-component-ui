@@ -113,7 +113,7 @@ export function mapItemsToObject (items: []) {
   return mappedItems;
 }
 
-export function markup (text: string) {
+export function markup (text: string, useTagName: boolean = false) {
   if (!text) {
     return null;
   }
@@ -126,7 +126,7 @@ export function markup (text: string) {
       const parsedColour = colour.replace('@', '');
       const parsedWords = words.replace(/>|</g, '');
 
-      return `<span class="${colours[parsedColour]}">${parsedWords}</span>`;
+      return `<span class="${useTagName ? parsedColour : colours[parsedColour]}">${parsedWords}</span>`;
     })
     .split(/\n|<br>/)
     .join('<br />');

@@ -41,4 +41,15 @@ describe('gw2 markup parser', () => {
       'Gain a boon upon casting a <span class="abilitytype">glyph</span> based on your attunement. <span class="abilitytype">Glyphs</span> gain reduced recharge.'
     );
   });
+
+  it('should use original name as class', () => {
+    const raw = '<c=@orange>Thing.</c> Yeah it is ok.\nBut really, is it?<br>Dunno!';
+
+    const jsx = markup(raw, true);
+    const wrapper = shallow(jsx);
+
+    expect(wrapper.props().dangerouslySetInnerHTML.__html).to.equal(
+      '<span class="orange">Thing.</span> Yeah it is ok.<br />But really, is it?<br />Dunno!',
+    );
+  });
 });

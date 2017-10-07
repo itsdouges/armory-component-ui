@@ -376,7 +376,9 @@ connect(mapStateToProps, mapDispatchToProps)(
 | fetchWorlds | `Array<number>` |
 | fetchCalculatedItemStats | `Array<{ id: number, itemId: number, type: string, rarity: string, level: number }>` |
 
-#### `markup(string)`
+#### `markup(text: string, useTagName: boolean)`
+
+By default the class will be a class inside the `armory-component-ui/styles.css`:
 
 ```javascript
 import { markup } from 'armory-component-ui';
@@ -384,6 +386,17 @@ import { markup } from 'armory-component-ui';
 const text = 'Gain a boon upon casting a <c=@abilitytype>glyph</c> based on your attunement. <c=@abilitytype>Glyphs</c> gain reduced recharge.';
 
 markup(text);
+// <span dangerouslySetInnerHTML={{ __html: 'Gain a boon upon casting a <span class="abilitytype">glyph</span> based on your attunement. <span class="DxsxS">Glyphs</span> gain reduced recharge.' }}>
+```
+
+If you pass `useTagName` as true, the class on the element will be the `@colourname` text, for example:
+
+```javascript
+import { markup } from 'armory-component-ui';
+
+const text = 'Gain a boon upon casting a <c=@abilitytype>glyph</c> based on your attunement. <c=@abilitytype>Glyphs</c> gain reduced recharge.';
+
+markup(text, true);
 // <span dangerouslySetInnerHTML={{ __html: 'Gain a boon upon casting a <span class="abilitytype">glyph</span> based on your attunement. <span class="abilitytype">Glyphs</span> gain reduced recharge.' }}>
 ```
 
