@@ -66,6 +66,10 @@ class Gw2Item extends Component<*> {
         const type = (item.details && item.details.type) || item.type;
 
         const statsDef = {
+          // TODO: This is pretty terrible. We need the system to properly support
+          // calculated ids instead of relying on this. Why? Because it means
+          // every consumer needs to do this. Leaky abstraction! Not good!
+          calculatedId: `${id}${statsId}`,
           id: statsId,
           itemId: id,
           type,

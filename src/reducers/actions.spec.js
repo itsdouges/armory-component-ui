@@ -117,6 +117,15 @@ describe('gw2 action factory', () => {
 
         expect(getFunc.firstCall.args[0]).to.eql([{ id: 5 }]);
       });
+
+      it('should prioritise using calculatedId', () => {
+        const ids = [{ id: 5 }, { calculatedId: 1, id: 3 }];
+        const action = actions.fetchAmulets(ids);
+
+        action(dispatch, getStore);
+
+        expect(getFunc.firstCall.args[0]).to.eql([{ id: 5 }]);
+      });
     });
 
     context('when all ids area already in the store', () => {

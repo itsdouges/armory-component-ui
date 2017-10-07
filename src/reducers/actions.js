@@ -64,7 +64,8 @@ export function generateActions (resourceName, getResource, afterGet) {
     const idsToFetch = uniq(ids.filter((id) => {
       // Sometimes we'll call with more complicated objects for the request
       // We filter them, then pass them along to the service (for example lib/gw2/readCalculatedItemStats)
-      const actualId = typeof id === 'object' ? +id.id : +id;
+      // If calculatedId exists, use that.
+      const actualId = +(typeof id === 'object' ? (id.calculatedId || id.id) : id);
       const isValidId = actualId && actualId !== -1;
       const isNotInStore = !store[resourceName][actualId] || !!store[resourceName][actualId].error;
       return isValidId && isNotInStore;
