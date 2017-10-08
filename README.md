@@ -411,3 +411,27 @@ import { persistToLocalStorage } from 'armory-component-ui';
 persistToLocalStorage(false);
 // Local storage data persistence is now turned off.
 ```
+
+## Local Development
+
+```bash
+git clone git@github.com:madou/armory-component-ui.git
+cd armory-component-ui
+yarn # See https://yarnpkg.com/lang/en/docs/install/
+npm start # Runs react-storybook
+npm run tdd # Runs tests in watch mode
+```
+
+### Building Docs
+
+```bash
+npm run build-storybook
+```
+
+### Releasing
+
+```bash
+# Make sure the changelog has your changes under Unreleased
+# Be on master branch
+npm version major|minor|patch
+```
