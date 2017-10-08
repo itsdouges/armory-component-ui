@@ -7,6 +7,7 @@ const afterGetFunc = sandbox.stub();
 
 const actionsFactory = proxyquire.noCallThru()('./actions', {
   'function-batch': (func) => func,
+  'i18n-react': { translate: (text) => text },
 }, true);
 
 const resourceName = 'amulets';
