@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Gw2Item not handling invalid stats
+- Gw2 action creator not taking objects/calcualted id into consideration
 
 ## [0.2.0][] - 2017-10-07
 ### Added
