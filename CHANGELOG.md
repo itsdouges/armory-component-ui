@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Move all dependencie to peer deps
+- Prune unused i18n text
 
 ### Removed
 - Recompose dependency

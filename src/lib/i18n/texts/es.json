@@ -1,132 +1,7 @@
 {
-  "home": {
-    "whatIs": {
-      "title": "Qué es",
-      "text": "¡Guild Wars 2 Armory es la manera más sencilla de encontrar, ver y compartir usuarios, personajes y clanes con amigos en móvil y PC! ¡Únete hoy y empieza a compartir!"
-    }
-  },
-  "embeds": {
-    "name": "Insertar"
-  },
-  "login": {
-    "name": "Entrar",
-    "joinCta": "¿Todavía no tienes cuenta? ¡Haz clic aquí!",
-    "forgotMyPasswordCta": "Olvidé la contraseña",
-    "buttons": {
-      "login": "Entrar"
-    }
-  },
-  "forgotPassword": {
-    "name": "Olvidé la Contraseña",
-    "nextCta": "Siguiente",
-    "changeCta": "Cambiar",
-    "checkEmail": "¡Consulta el correo electrónico para reiniciar tu contraseña!",
-    "success": "Tu contraseña ha sido cambiada. ¡Inicia sesión!"
-  },
-  "join": {
-    "name": "Regístrate",
-    "loginCta": "¿Ya tienes cuenta? ¡Haz clic aquí!",
-    "buttons": {
-      "join": "Registrar"
-    }
-  },
-  "images": {
-    "tooBig": "La imagen debe ser inferior a 1 MB, elige otra.",
-    "wrongType": "La imagen debe ser JPEG o PNG, elige otra."
-  },
-  "stats": {
-    "name": "Estadísticas",
-    "refreshNote": "Las estadísticas se actualizan cada treinta minutos."
-  },
-  "search": {
-    "textbox": "Búsqueda de usuarios, personajes y clanes",
-    "results": "Resultados de la búsqueda",
-    "minlength": "La búsqueda debe tener un mínimo de 3 caracteres :-)",
-    "nonefound": "No se encontró nada ... ¿Pensabas que ibas a encontrar algo?",
-    "joincta": "¡Entra y añade tus claves de la API de gw2!"
-  },
-  "users": {
-    "materials": "Materiales",
-    "bank": "Banco",
-    "wallet": "Billetera",
-    "name": "Usuarios",
-    "achievements": "Logros",
-    "recentMatches": "Partidas recientes",
-    "claimCta": "Reclamar",
-    "noApiKey": "Clave de la API no configurada",
-    "makePrimary": "Hacer clave principal de la API.",
-    "primaryToken": "Esta es tu clave principal de la API, de donde se obtendrá tu información de usuario.",
-    "invalidToken": "No se pudieron recuperar los datos de GW2, la clave de la API seguramente fue eliminada de la cuenta de usuario.",
-    "stubUser": "Este usuario no ha sido reclamado todavía, ¡ve a bug para agregar su clave api!",
-    "pvpStats": {
-      "name": "Estadísticas PvP",
-      "unranked": "Libres",
-      "ranked": "Clasificatorias",
-      "wins": "Victorias",
-      "byes": "Enemigo desconectado",
-      "losses": "Derrotas",
-      "desertions": "Deserciones",
-      "forfeits": "Aliado desconectado",
-      "finished": "Jugadas",
-      "ranking": "Rango",
-      "rating": "Grado"
-    },
-    "pvp": {
-      "favouriteClass": "Profesión favorita",
-      "winLossAbbreviation": "V/D"
-    }
-  },
-  "guilds": {
-    "name": "Clanes",
-    "guild": "Clan",
-    "noGuild": "Sin clan",
-    "claimed": "¡Se ha reclamado este clan!",
-    "unclaimed": "Este clan todavía no se ha reclamado, si eres el líder añade una clave de la api con los permisos de clan!",
-    "motd": "Mensaje del día"
-  },
-  "characters": {
-    "name": "Personajes",
-    "embedCta": "¡Este es un personaje al azar. ¡Puedes conseguir el código para insertarlo en tu página! Haz clic en el texto de inserción de cualquier página de personaje.",
-    "shown": "Mostrar a todo el mundo",
-    "hidden": "Personaje privado",
-    "done": "Hecho",
-    "edit": "Intimidad",
-    "changePortrait": "Cambiar el retrato del personaje",
-    "noSkill": "Habilidad no seleccionada",
-    "embedTooltip": "Copia y pega este markup a tu página.",
-    "bags": "Bags"
-  },
-  "settings": {
-    "name": "Ajustes",
-    "avatar": {
-      "cta": "Haz clic para cambiar el avatar",
-      "label": "Cambiar el avatar",
-      "finished": "Te ves bien ;-)"
-    },
-    "apiKeys": {
-      "name": "Claves de la API",
-      "noKeysCta": "No tienes claves de la API .. ¡Ve a crear una ...! Asegúrate de seleccionar los permisos de personajes, perfiles y PvP :-).",
-      "inputs": {
-        "add": "Añadir clave"
-      },
-      "buttons": {
-        "add": "Añadir"
-      }
-    },
-    "changePassword": {
-      "name": "Cambiar la contraseña",
-      "inputs": {
-        "current": "Contraseña actual",
-        "password": "Contraseña",
-        "confirm": "Confirma la contraseña"
-      }
-    },
-    "buttons": {
-      "logout": "Salir"
-    }
-  },
-  "misc": {
-    "opensInNewWindow": "Abrir en una ventana nueva"
+  "words": {
+    "title": "Título",
+    "objectives": "Objetivos"
   },
   "items": {
     "transmuted": "Transmutado",
@@ -137,6 +12,9 @@
     "currentlyEquipped": "Actualmente equipado",
     "accountBound": "Vinculado a cuenta",
     "soulBound": "Ligado"
+  },
+  "characters": {
+    "noSkill": "Habilidad no seleccionada"
   },
   "itemAttributes": {
     "power": "Potencia",
@@ -156,77 +34,10 @@
     "expertise": "Pericia",
     "concentration": "Concentración",
     "agonyResistance": "Resistencia a la agonía",
-    "magic": "Hallazgo mágico",
-    "elementalist": "Tasa de recarga de la sintonía",
-    "guardian": "Tasa de recarga de la virtud",
-    "warrior": "Recarga de estallido",
-    "engineer": "Tasa de recarga del cinturón de herramientas",
-    "ranger": "Bono a atributos de mascota",
-    "thief": "Tasa de recarga de robo",
-    "mesmer": "Índice de recarga de la habilidad de destrozo",
-    "necromancer": "Reserva de fuerza vital",
-    "revanent": "Retornado"
-  },
-  "accSummary": {
-    "raidBossKills": "Jefes de incursión",
-    "fractalLvl": "Nivel de fractal",
-    "dailyAp": "Logros diarios"
-  },
-  "classes": {
-    "druid": "Druida",
-    "daredevil": "Temerario",
-    "berserker": "Berserker",
-    "dragonhunter": "Cazadragones",
-    "reaper": "Segador",
-    "chronomancer": "Cronomante",
-    "scrapper": "Chatarrero",
-    "tempest": "Tempestad",
-    "herald": "Heraldo",
-    "soulbeast": "Soulbeast",
-    "weaver": "Weaver",
-    "holosmith": "Holosmith",
-    "deadeye": "Deadeye",
-    "mirage": "Mirage",
-    "scourge": "Scourge",
-    "spellbreaker": "Spellbreaker",
-    "firebrand": "Firebrand",
-    "renegade": "Renegade"
-  },
-  "words": {
-    "played": "Jugado",
-    "times": "Veces",
-    "ratio": "Ratio",
-    "rank": "Rango",
-    "optional": "Opcional",
-    "dismiss": "Descartar",
-    "embed": "Insertar",
-    "loadMore": "Cargar más",
-    "completed": "Completed",
-    "masteryPoint": "Mastery Point",
-    "coins": "Monedas",
-    "title": "Título",
-    "of": "de",
-    "objectives": "Objetivos",
-    "ladder": "Escalera"
-  },
-  "leaderboards": {
-    "name": "Tabla de clasificación"
+    "magic": "Hallazgo mágico"
   },
   "messages": {
     "gw2ApiDown": "¡La API oficial de GW2 está teniendo problemas, tu sesión se puede ver afectada!",
-    "notFound": "No se ha encontrado",
-    "notFoundLong": "No se ha  encontrado (or la API de API está caída)!",
-    "resourceNotFound": "¡Lo siento, aquí no hay nada. ¡Aún así aquí tienes un personaje aleatorio!",
-    "newBags": "¡Sacos ahora disponibles en las páginas de usuario! Próximamente logros de usuario."
-  },
-  "achievements": {
-    "pointsThisTier": "Puntos de este nivel"
-  },
-  "patreon": {
-    "cta": "Guild Wars 2 Armory necesita tu ayuda, ¡hazte una patrona hoy!"
-  },
-  "notifications": {
-    "didYouKnow1": "¿Sabías? Los datos del clan autenticado están disponibles: ¡pídale a su líder del gremio que se registre y pueda acceder a su mensaje del día y los registros! Más datos próximamente.",
-    "privacyNowAvailable": "Configuración de privacidad ahora disponible! ¡Ahora también puedes mostrar tu gremio si eres el líder del gremio! Busque el gran botón rojo de \"INTIMIDAD\" cuando está conectado."
+    "notFoundLong": "No se ha  encontrado (or la API de API está caída)!"
   }
 }

@@ -1,149 +1,20 @@
 {
-  "home": {
-    "whatIs": {
-      "title": "What is",
-      "text": "Guild Wars 2 Armory is an easy way to find, view, and share users, characters, and guilds with your friends on your mobile and PC! Join today and start sharing!"
-    }
-  },
-  "embeds": {
-    "name": "Embeds",
-    "upsell": "Guild Wars 2 Armory has a rich embed system that allows for highly customised embeds that can display user and character data in any way you see fit.",
-    "custom": "Customisable Embed",
-    "characterPvpPreset": "Character PvP Preset",
-    "characterPvePreset": "Character PvE Preset",
-    "characterOriginal": "Minimal Character Embed"
-  },
-  "login": {
-    "name": "Sign in",
-    "joinCta": "Don't have an account?",
-    "forgotMyPasswordCta": "Forgot my password",
-    "buttons": {
-      "login": "Sign in"
-    }
-  },
-  "forgotPassword": {
-    "name": "Forgot My Password",
-    "nextCta": "Next",
-    "changeCta": "Change",
-    "checkEmail": "A reset token has been emailed to you.",
-    "success": "Your password has been changed. Click here to login."
-  },
-  "join": {
-    "name": "Join",
-    "loginCta": "Have an account already?",
-    "buttons": {
-      "join": "Register"
-    }
-  },
-  "images": {
-    "tooBig": "Image should be less than 1MB, choose another.",
-    "wrongType": "Image should be PNG or JPEG, choose another."
-  },
-  "stats": {
-    "name": "Statistics",
-    "refreshNote": "Armory statistics are refreshed every thirty minutes."
-  },
-  "search": {
-    "name": "Search",
-    "textbox": "Search users, characters, and guilds",
-    "results": "Search results for",
-    "minlength": "Your search term should be 3 or more characters",
-    "nonefound": "There was nothing found.",
-    "joincta": "To be listed in the search results you first need to add your API key to the Armory, click here to join."
-  },
-  "users": {
-    "materials": "Materials",
-    "bank": "Bank",
-    "name": "Users",
-    "wallet": "Wallet",
-    "recentMatches": "Recent Matches",
-    "claimCta": "Claim",
-    "noApiKey": "API key not set.",
-    "achievements": "Achievements",
-    "makePrimary": "Make primary API key.",
-    "primaryToken": "This is your primary API key, your user information will be sourced from this.",
-    "invalidToken": "Could not retrieve data from GW2, the API key was probably deleted from the ArenaNet account page.",
-    "stubUser": "This user hasn't been claimed yet. Add an API key!",
-    "pvpStats": {
-      "name": "Pvp Stats",
-      "unranked": "Unranked",
-      "ranked": "Ranked",
-      "wins": "Wins",
-      "winRate": "Win Rate",
-      "byes": "Byes",
-      "losses": "Losses",
-      "desertions": "Desertions",
-      "forfeits": "Forfeits",
-      "finished": "Played",
-      "ranking": "Rank",
-      "rating": "Rating"
-    },
-    "pvp": {
-      "favouriteClass": "Favourite Class",
-      "winLossAbbreviation": "W/L"
-    }
-  },
-  "guilds": {
-    "name": "Guilds",
-    "guild": "Guild",
-    "noGuild": "No Guild",
-    "claimed": "This guild has been claimed!",
-    "unclaimed": "This guild hasn't been claimed yet, the guild leader should add an API key with the \"guilds\" permission.",
-    "motd": "Message of the day"
-  },
-  "characters": {
-    "name": "Characters",
-    "embedCta": "This is a character chosen at random. You can get an embed just like this on your website, click the embed text on any character page.",
-    "shown": "Can be seen by everyone",
-    "hidden": "Can only be seen by you",
-    "done": "Done",
-    "edit": "Privacy",
-    "changePortrait": "Click to change your character portrait",
-    "noSkill": "No skill selected",
-    "embedTooltip": "Copy and paste this markup onto your website.",
-    "bags": "Bags"
-  },
-  "settings": {
-    "name": "Settings",
-    "avatar": {
-      "cta": "Click to change your avatar",
-      "label": "Change your avatar",
-      "finished": "Your avatar has been updated."
-    },
-    "apiKeys": {
-      "name": "API Keys",
-      "noKeysCta": "Click here to create an API key. Select all permissions, you can hide what you don't want to show.",
-      "inputs": {
-        "add": "Add key"
-      },
-      "buttons": {
-        "add": "Add"
-      }
-    },
-    "changePassword": {
-      "name": "Change Password",
-      "inputs": {
-        "current": "Current password",
-        "password": "Password",
-        "confirm": "Confirm password"
-      }
-    },
-    "buttons": {
-      "logout": "Logout"
-    }
-  },
-  "misc": {
-    "opensInNewWindow": "Opens in a new window"
+  "words": {
+    "title": "Title",
+    "objectives": "Objectives"
   },
   "items": {
+    "currentlyEquipped": "Currently Equipped",
+    "defense": "Defense",
+    "weaponStrength": "Weapon Strength",
     "transmuted": "Transmuted",
     "skinLocked": "Skin Locked",
     "requiredLevel": "Required Level",
-    "weaponStrength": "Weapon Strength",
-    "defense": "Defense",
-    "currentlyEquipped": "Currently Equipped",
-    "accountBound": "Account bound",
-    "soulBound": "Soulbound"
+    "soulBound": "Soulbound",
+    "accountBound": "Accountbound"
+  },
+  "characters": {
+    "noSkill": "No Skill"
   },
   "itemAttributes": {
      "power": "Power",
@@ -163,77 +34,10 @@
      "expertise": "Expertise",
      "concentration": "Concentration",
      "agonyResistance": "Agony Resistance",
-     "magic": "Magic Find",
-     "elementalist": "Attunement Recharge Rate",
-     "guardian": "Virtue Recharge Rate",
-     "warrior": "Burst Recharge",
-     "engineer": "Tool Belt Recharge Rate",
-     "ranger": "Pet Attribute Bonus",
-     "thief": "Steal Recharge Rate",
-     "mesmer": "Shatter Skill Recharge Rate",
-     "necromancer": "Life Force Pool",
-     "revanent": "Revenant"
-  },
-  "accSummary": {
-    "raidBossKills": "Raid Bosses",
-    "fractalLvl": "Fractal Level",
-    "dailyAp": "Daily Ap"
-  },
-  "classes": {
-    "druid": "Druid",
-    "daredevil": "Daredevil",
-    "berserker": "Berserker",
-    "dragonhunter": "Dragonhunter",
-    "reaper": "Reaper",
-    "chronomancer": "Chronomancer",
-    "scrapper": "Scrapper",
-    "tempest": "Tempest",
-    "herald": "Herald",
-    "soulbeast": "Soulbeast",
-    "weaver": "Weaver",
-    "holosmith": "Holosmith",
-    "deadeye": "Deadeye",
-    "mirage": "Mirage",
-    "scourge": "Scourge",
-    "spellbreaker": "Spellbreaker",
-    "firebrand": "Firebrand",
-    "renegade": "Renegade"
-  },
-  "words": {
-    "played": "Played",
-    "times": "times",
-    "ratio": "Ratio",
-    "rank": "Rank",
-    "optional": "Optional",
-    "dismiss": "Dismiss",
-    "embed": "Embed",
-    "loadMore": "Load More",
-    "completed": "Completed",
-    "masteryPoint": "Mastery Point",
-    "coins": "Coins",
-    "title": "Title",
-    "of": "of",
-    "objectives": "Objectives",
-    "ladder": "Ladder"
-  },
-  "leaderboards": {
-    "name": "Leaderboards"
+     "magic": "Magic Find"
   },
   "messages": {
-    "gw2ApiDown": "The official GW2 API is experiencing issues, your session may be affected!",
-    "notFound": "Not Found",
     "notFoundLong": "Not Found (or the GW2 API is dead)!",
-    "resourceNotFound": "Sorry that couldn't be found.",
-    "newBags": "Bags now available on character pages! User achievements coming soon."
-  },
-  "achievements": {
-    "pointsThisTier": "Points this tier"
-  },
-  "patreon": {
-    "cta": "Guild Wars 2 Armory needs your help, become a patreon today!"
-  },
-  "notifications": {
-    "didYouKnow1": "Did you know? Private authenticated guild data is available - get your guild leader to sign up and you can access your message of the day and logs! More data coming soon.",
-    "privacyNowAvailable": "Privacy settings now available! You can now also show off your guild if you're the guild leader! Look for the big red \"PRIVACY\" button when logged in."
+    "gw2ApiDown": "The official GW2 API is experiencing issues, your session may be affected!"
   }
 }

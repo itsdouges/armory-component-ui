@@ -1,131 +1,7 @@
 {
-  "home": {
-    "whatIs": {
-      "title": "什么是",
-      "text": "Guild Wars 2 Armory 使您更容易在手机和电脑上与朋友寻找，查看，并共享用户，角色和行会！今天就加盟并开始分享吧！"
-    }
-  },
-  "embeds": {
-    "name": "嵌入"
-  },
-  "login": {
-    "name": "登录",
-    "joinCta": "还没有账号？加入我们！",
-    "forgotMyPasswordCta": "忘了我的密码",
-    "buttons": {
-      "login": "登录"
-    }
-  },
-  "forgotPassword": {
-    "name": "忘了我的密码",
-    "nextCta": "下一步",
-    "changeCta": "更改",
-    "checkEmail": "请检查你的电子邮件来获取您的重置令牌！",
-    "success": "您的密码已被更改。请前往登录！"
-  },
-  "join": {
-    "name": "加入",
-    "loginCta": "已经有一个帐户？前往登录！",
-    "buttons": {
-      "join": "注册"
-    }
-  },
-  "images": {
-    "tooBig": "图片应小于1MB，请重新选择",
-    "wrongType": "图片应该是PNG或JPEG格式，请重新选择。"
-  },
-  "stats": {
-    "name": "统计",
-    "refreshNote": "军械库统计每三十分钟刷新一次。"
-  },
-  "search": {
-    "textbox": "搜索用户，角色和行会",
-    "results": "对于。。。的查找结果",
-    "minlength": "搜索词应该是3个或更多字符 :-)",
-    "nonefound": "什么都没有找到。。。我还以为你会找到你想要的",
-    "joincta": "请先注册，并添加你的GW2 API令牌！"
-  },
-  "users": {
-    "materials": "物料",
-    "bank": "银行",
-    "wallet": "钱包",
-    "name": "用户",
-    "recentMatches": "近期比赛",
-    "achievements": "成就",
-    "claimCta": "索取",
-    "noApiKey": "哦，你没有API密钥。。请前往生成一个。。!",
-    "makePrimary": "生成主要API密钥。",
-    "primaryToken": "这是你的主要API密钥，你的用户资料会来自这里。",
-    "invalidToken": "没有成功从 Guild Wars 2 取到资料，API密钥可能从 ArenaNet 的账目页被删除了。",
-    "stubUser": "这个用户还没有被声明过，他会发现他添加了他的api密钥！",
-    "pvpStats": {
-      "name": "PVP统计",
-      "unranked": "未排序",
-      "ranked": "排名",
-      "wins": "胜",
-      "byes": "轮空",
-      "losses": "损失",
-      "desertions": "离弃",
-      "forfeits": "弃权",
-      "finished": "结束",
-      "ranking": "排名",
-      "rating": "排名点数"
-    },
-    "pvp": {
-      "favouriteClass": "最喜欢的职业",
-      "winLossAbbreviation": "胜/败"
-    }
-  },
-  "guilds": {
-    "name": "公会",
-    "guild": "公会",
-    "noGuild": "无公会",
-    "claimed": "这公会被索取!",
-    "unclaimed": "这公会还没有被索取，如果你是公会的领导者，请获得公会的认同生成API密钥!",
-    "motd": "当天信息"
-  },
-  "characters": {
-    "name": "角色",
-    "embedCta": "这是随机选择的字符。你可以将它嵌入在您的网站！请点击任何角色页面上的嵌入图标。",
-    "shown": "所示的字符",
-    "hidden": "隐藏角色",
-    "done": "完成",
-    "edit": "隐私",
-    "changePortrait": "更改角色的图像",
-    "noSkill": "没有技能被选择",
-    "embedTooltip": "复制这标记然后粘贴在你的网页上。"
-  },
-  "settings": {
-    "name": "设置",
-    "avatar": {
-      "cta": "点击改变你的头像",
-      "label": "改变你的头像",
-      "finished": "看起来不错 ;-)"
-    },
-    "apiKeys": {
-      "name": "API密钥",
-      "noKeysCta": "哦，你有没有API密钥..请前往生成一个..！确保你选择的字符，构建和PVP权限 :-)。",
-      "inputs": {
-        "add": "添加密钥"
-      },
-      "buttons": {
-        "add": "加"
-      }
-    },
-    "changePassword": {
-      "name": "更改密码",
-      "inputs": {
-        "current": "当前密码",
-        "password": "密码",
-        "confirm": "确认密码"
-      }
-    },
-    "buttons": {
-      "logout": "登出"
-    }
-  },
-  "misc": {
-    "opensInNewWindow": "打开一个新窗口"
+  "words": {
+    "title": "标题",
+    "objectives": "目标"
   },
   "items": {
     "transmuted": "蜕变",
@@ -136,6 +12,9 @@
     "currentlyEquipped": "目前装备",
     "accountBound": "账户绑定",
     "soulBound": "角色绑定"
+  },
+  "characters": {
+    "noSkill": "没有技能被选择"
   },
   "itemAttributes": {
     "power": "力量",
@@ -155,77 +34,10 @@
     "expertise": "延迟症状持续",
     "concentration": "延迟增益持续",
     "agonyResistance": "痛苦抗性",
-    "magic": "掉宝率",
-    "elementalist": "调和冷却率",
-    "guardian": "美德冷却率",
-    "warrior": "爆发冷却率",
-    "engineer": "工具腰带冷却率",
-    "ranger": "宠物数值加成",
-    "thief": "偷窃冷却率",
-    "mesmer": "幻象自爆冷却率",
-    "necromancer": "生命之力量",
-    "revanent": "能量回复率"
-  },
-  "accSummary": {
-    "raidBossKills": "团本 BOSS 杀次数",
-    "fractalLvl": "个人迷雾碎层等级",
-    "dailyAp": "日常成就点数"
-  },
-  "classes": {
-    "druid": "德鲁伊",
-    "daredevil": "独行侠",
-    "berserker": "狂战士",
-    "dragonhunter": "猎龙者",
-    "reaper": "死灵",
-    "chronomancer": "时空术士",
-    "scrapper": "机械师",
-    "tempest": "风暴使",
-    "herald": "龙魂使",
-    "soulbeast": "Soulbeast",
-    "weaver": "Weaver",
-    "holosmith": "Holosmith",
-    "deadeye": "Deadeye",
-    "mirage": "Mirage",
-    "scourge": "Scourge",
-    "spellbreaker": "Spellbreaker",
-    "firebrand": "Firebrand",
-    "renegade": "Renegade"
-  },
-  "words": {
-    "played": "打过",
-    "times": "次数",
-    "ratio": "对比率",
-    "rank": "排名",
-    "optional": "可选择的",
-    "dismiss": "搁置",
-    "embed": "嵌入",
-    "loadMore": "加载更多",
-    "completed": "已完成",
-    "masteryPoint": "掌握点",
-    "coins": "硬币",
-    "title": "标题",
-    "of": "的",
-    "objectives": "目标",
-    "ladder": "阶梯"
-  },
-  "leaderboards": {
-    "name": "选手积分榜"
+    "magic": "掉宝率"
   },
   "messages": {
     "gw2ApiDown": "Guild Wars 2 官方API现在遇到问题。你的连接可能会受到影响!",
-    "notFound": "找不到",
-    "notFoundLong": "找不到(或者Guild Wars 2 的API过期了)!",
-    "resourceNotFound": "抱歉，这里没有东西。来一个随机的角色吧!",
-    "newBags": "现在可以在各角色页面上看到容器!账户成就就快来了!"
-  },
-  "achievements": {
-    "pointsThisTier": "点这一层"
-  },
-  "patreon": {
-    "cta": "激战2军械库需要你的帮助，今天成为一个patreon"
-  },
-  "notifications": {
-    "didYouKnow1": "你知道吗？认证公会数据可用 - 让您的公会领导注册，您可以访问您的日期和日志信息！更多数据即将推出",
-    "privacyNowAvailable": "隐私设置现在可用！你现在还可以炫耀你的公会，如果你是公会领袖！登录时寻找大的红色隐私按钮。"
+    "notFoundLong": "找不到(或者Guild Wars 2 的API过期了)!"
   }
 }
