@@ -10,7 +10,8 @@
     "start": "start-storybook -p 6006",
     "prebuild": "rm -rf dist",
     "build": "webpack",
-    "postbuild": "cp package.json dist/package.json && cp README.md dist/README.md",
+    "postbuild": "cp package.json dist/package.json && cp README.md dist/README.md && cp src/flowTypes.js dist/flowTypes.js.flow",
+    "copy-flow": "flow-copy-source src dist",
     "test": "npm run lint && npm run flow && npm run coverage",
     "flow": "flow",
     "flowtypes": "rm -rf ./flow-typed && flow-typed install --overwrite --skip",
@@ -81,6 +82,7 @@
     "file-loader": "^0.11.2",
     "filesize": "^3.5.10",
     "flow-bin": "^0.53.1",
+    "flow-copy-source": "^1.2.1",
     "flow-typed": "^2.1.5",
     "function-batch": "^1.1.2",
     "gzip-size": "^3.0.0",
@@ -115,6 +117,7 @@
     "webpack": "^3.5.5",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-merge": "^4.1.0",
+    "webpack-node-externals": "^1.6.0",
     "yargs": "^8.0.2"
   }
 }

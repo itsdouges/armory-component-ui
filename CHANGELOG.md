@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
+### Fixed
+- Properly build externals
+- Flow types in package
 
 ## [0.3.1][] - 2017-10-09
 ### Changed

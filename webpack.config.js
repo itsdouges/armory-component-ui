@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const paths = require('./config/paths');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const peerDependencies = require('./package.json').peerDependencies;
+const nodeExternals = require('webpack-node-externals');
 
 const config = {
   bail: true,
@@ -20,9 +20,7 @@ const config = {
     libraryTarget: 'commonjs-module',
   },
 
-  externals: Object.keys(peerDependencies).concat([
-    /^lodash\/.+$/,
-  ]),
+  externals: [nodeExternals()],
 
   module: {
     strictExportPresence: true,
