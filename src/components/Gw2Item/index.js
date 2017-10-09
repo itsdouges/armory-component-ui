@@ -10,7 +10,7 @@ import get from 'lodash/get';
 import Item from '../Item';
 import actions from '../../reducers/actions';
 
-export const selector = createSelector(
+const selector = createSelector(
   (state, props) => {
     const item = state.items[props.id];
     const stat = get(state.calculatedItemStats, `${props.id}${props.statsId}`);
@@ -24,11 +24,17 @@ export const selector = createSelector(
       };
     }
 
-    if (item && stat && item.details) {
-      const statName = stat.error ? '[404]' : stat.name;
+    if (item && stat && item.details && stat.error) {
       return {
         ...item,
-        name: `${statName} ${item.name}`,
+        name: `[404] ${item.name}`,
+      };
+    }
+
+    if (item && stat && item.details) {
+      return {
+        ...item,
+        name: `${stat.name} ${item.name}`,
         details: {
           ...item.details,
           infix_upgrade: stat,
@@ -70,8 +76,6 @@ class Gw2Item extends Component<*> {
           return;
         }
 
-        const type = (item.details && item.details.type) || item.type;
-
         const statsDef = {
           // TODO: This is pretty terrible. We need the system to properly support
           // calculated ids instead of relying on this. Why? Because it means
@@ -79,7 +83,7 @@ class Gw2Item extends Component<*> {
           calculatedId: `${id}${statsId}`,
           id: statsId,
           itemId: id,
-          type,
+          type: (item.details && item.details.type) || item.type,
           rarity: item.rarity,
           level: item.level,
         };
@@ -89,7 +93,18 @@ class Gw2Item extends Component<*> {
   }
 
   render () {
-    return <Item {...this.props} />;
+    const {
+      id,
+      skinId,
+      statsId,
+      fetchSkins,
+      fetchCalculatedItemStats,
+      fetch,
+      // Removed props that shouldn't be passed down.
+      ...props
+    } = this.props;
+
+    return <Item {...props} />;
   }
 }
 );
