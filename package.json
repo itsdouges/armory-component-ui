@@ -6,12 +6,11 @@
     "test"
   ],
   "main": "armory-component-ui.js",
-  "module": "src/index.js",
   "scripts": {
     "start": "start-storybook -p 6006",
     "prebuild": "rm -rf dist",
     "build": "webpack",
-    "postbuild": "cp package.json dist/package.json && cp README.md dist/README.md && cp -r src dist/src",
+    "postbuild": "cp package.json dist/package.json && cp README.md dist/README.md",
     "test": "npm run lint && npm run flow && npm run coverage",
     "flow": "flow",
     "flowtypes": "rm -rf ./flow-typed && flow-typed install --overwrite --skip",
@@ -114,6 +113,7 @@
     "url-loader": "^0.5.9",
     "version-changelog": "^2.1.0",
     "webpack": "^3.5.5",
+    "webpack-bundle-analyzer": "^2.9.0",
     "webpack-merge": "^4.1.0",
     "yargs": "^8.0.2"
   }

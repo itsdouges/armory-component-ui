@@ -1,14 +1,18 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const merge = require('webpack-merge');
 const paths = require('./config/paths');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const peerDependencies = require('./package.json').peerDependencies;
 
-const baseConfig = {
+const config = {
   bail: true,
 
   context: __dirname,
+
+  entry: {
+    'armory-component-ui': './src/index.js',
+  },
 
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -25,6 +29,11 @@ const baseConfig = {
 
     rules: [
       {
+        test: /\.js$/,
+        include: paths.appSrc,
+        loader: 'babel-loader',
+      },
+      {
         test: /\.(css|less)$/,
         include: [paths.appSrc, paths.appNodeModules],
         use: ExtractTextPlugin.extract({
@@ -35,7 +44,7 @@ const baseConfig = {
               options: {
                 modules: true,
                 importLoaders: '1',
-                localIdentName: '[hash:base64:4]',
+                localIdentName: 'gw2a--[hash:base64:5]',
               },
             },
             'less-loader',
@@ -46,8 +55,8 @@ const baseConfig = {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'url-loader',
         options: {
-          limit: Infinity,
-          name: '[name].[ext]',
+          limit: 100,
+          name: 'images/gw2a--[hash:base64:5].[ext]',
         },
       },
       {
@@ -67,23 +76,11 @@ const baseConfig = {
       filename: 'styles.css',
       allChunks: true,
     }),
+
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+    }),
   ],
 };
 
-const compiledConfig = merge(baseConfig, {
-  entry: {
-    'armory-component-ui': './src/index.js',
-  },
-
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        include: paths.appSrc,
-        loader: 'babel-loader',
-      },
-    ],
-  },
-});
-
-module.exports = compiledConfig;
+module.exports = config;
