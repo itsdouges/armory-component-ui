@@ -32,8 +32,8 @@ type Props = {
 };
 
 const Specialization = ({ activeTraits, traits, specialization }: Props) => {
-  const minorTraits = specialization.minor_traits;
-  const majorTraits = specialization.major_traits;
+  const minorTraits = specialization.minor_traits || emptyTraits;
+  const majorTraits = specialization.major_traits || emptyTraits;
   const error = specialization.error;
 
   return (
