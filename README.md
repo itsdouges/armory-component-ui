@@ -49,19 +49,19 @@ const App = () => (
 
 Make sure to import the component styles to your application.
 
+If you're using webpack, simply do:
+
 ```javascript
-import 'armory-component-ui/styles.css';
+import '!!style-loader!css-loader!armory-component-ui/styles.css';
 ```
+
+This resets all loaders on this import, then applies the style and css loader.
 
 ### Fonts
 
 The `menomonia` and `opensans` fonts are used across these components.
-Look inside [`/stories/styles.css`](https://github.com/madou/armory-component-ui/blob/master/stories/styles.css) for an example font definition.
+Look inside [`/stories/styles.css`](https://github.com/madou/armory-embeds/blob/master/src/styles.less) for an example font definition.
 All the fonts are included in the package for you to use.
-
-### Polyfills
-
-`Promise` is expected to be available on the global object.
 
 ### Components
 
