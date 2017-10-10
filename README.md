@@ -63,6 +63,17 @@ The `menomonia` and `opensans` fonts are used across these components.
 Look inside [`/stories/styles.css`](https://github.com/madou/armory-embeds/blob/master/src/styles.less) for an example font definition.
 All the fonts are included in the package for you to use.
 
+### Images
+
+This library uses webpack for module bundling and static asset handling.
+Make sure to copy `node_modules/armory-coponent-ui/images` to where you are storing your static assets (js/css/images/etc).
+Set `document.__publicPath` to this location, make sure to have it set before importing
+`armory-component-ui`. So for example if you are serving the site at `https://my-fan-site.com/hey`, ensure
+the  `document.__publicPath='https://my-fan-site.com/hey'`, then have all assets under `https://my-fan-site.com/hey/images`
+copied from `node_modules/armory-coponent-ui/images`.
+
+Until we can figure out a better way to handle images, this is it.
+
 ### Components
 
 #### `<Gw2Skin />`

@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
+### Changed
+- Exposes publicPath for consumers to set
 
 ## [0.3.3][] - 2017-10-10
 ### Fixed

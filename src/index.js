@@ -1,5 +1,8 @@
 // @flow
 
+// Ghetto public path setting for consumers.
+import './publicPath';
+
 // Fonts to include in package. Optionally required.
 import './styles/fonts/menomonia.woff';
 import './styles/fonts/menomonia.ttf';

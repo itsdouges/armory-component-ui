@@ -59,11 +59,6 @@ module.exports = {
     'import/resolver': 'webpack',
   },
   globals: {
-    ReduxThunk: true,
-    ReduxState: true,
-    GW2A_EMBED_OPTIONS: true,
-    __DEVELOPMENT__: true,
-    __webpack_public_path__: true,
     before: true,
     after: true,
     beforeEach: true,
@@ -71,10 +66,9 @@ module.exports = {
     describe: true,
     it: true,
     context: true,
-    proxyquire: true,
     expect: true,
     sinon: true,
     xit: true,
-    GetState: true,
+    __webpack_public_path: true,
   },
 };
