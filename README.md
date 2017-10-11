@@ -445,3 +445,5 @@ npm run build-storybook
 # Be on master branch
 npm version major|minor|patch
 ```
+
+© 2015-present gw2armory.com
