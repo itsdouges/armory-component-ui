@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
+
+## [0.4.2][] - 2017-10-11
 ### Fixed
 - Tooltip from showing on mobile when it shouldn't
 
@@ -64,7 +66,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Initial release
 
 
-[Unreleased]: https://github.com/madou/armory-component-ui/compare/v0.4.1...HEAD
+[Unreleased]: https://github.com/madou/armory-component-ui/compare/v0.4.2...HEAD
+[0.4.2]: https://github.com/madou/armory-component-ui/compare/v0.4.1...v0.4.2
 [0.4.1]: https://github.com/madou/armory-component-ui/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/madou/armory-component-ui/compare/v0.3.3...v0.4.0
 [0.3.3]: https://github.com/madou/armory-component-ui/compare/v0.3.2...v0.3.3
