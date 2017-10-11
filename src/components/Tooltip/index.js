@@ -24,21 +24,21 @@ const selector = createSelector(
   })
 );
 
-export type Props = {
-  tooltip?: {
-    show: boolean,
-    type: string,
-    data: Object,
-  },
-  showTooltip?: (boolean) => void,
-  showBadge?: boolean,
-  className?: string,
+type TooltipData = {
+  show: boolean,
+  type: string,
+  data: Object,
 };
 
-export const BaseTooltip = (props: Props) => {
-  const { tooltip, showBadge, className } = props;
+type BaseProps = {
+  tooltip: TooltipData,
+  showTooltip: (boolean) => void,
+  showBadge: boolean,
+  className: string,
+};
 
-  if (!tooltip || !tooltip.show) return null;
+export const BaseTooltip = (props: BaseProps) => {
+  const { tooltip, showBadge, className } = props;
 
   let content;
 
@@ -80,6 +80,10 @@ export const BaseTooltip = (props: Props) => {
   );
 };
 
+type Props = BaseProps & {
+  tooltip?: TooltipData,
+};
+
 export default connect(selector, {
   showTooltip,
 })(
@@ -91,6 +95,8 @@ export default connect(selector, {
     };
 
     render () {
+      if (!this.props.tooltip || !this.props.tooltip.show) return null;
+
       return (
         <MouseFollow onTouchEnd={this.close}>
           <BaseTooltip {...this.props} />
