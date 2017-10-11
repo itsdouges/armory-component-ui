@@ -1,1 +1,1 @@
-__webpack_public_path = document.__publicPath || '';
+__webpack_public_path__ = document.__publicPath || '';

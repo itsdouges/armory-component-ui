@@ -69,6 +69,6 @@ module.exports = {
     expect: true,
     sinon: true,
     xit: true,
-    __webpack_public_path: true,
+    __webpack_public_path__: true,
   },
 };
