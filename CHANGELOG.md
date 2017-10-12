@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
+### Fixed
+- Local storage not being initialised
 
 ## [0.4.2][] - 2017-10-11
 ### Fixed

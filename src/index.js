@@ -13,6 +13,8 @@ import './styles/fonts/opensans-semibold.ttf';
 // Utility Functions
 // NOTE: Reducers have to be imported first as
 // they dynamically create the action creators.
+import { initialise as initialiseLs } from './lib/localStorage';
+
 export { default as reducers } from './reducers/index';
 export { default as actions } from './reducers/actions';
 export { persistToLocalStorage } from './reducers/reducerFactory';
@@ -44,3 +46,5 @@ export { default as PieChart } from './components/PieChart';
 export { default as Tooltip, BaseTooltip } from './components/Tooltip';
 export { default as TooltipTrigger } from './components/TooltipTrigger';
 export { default as Icon } from './components/Icon';
+
+initialiseLs();
