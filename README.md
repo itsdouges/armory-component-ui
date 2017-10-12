@@ -7,7 +7,7 @@
 [![Dependency Status](http://img.shields.io/david/madou/armory-component-ui.svg?style=flat-square)](https://david-dm.org/madou/armory-component-ui)
 
 
-Common components and features for GW2Armory.com and GW2AEmbeds.
+Common components and features for GW2Armory.com and GW2AEmbeds. With data fetching, persistence, error handling, and a plethora of components for use, all out-of-the-box.
 
 ## Installation
 
