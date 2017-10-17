@@ -1,0 +1,118 @@
+@import '../../styles/base.less';
+
+@potrait-top-spacer: 37px;
+@portraitBg: @_zindex10;
+
+.root {
+  background-position: center center;
+  background-repeat: no-repeat;
+  composes: low;
+  background: @_black;
+  background-size: cover;
+  position: relative;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.root:before {
+  content: "";
+  display: block;
+  padding-top: 150%;
+}
+
+.portraitTopIn.portraitTopIn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 239px;
+  background-size: cover;
+  z-index: @portraitBg;
+}
+
+.portraitBottomIn.portraitBottomIn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: cover;
+  height: 240px;
+  z-index: @portraitDecorationZ;
+}
+
+.portrait {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.compact {
+  .portraitTopIn.portraitTopIn {
+    top: -55px;
+  }
+
+  .portraitBottomIn.portraitBottomIn {
+    bottom: -65px;
+  }
+
+  .portrait {
+    background-position: top center;
+  }
+}
+
+.fromMobile({
+  .container:before {
+    content: "";
+    display: block;
+    padding-top: 175%;
+  }
+
+  .container {
+    margin-left: 0.5rem;
+  }
+});
+
+.fromTablet({
+  .container:before {
+    content: "";
+    display: block;
+    padding-top: 140%;
+  }
+
+  .container {
+    margin-left: 0;
+  }
+});
+
+.asura {
+  background-image: url('../../assets/images/portrait-bgs/asura.png');
+}
+
+.human {
+  background-image: url('../../assets/images/portrait-bgs/human.png');
+}
+
+.charr {
+  background-image: url('../../assets/images/portrait-bgs/charr.png');
+}
+
+.norn {
+  background-image: url('../../assets/images/portrait-bgs/norn.png');
+}
+
+.sylvari {
+  background-image: url('../../assets/images/portrait-bgs/sylvari.png');
+}
+
+.borderStrip1 {
+  background: url('../../assets/images/portrait-top-in.png');
+}
+
+.borderStrip2 {
+  background: url('../../assets/images/portrait-bottom-in.png');
+}

@@ -1,0 +1,90 @@
+@import '../../styles/base.less';
+
+@padding: 0.5rem;
+
+.root {
+  display: flex;
+  align-items: center;
+  padding: @padding * 1.5;
+
+  &.big {
+    flex-direction: column;
+    text-align: center;
+
+    h2 {
+      text-transform: none;
+    }
+
+    .textContainer {
+      align-items: center;
+    }
+  }
+}
+
+.placeholder {
+  .loadingAnimation();
+  border-radius: 5px;
+}
+
+.textContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.title {
+  .primaryFont();
+  margin: 0;
+  margin-bottom: 2px;
+  font-size: 1.5em;
+  font-weight: bold;
+  word-break: break-word;
+}
+
+.subTitle {
+  .secondaryFont();
+  font-size: 0.9em;
+  font-weight: 100;
+}
+
+.image {
+  margin: 0 0.5em;
+  background-size: cover;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.small {
+  .image {
+    height: @medium * 1px;
+    width: @medium * 1px;
+  }
+}
+
+.big {
+  font-size: 1.8em;
+
+  .image {
+    width: @large * 1px;
+    height: @large * 1px;
+  }
+
+  .subTitle {
+    font-size: 0.75em;
+  }
+}
+
+.fromTablet({
+  .root {
+    &.big {
+      flex-direction: row;
+      text-align: left;
+
+      .textContainer {
+        align-items: flex-start;
+      }
+    }
+  }
+});

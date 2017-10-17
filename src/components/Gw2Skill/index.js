@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import Skill from '../Skill';
-import actions from '../../reducers/actions';
+import actions from '../../actions/gw2';
 
 export const selector = createSelector(
   (state, props) => state.skills[props.id],

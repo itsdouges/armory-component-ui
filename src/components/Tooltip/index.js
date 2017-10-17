@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import cx from 'classnames';
 
-import { showTooltip } from '../../reducers/actions';
+import { showTooltip } from '../../actions/gw2';
 import ArmoryBadge from '../ArmoryBadge';
 import MouseFollow from '../MouseFollow';
 import AmuletTooltip from './Amulet';

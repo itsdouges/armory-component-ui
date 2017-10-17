@@ -5,7 +5,7 @@ const getFunc = sandbox.stub();
 const dispatch = sandbox.spy();
 const afterGetFunc = sandbox.stub();
 
-const actionsFactory = proxyquire.noCallThru()('./actions', {
+const actionsFactory = proxyquire.noCallThru()('./gw2', {
   'function-batch': (func) => func,
   'i18n-react': { translate: (text) => text },
 }, true);

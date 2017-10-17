@@ -1,6 +1,6 @@
 import { readSpecializations } from '../lib/gw2';
 import createReducer from './reducerFactory';
-import actions from './actions';
+import actions from '../actions/gw2';
 
 const { defaultState, reducer } = createReducer('specializations', readSpecializations, {
   afterGet: (dispatch, specializations) => {

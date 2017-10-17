@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import actions from '../../reducers/actions';
+import actions from '../../actions/gw2';
 import Item from '../Item';
 
 const defaultSkin = {};

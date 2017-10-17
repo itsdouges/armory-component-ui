@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import Map from '../Map';
-import actions from '../../reducers/actions';
+import actions from '../../actions/gw2';
 
 export const selector = createSelector(
   (state, props) => state.maps[props.id] || {},

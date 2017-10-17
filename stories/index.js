@@ -22,6 +22,8 @@ import {
   Gw2Skill,
   Gw2Trait,
   Gw2Specialization,
+  ResourceCard,
+  CharacterPortrait,
 } from '../src';
 
 persistToLocalStorage(false);
@@ -164,6 +166,35 @@ storiesOf('Gw2Map', module)
   .add('loading', () => <App><Gw2Map /></App>)
   .add('not found', () => <App><Gw2Map id={112233} /></App>)
   .add('no map image', () => <App><Gw2Map id={23} /></App>);
+
+const imageBig = {
+  name: 'elementalist-icon.png',
+};
+
+const imageSmall = {
+  name: 'elementalist-icon-small.png',
+};
+
+storiesOf('ResourceCard', module)
+  .add('big loading', () => <ResourceCard />)
+  .add('big loaded', () => <ResourceCard title="Quartermile" subTitle="Ranger" image={imageBig} />)
+  .add('small loading', () => <ResourceCard appearance="small" />)
+  .add('small loaded', () => <ResourceCard title="Quartermile" subTitle="Ranger" appearance="small" image={imageSmall} />);
+
+// eslint-disable-next-line
+const Container = ({ children }) => <div style={{ width: 400 }}>{children}</div>
+
+storiesOf('CharacterPortrait', module)
+  .add('default', () =>
+    <Container>
+      <CharacterPortrait name="Quartermile" alias="madou" race="Norn" />
+    </Container>
+  )
+  .add('compact', () =>
+    <Container>
+      <CharacterPortrait name="Quartermile" alias="madou" race="Norn" appearance="compact" />
+    </Container>
+  );
 
 const makeLangApp = (lang) => (
   <LanguageProvider lang={lang} key={lang}>

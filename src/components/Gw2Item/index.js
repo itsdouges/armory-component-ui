@@ -8,7 +8,7 @@ import { createSelector } from 'reselect';
 import get from 'lodash/get';
 
 import Item from '../Item';
-import actions from '../../reducers/actions';
+import actions from '../../actions/gw2';
 
 const selector = createSelector(
   (state, props) => {

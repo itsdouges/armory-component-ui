@@ -1,5 +1,5 @@
 import * as ls from '../lib/localStorage';
-import { generateActions } from './actions';
+import { generateActions } from '../actions/gw2';
 
 let saveToLs = true;
 

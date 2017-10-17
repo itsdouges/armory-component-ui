@@ -1,6 +1,6 @@
 import { readProfessions } from '../lib/gw2';
 import createReducer from './reducerFactory';
-import actions from './actions';
+import actions from '../actions/gw2';
 import forEach from 'lodash/forEach';
 
 const { defaultState, reducer } = createReducer('professions', readProfessions, {
