@@ -5,6 +5,7 @@
 [![Build Status](http://img.shields.io/travis/madou/armory-component-ui/master.svg?style=flat-square)](https://travis-ci.org/madou/armory-component-ui)
 [![codecov](https://codecov.io/gh/madou/armory-component-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/madou/armory-component-ui)
 [![Dependency Status](http://img.shields.io/david/madou/armory-component-ui.svg?style=flat-square)](https://david-dm.org/madou/armory-component-ui)
+[![Discord](https://img.shields.io/badge/discord-GW2Armory-blue.svg)](https://discord.gg/3BRbV7b)
 
 
 Common components and features for GW2Armory.com and GW2AEmbeds. With data fetching, persistence, error handling, and a plethora of components for use, all out-of-the-box.
