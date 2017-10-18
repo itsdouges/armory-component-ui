@@ -30,6 +30,7 @@ export { default as Gw2Map } from './components/Gw2Map';
 export { default as Gw2Skill } from './components/Gw2Skill';
 export { default as Gw2Specialization } from './components/Gw2Specialization';
 export { default as Gw2Trait } from './components/Gw2Trait';
+export { default as CharacterPreview } from './components/CharacterPreview';
 
 // Stateless Components
 export { default as Item } from './components/Item';

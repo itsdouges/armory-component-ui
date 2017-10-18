@@ -14,8 +14,8 @@ import { markup, attributeToName } from '../../../lib/gw2/parse';
 import Icon from '../../Icon';
 import ItemHeader from '../ItemHeader';
 import Gold from '../../Gold';
-import Upgrade from '../Upgrade';
-import Infusion from '../Infusion';
+import Gw2Upgrade from '../../Gw2Upgrade';
+import Gw2Infusion from '../../Gw2Infusion';
 import Background from '../Background';
 
 const addCount = (str, count) => (count > 1 ? `${count} ${str}` : str);
@@ -136,16 +136,17 @@ const ItemsTooltip = ({
 
         <br />
 
-        {upgrades.map((upgrade) =>
-          <span key={upgrade.id}>
-            <Upgrade data={upgrade} count={upgradeCounts[upgrade.id]} /><br />
+        {upgrades.map((id, index) =>
+          // eslint-disable-next-line react/no-array-index-key
+          <span key={index}>
+            <Gw2Upgrade id={id} count={upgradeCounts[id]} /><br />
           </span>
         )}
 
-        {infusions.map((infusion, index) =>
+        {infusions.map((id, index) =>
           // eslint-disable-next-line react/no-array-index-key
           <span key={index}>
-            <Infusion data={infusion} /><br />
+            <Gw2Infusion id={id} /><br />
           </span>
         )}
 

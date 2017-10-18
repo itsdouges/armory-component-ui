@@ -24,6 +24,7 @@ import {
   Gw2Specialization,
   ResourceCard,
   CharacterPortrait,
+  CharacterPreview,
 } from '../src';
 
 persistToLocalStorage(false);
@@ -195,6 +196,9 @@ storiesOf('CharacterPortrait', module)
       <CharacterPortrait name="Quartermile" alias="madou" race="Norn" appearance="compact" />
     </Container>
   );
+
+storiesOf('CharacterPreview', module)
+  .add('default', () => <App><CharacterPreview name="Quartermile" /></App>);
 
 const makeLangApp = (lang) => (
   <LanguageProvider lang={lang} key={lang}>

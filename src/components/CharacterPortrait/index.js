@@ -50,9 +50,6 @@ const CharacterPortrait = ({
 );
 
 CharacterPortrait.defaultProps = {
-  name: '',
-  alias: '',
-  race: '',
   className: '',
   appearance: 'default',
 };

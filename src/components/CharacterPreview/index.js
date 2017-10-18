@@ -22,23 +22,31 @@ import { mergeEliteSpec } from '../../reducers/characters.reducer';
 
 type Props = {
   name: string,
-  character?: Character,
   fetchCharacter: (name: string, any) => void,
-  items?: Items,
-  skins?: Skins,
+  character?: Character,
   className?: string,
 };
 
 const selector = createSelector(
   (state, props) => state.characters.data[props.name],
-  (state) => state.items,
-  (state) => state.skins,
-  (character, items, skins) => ({
+  (character) => ({
     character: mergeEliteSpec(character),
-    items,
-    skins,
   })
 );
+
+const buildCardData = (character) => {
+  if (character) {
+    return {
+      image: {
+        name: `${character.profession.toLowerCase()}-icon-small.png`,
+      },
+      title: character.guild_tag ? `${character.name || 'Api Error.'} [${character.guild_tag}]` : character.name || 'Api Error.',
+      subTitle: character.level ? `${character.level} ${character.race} ${character.eliteSpecialization}` : 'Api error.',
+    };
+  }
+
+  return undefined;
+};
 
 export default connect(selector, {
   fetchCharacter,
@@ -46,7 +54,7 @@ export default connect(selector, {
 class CharacterPreview extends Component<Props> {
   props: Props;
 
-  componentWillMount () {
+  componentDidMount () {
     const name = this.props.name;
     if (!name) {
       return;
@@ -63,25 +71,12 @@ class CharacterPreview extends Component<Props> {
     this.loadCharacter(nextProps.name);
   }
 
-  getItems (ids: Array<number> = []) {
-    return ids.map((id) => (this.props.items || [])[id]);
-  }
-
   loadCharacter (name: string) {
-    this.props.fetchCharacter(name, {
-      redirect404: false,
-      basicLoad: true,
-    });
+    this.props.fetchCharacter(name);
   }
 
   render () {
-    const {
-      character,
-      items,
-      skins,
-      className,
-    } = this.props;
-
+    const { character, className } = this.props;
     const equipment = get(character, 'equipment', {});
     const profession = get(character, 'profession');
     const safeCharacter = get(this.props, 'character', {});
@@ -91,14 +86,22 @@ class CharacterPreview extends Component<Props> {
         <ArmoryBadge className={styles.badge} hotlink />
 
         <div className={styles.cover}>
-          <CharacterPortrait character={character} className={styles.litePortrait} />
+          <CharacterPortrait
+            name={safeCharacter.name}
+            alias={safeCharacter.alias}
+            race={safeCharacter.race}
+            className={styles.litePortrait}
+          />
         </div>
 
         <a
           href={`https://gw2armory.com/${safeCharacter.alias}/c/${safeCharacter.name}`}
           className={styles.header}
         >
-          <ResourceCard content={character} />
+          <ResourceCard
+            appearance="small"
+            {...buildCardData(character)}
+          />
         </a>
 
         <div className={styles.equips}>
@@ -112,10 +115,10 @@ class CharacterPreview extends Component<Props> {
                 hide={includes(item.hideForClasses, profession)}
                 key={item.key}
                 upgradeCounts={equip.upgradeCounts}
-                upgrades={this.getItems(equip.upgrades)}
-                infusions={this.getItems(equip.infusions)}
-                item={(items || [])[equip.id]}
-                skin={(skins || [])[equip.skin]}
+                upgrades={equip.upgrades}
+                infusions={equip.infusions}
+                id={equip.id}
+                skinId={equip.skin}
                 stats={equip.stats}
                 equipped
               />
@@ -128,14 +131,14 @@ class CharacterPreview extends Component<Props> {
             return (
               <Gw2Item
                 {...item}
+                key={item.key}
                 small
                 hide={includes(item.hideForClasses, profession)}
-                key={item.key}
                 upgradeCounts={equip.upgradeCounts}
-                upgrades={this.getItems(equip.upgrades)}
-                infusions={this.getItems(equip.infusions)}
-                item={(items || [])[equip.id]}
-                skin={(skins || [])[equip.skin]}
+                upgrades={equip.upgrades}
+                infusions={equip.infusions}
+                id={equip.id}
+                skinId={equip.skin}
                 stats={equip.stats}
                 equipped
               />

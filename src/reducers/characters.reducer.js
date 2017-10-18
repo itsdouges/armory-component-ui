@@ -108,13 +108,11 @@ function parseEquipment (character) {
 }
 
 function parseCharacter (character) {
-  const parse = flowRight(
-    parseCharacterUpgrades,
-    parseEquipment,
-    parseWeaponSwap,
-  );
+  let hey = parseCharacterUpgrades(character);
+  hey = parseEquipment(hey);
+  hey = parseWeaponSwap(hey);
 
-  return parse(character);
+  return hey;
 }
 
 function extractEliteSpecialization (character, mode) {
