@@ -25,20 +25,20 @@ const minutes = (ms) => `${Math.floor(ms / 60000)} m`;
 function buildName (item, skin, upgrades, count) {
   let name;
 
-  if (!skin.name) {
+  // if (!skin.name) {
     name = item.name;
-  } else {
-    const regex = /[\w'-]+/;
-    const prefix = regex.exec(item.name);
-    const prefixedName = `${prefix} ${skin.name}`;
+  // } else {
+  //   // const regex = /[\w'-]+/;
+  //   // const prefix = regex.exec(item.name);
+  //   // const prefixedName = `${prefix} ${skin.name}`;
 
-    const [upgradeOne] = upgrades;
-    if (upgradeOne && prefixedName.indexOf(upgradeOne.details.suffix)) {
-      name = `${prefixedName} ${upgradeOne.details.suffix}`;
-    }
+  //   // const [firstUpgradeId] = upgrades;
+  //   // if (upgradeOne && prefixedName.indexOf(upgradeOne.details.suffix)) {
+  //   //   name = `${prefixedName} ${upgradeOne.details.suffix}`;
+  //   // }
 
-    name = prefixedName;
-  }
+  //   // name = prefixedName;
+  // }
 
   return addCount(name, count);
 }
@@ -48,9 +48,9 @@ type Props = {
   count: number,
   item: Object,
   skin: Object,
-  upgrades: Array<*>,
+  upgrades: Array<number>,
   upgradeCounts: Object,
-  infusions: Array<*>,
+  infusions: Array<number>,
   stats: Object,
   equipped?: boolean,
 };
@@ -181,6 +181,7 @@ ItemsTooltip.defaultProps = {
   count: 0,
   skin: {},
   upgrades: [],
+  upgradeCounts: {},
   infusions: [],
 };
 

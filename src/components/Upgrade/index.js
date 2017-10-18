@@ -2,9 +2,9 @@
 
 import React from 'react';
 import styles from './styles.less';
-import colours from '../../../styles/colours.less';
-import Icon from '../../Icon';
-import { markup } from '../../../lib/gw2/parse';
+import colours from '../../styles/colours.less';
+import Icon from '../Icon';
+import { markup } from '../../lib/gw2/parse';
 
 type Props = {
   data: {
@@ -19,19 +19,10 @@ type Props = {
       },
     },
   },
-  count: {
-    count: number,
-  },
+  count: number,
 };
 
-const ItemUpgrade = ({ data, count: { count } }: Props) => {
-  if (typeof data !== 'object') {
-    // Dirty hack to back out if data isn't an object.
-    // It won't be an object if the item hasn't been parsed with
-    // loaded data (its just a number)
-    return null;
-  }
-
+const ItemUpgrade = ({ data, count }: Props) => {
   const upgradeSlotUsed = !!data;
 
   if (!upgradeSlotUsed) {
@@ -74,7 +65,8 @@ const ItemUpgrade = ({ data, count: { count } }: Props) => {
 };
 
 ItemUpgrade.defaultProps = {
-  count: {},
+  count: 0,
+  data: undefined,
 };
 
 export default ItemUpgrade;

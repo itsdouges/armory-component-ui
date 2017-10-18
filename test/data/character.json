@@ -1,0 +1,656 @@
+{
+    "name": "Quartermile",
+    "race": "Sylvari",
+    "gender": "Male",
+    "flags": [],
+    "profession": "Ranger",
+    "level": 80,
+    "guild": "59BDB177-85C5-E311-9621-AC162DAE8ACD",
+    "age": 27480,
+    "created": "2017-10-12T10:23:00Z",
+    "deaths": 6,
+    "crafting": [],
+    "backstory": [
+        "7-55",
+        "30-136",
+        "32-143",
+        "183-1",
+        "31-140"
+    ],
+    "wvw_abilities": [],
+    "specializations": {
+        "pve": [
+            {
+                "id": 8,
+                "traits": [
+                    1021,
+                    1000,
+                    1698
+                ]
+            },
+            {
+                "id": 30,
+                "traits": [
+                    1069,
+                    1016,
+                    1064
+                ]
+            },
+            {
+                "id": 33,
+                "traits": [
+                    1098,
+                    1100,
+                    1701
+                ]
+            }
+        ],
+        "pvp": [
+            {
+                "id": 8,
+                "traits": [
+                    1014,
+                    1000,
+                    1698
+                ]
+            },
+            {
+                "id": 30,
+                "traits": [
+                    1069,
+                    1700,
+                    1064
+                ]
+            },
+            {
+                "id": 33,
+                "traits": [
+                    1086,
+                    1100,
+                    1094
+                ]
+            }
+        ],
+        "wvw": [
+            null,
+            null,
+            null
+        ]
+    },
+    "skills": {
+        "pve": {
+            "heal": 31914,
+            "utilities": [
+                12501,
+                12542,
+                12491
+            ],
+            "elite": 12516,
+            "pets": {
+                "terrestrial": [
+                    22,
+                    19
+                ],
+                "aquatic": [
+                    1,
+                    19
+                ]
+            }
+        },
+        "pvp": {
+            "heal": 12483,
+            "utilities": [
+                null,
+                null,
+                null
+            ],
+            "elite": null,
+            "pets": {
+                "terrestrial": [],
+                "aquatic": []
+            }
+        },
+        "wvw": {
+            "heal": 31914,
+            "utilities": [
+                12633,
+                12491,
+                12494
+            ],
+            "elite": 12516,
+            "pets": {
+                "terrestrial": [
+                    22,
+                    19
+                ],
+                "aquatic": [
+                    1,
+                    19
+                ]
+            }
+        }
+    },
+    "equipment": [
+        {
+            "id": 78440,
+            "slot": "HelmAquatic",
+            "upgrades": [
+                24815
+            ],
+            "binding": "Character",
+            "bound_to": "Quartermile"
+        },
+        {
+            "id": 78165,
+            "slot": "Backpack",
+            "upgrades": [
+                24543
+            ],
+            "binding": "Character",
+            "bound_to": "Quartermile"
+        },
+        {
+            "id": 78391,
+            "slot": "Coat",
+            "upgrades": [
+                24815
+            ],
+            "binding": "Character",
+            "bound_to": "Quartermile"
+        },
+        {
+            "id": 78569,
+            "slot": "Boots",
+            "upgrades": [
+                24815
+            ],
+            "binding": "Character",
+            "bound_to": "Quartermile"
+        },
+        {
+            "id": 78241,
+            "slot": "Gloves",
+            "upgrades": [
+                24815
+            ],
+            "skin": 7430,
+            "binding": "Character",
+            "bound_to": "Quartermile"
+        },
+        {
+            "id": 78325,
+            "slot": "Helm",
+            "upgrades": [
+                24815
+            ],
+            "skin": 6275,
+            "binding": "Character",
+            "bound_to": "Quartermile"
+        },
+        {
+            "id": 78554,
+            "slot": "Leggings",
+            "upgrades": [
+                24815
+            ],
+            "binding": "Character",
+            "bound_to": "Quartermile"
+        },
+        {
+            "id": 78308,
+            "slot": "Shoulders",
+            "upgrades": [
+                24815
+            ],
+            "binding": "Character",
+            "bound_to": "Quartermile"
+        },
+        {
+            "id": 78186,
+            "slot": "Accessory1",
+            "upgrades": [
+                24543
+            ],
+            "binding": "Character",
+            "bound_to": "Quartermile"
+        },
+        {
+            "id": 78186,
+            "slot": "Accessory2",
+            "upgrades": [
+                24543
+            ],
+            "binding": "Character",
+            "bound_to": "Quartermile"
+        },
+        {
+            "id": 78164,
+            "slot": "Ring1",
+            "upgrades": [
+                24543
+            ],
+            "binding": "Character",
+            "bound_to": "Quartermile"
+        },
+        {
+            "id": 78164,
+            "slot": "Ring2",
+            "upgrades": [
+                24543
+            ],
+            "binding": "Character",
+            "bound_to": "Quartermile"
+        },
+        {
+            "id": 78239,
+            "slot": "Amulet",
+            "upgrades": [
+                24543
+            ],
+            "binding": "Character",
+            "bound_to": "Quartermile"
+        },
+        {
+            "id": 78637,
+            "slot": "WeaponAquaticA",
+            "upgrades": [
+                24615,
+                24618
+            ],
+            "binding": "Character",
+            "bound_to": "Quartermile"
+        },
+        {
+            "id": 78431,
+            "slot": "WeaponAquaticB",
+            "upgrades": [
+                24615,
+                24618
+            ],
+            "binding": "Character",
+            "bound_to": "Quartermile"
+        },
+        {
+            "id": 78442,
+            "slot": "WeaponA1",
+            "upgrades": [
+                24615,
+                24618
+            ],
+            "binding": "Character",
+            "bound_to": "Quartermile"
+        },
+        {
+            "id": 78649,
+            "slot": "WeaponB1",
+            "upgrades": [
+                24615,
+                24618
+            ],
+            "binding": "Character",
+            "bound_to": "Quartermile"
+        },
+        {
+            "id": 22997,
+            "slot": "Sickle",
+            "binding": "Account",
+            "charges": 46
+        },
+        {
+            "id": 23000,
+            "slot": "Axe",
+            "binding": "Account",
+            "charges": 94
+        },
+        {
+            "id": 23001,
+            "slot": "Pick",
+            "binding": "Account",
+            "charges": 91
+        }
+    ],
+    "recipes": [],
+    "equipment_pvp": {
+        "amulet": 20,
+        "rune": 21207,
+        "sigils": [
+            81238,
+            21155,
+            21150,
+            81268
+        ]
+    },
+    "training": [
+        {
+            "id": 77,
+            "spent": 13,
+            "done": true
+        },
+        {
+            "id": 90,
+            "spent": 15,
+            "done": true
+        },
+        {
+            "id": 48,
+            "spent": 24,
+            "done": true
+        },
+        {
+            "id": 41,
+            "spent": 24,
+            "done": true
+        },
+        {
+            "id": 82,
+            "spent": 22,
+            "done": true
+        },
+        {
+            "id": 83,
+            "spent": 60,
+            "done": true
+        },
+        {
+            "id": 105,
+            "spent": 60,
+            "done": true
+        },
+        {
+            "id": 65,
+            "spent": 60,
+            "done": true
+        },
+        {
+            "id": 101,
+            "spent": 60,
+            "done": true
+        },
+        {
+            "id": 46,
+            "spent": 60,
+            "done": true
+        },
+        {
+            "id": 407,
+            "spent": 80,
+            "done": false
+        }
+    ],
+    "bags": [
+        {
+            "id": 8932,
+            "size": 20,
+            "inventory": [
+                {
+                    "id": 21043,
+                    "count": 1,
+                    "binding": "Character",
+                    "bound_to": "Quartermile"
+                },
+                {
+                    "id": 24558,
+                    "count": 1
+                },
+                {
+                    "id": 19722,
+                    "count": 31
+                },
+                {
+                    "id": 24736,
+                    "count": 1
+                },
+                {
+                    "id": 83103,
+                    "count": 15
+                },
+                {
+                    "id": 68336,
+                    "count": 1,
+                    "binding": "Account"
+                },
+                {
+                    "id": 24705,
+                    "count": 1
+                },
+                {
+                    "id": 24694,
+                    "count": 1
+                },
+                {
+                    "id": 19700,
+                    "count": 67
+                },
+                {
+                    "id": 46731,
+                    "count": 48,
+                    "binding": "Account"
+                },
+                {
+                    "id": 21675,
+                    "count": 3
+                },
+                {
+                    "id": 84030,
+                    "count": 1
+                },
+                {
+                    "id": 34185,
+                    "count": 1,
+                    "upgrades": [
+                        24561
+                    ]
+                },
+                {
+                    "id": 24631,
+                    "count": 1
+                },
+                {
+                    "id": 24610,
+                    "count": 1
+                },
+                {
+                    "id": 84731,
+                    "count": 42
+                },
+                {
+                    "id": 45176,
+                    "count": 1,
+                    "binding": "Account"
+                },
+                {
+                    "id": 85016,
+                    "count": 40
+                },
+                {
+                    "id": 82224,
+                    "count": 1,
+                    "binding": "Account"
+                },
+                {
+                    "id": 82488,
+                    "count": 17
+                }
+            ]
+        },
+        {
+            "id": 8936,
+            "size": 15,
+            "inventory": [
+                null,
+                {
+                    "id": 1458,
+                    "count": 1
+                },
+                {
+                    "id": 27556,
+                    "count": 1,
+                    "upgrades": [
+                        24547
+                    ]
+                },
+                null,
+                {
+                    "id": 83252,
+                    "count": 1,
+                    "binding": "Account"
+                },
+                {
+                    "id": 84335,
+                    "count": 3,
+                    "binding": "Account"
+                },
+                {
+                    "id": 27458,
+                    "count": 1
+                },
+                {
+                    "id": 844,
+                    "count": 1
+                },
+                {
+                    "id": 82583,
+                    "count": 1,
+                    "binding": "Account"
+                },
+                {
+                    "id": 19719,
+                    "count": 3
+                },
+                {
+                    "id": 19739,
+                    "count": 2
+                },
+                null,
+                {
+                    "id": 39223,
+                    "count": 3,
+                    "binding": "Character",
+                    "bound_to": "Quartermile"
+                },
+                null,
+                null
+            ]
+        },
+        {
+            "id": 8936,
+            "size": 15,
+            "inventory": [
+                null,
+                null,
+                {
+                    "id": 83008,
+                    "count": 3
+                },
+                {
+                    "id": 83037,
+                    "count": 1,
+                    "binding": "Account"
+                },
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                {
+                    "id": 19718,
+                    "count": 5
+                },
+                null,
+                null,
+                null
+            ]
+        },
+        {
+            "id": 8936,
+            "size": 15,
+            "inventory": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                {
+                    "id": 84536,
+                    "count": 1,
+                    "binding": "Account"
+                },
+                null,
+                {
+                    "id": 43992,
+                    "count": 1,
+                    "binding": "Account"
+                },
+                {
+                    "id": 82060,
+                    "count": 1,
+                    "binding": "Account"
+                },
+                {
+                    "id": 19996,
+                    "count": 1,
+                    "binding": "Account"
+                }
+            ]
+        },
+        {
+            "id": 8936,
+            "size": 15,
+            "inventory": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                {
+                    "id": 78741,
+                    "count": 1,
+                    "binding": "Account"
+                },
+                null,
+                null,
+                null,
+                {
+                    "id": 78658,
+                    "count": 21,
+                    "binding": "Account"
+                },
+                {
+                    "id": 78305,
+                    "count": 21,
+                    "binding": "Account"
+                },
+                null,
+                null,
+                {
+                    "id": 67280,
+                    "count": 5,
+                    "binding": "Account"
+                },
+                {
+                    "id": 23045,
+                    "count": 1,
+                    "charges": 187,
+                    "binding": "Account"
+                }
+            ]
+        }
+    ],
+    "apiTokenAvailable": true,
+    "privacy": [],
+    "accountName": "stress level zero.4907",
+    "alias": "madou",
+    "authorization": {
+        "showPublic": true,
+        "showGuild": true
+    },
+    "guild_tag": "LUX",
+    "guild_name": "Ultra Lux"
+}

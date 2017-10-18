@@ -1,6 +1,7 @@
 import proxyquire from 'proxyquire';
+import characterData from '../../test/data/character.json';
 
-const { minimalSelector } = proxyquire('./characters.reducer', {
+const { minimalSelector, default: reducer } = proxyquire('./characters.reducer', {
   '../actions/gw2': {
     '@noCallThru': true,
   },
@@ -46,6 +47,18 @@ describe('characters.reducer.js', () => {
       const data = minimalSelector(state, { name: 'Blastrn' });
 
       expect(data.character.eliteSpecialization).to.equal('Engineer');
+    });
+
+    it('should count total upgrades', () => {
+      const state = reducer({}, {
+        type: 'FETCH_CHARACTER_RESULT',
+        payload: {
+          name,
+          data: characterData,
+        },
+      });
+
+      expect(state).to.eql({});
     });
   });
 });

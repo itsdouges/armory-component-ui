@@ -25,6 +25,8 @@ import {
   ResourceCard,
   CharacterPortrait,
   CharacterPreview,
+  Gw2Upgrade,
+  Gw2Infusion,
 } from '../src';
 
 persistToLocalStorage(false);
@@ -79,6 +81,50 @@ storiesOf('TooltipBasic', module)
 storiesOf('TooltipItems', module)
   .add('default', () => <Tooltip tooltip={{ show: true, data: { item: itemData }, type: 'items' }} />)
   .add('equipped', () => <Tooltip tooltip={{ show: true, data: { item: itemData, equipped: true }, type: 'items' }} />)
+  .add('with infusions', () =>
+    <App>
+      <Tooltip
+        tooltip={{
+          show: true,
+          data: { item: itemData, equipped: true, infusions: [49426, 49426] },
+          type: 'items',
+        }}
+      />
+    </App>
+  )
+  .add('with upgrades', () =>
+    <App>
+      <Tooltip
+        tooltip={{
+          show: true,
+          data: { item: itemData, equipped: true, upgrades: [24815], upgradeCounts: { 24815: 2 } },
+          type: 'items',
+        }}
+      />
+    </App>
+  )
+  .add('with empty upgrades', () =>
+    <App>
+      <Tooltip
+        tooltip={{
+          show: true,
+          data: { item: itemData, equipped: true, upgrades: [undefined] },
+          type: 'items',
+        }}
+      />
+    </App>
+  )
+  .add('with empty infusions', () =>
+    <App>
+      <Tooltip
+        tooltip={{
+          show: true,
+          data: { item: itemData, equipped: true, infusions: [undefined, undefined] },
+          type: 'items',
+        }}
+      />
+    </App>
+  )
   .add('with badge', () => <Tooltip tooltip={{ show: true, data: { item: itemData }, type: 'items' }} showBadge />);
 
 storiesOf('TooltipAmulets', module)
@@ -161,6 +207,18 @@ storiesOf('Gw2Skin', module)
   .add('inline text', () => <App><Gw2Skin inlineText="gw2spidy" id={191} /></App>)
   .add('not found', () => <App><Gw2Skin id={112233} /></App>)
   .add('loading', () => <App><Gw2Skin /></App>);
+
+storiesOf('Gw2Upgrade', module)
+  .add('sigil', () => <App><Gw2Upgrade id={24615} /></App>)
+  .add('rune', () => <App><Gw2Upgrade id={24815} /></App>)
+  .add('rune with count', () => <App><Gw2Upgrade id={24815} count={3} /></App>)
+  .add('loading', () => <App><Gw2Upgrade id={3333333} /></App>)
+  .add('empty', () => <App><Gw2Upgrade /></App>);
+
+storiesOf('Gw2Infusion', module)
+  .add('default', () => <App><Gw2Infusion id={49426} /></App>)
+  .add('loading', () => <App><Gw2Infusion id={3333333} /></App>)
+  .add('empty', () => <App><Gw2Infusion /></App>);
 
 storiesOf('Gw2Map', module)
   .add('default', () => <App><Gw2Map id={549} /></App>)

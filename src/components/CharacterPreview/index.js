@@ -107,7 +107,6 @@ class CharacterPreview extends Component<Props> {
         <div className={styles.equips}>
           {leftItems.map((item) => {
             const equip = equipment[item.key] || {};
-
             return (
               <Gw2Item
                 {...item}
@@ -127,7 +126,6 @@ class CharacterPreview extends Component<Props> {
 
           {rightItems.map((item) => {
             const equip = equipment[item.key] || {};
-
             return (
               <Gw2Item
                 {...item}

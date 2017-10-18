@@ -2,11 +2,11 @@
 
 import React from 'react';
 import get from 'lodash/get';
-import colours from '../../../styles/colours.less';
-import Icon from '../../Icon';
+import colours from '../../styles/colours.less';
+import Icon from '../Icon';
 
 type Props = {
-  data: {
+  data?: {
     name: string,
     icon: string,
     details: {
@@ -19,12 +19,8 @@ type Props = {
   },
 };
 
-const ItemInfusion = ({ data, data: {
-  name,
-  icon,
-  details },
-}: Props) => {
-  if (!data || !details) {
+const Infusion = ({ data }: Props) => {
+  if (!data) {
     return (
       <div>
         <span>Unused Infusion Slot</span>
@@ -35,13 +31,13 @@ const ItemInfusion = ({ data, data: {
   return (
     <div className={colours.blue}>
       <div>
-        <Icon src={icon} size="micro" />
-        <span> {name}</span>
+        <Icon src={data.icon} size="micro" />
+        <span> {data.name}</span>
       </div>
 
-      <div>{get(details, 'infix_upgrade.buff.description', []).map((descrip) => <div key={descrip}>{descrip}</div>)}</div>
+      <div>{get(data.details, 'infix_upgrade.buff.description', []).map((descrip) => <div key={descrip}>{descrip}</div>)}</div>
     </div>
   );
 };
 
-export default ItemInfusion;
+export default Infusion;
