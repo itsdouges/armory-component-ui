@@ -25,20 +25,23 @@ const minutes = (ms) => `${Math.floor(ms / 60000)} m`;
 function buildName (item, skin, upgrades, count) {
   let name;
 
-  // if (!skin.name) {
+  if (!skin.name) {
     name = item.name;
-  // } else {
-  //   // const regex = /[\w'-]+/;
-  //   // const prefix = regex.exec(item.name);
-  //   // const prefixedName = `${prefix} ${skin.name}`;
+  } else {
+    const regex = /[\w'-]+/;
+    const prefix = regex.exec(item.name);
+    const prefixedName = `${prefix} ${skin.name}`;
 
-  //   // const [firstUpgradeId] = upgrades;
-  //   // if (upgradeOne && prefixedName.indexOf(upgradeOne.details.suffix)) {
-  //   //   name = `${prefixedName} ${upgradeOne.details.suffix}`;
-  //   // }
+    // const [firstUpgradeId] = upgrades;
 
-  //   // name = prefixedName;
-  // }
+    // TODO: Need to dip into the redux store and get the firstUpgrade
+    // from the firstUpgradeId.
+    // if (upgradeOne && prefixedName.indexOf(upgradeOne.details.suffix)) {
+    //   name = `${prefixedName} ${upgradeOne.details.suffix}`;
+    // }
+
+    name = prefixedName;
+  }
 
   return addCount(name, count);
 }

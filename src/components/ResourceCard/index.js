@@ -11,11 +11,9 @@ import styles from './styles.less';
 export type Props = {
   title: Node,
   subTitle: Node,
-  image: {
-    src: string,
-    name: string,
-    style: Object,
-  },
+  imageSrc?: string,
+  imageName?: string,
+  imageStyle?: Object,
   className: string,
   appearance: 'small' | 'big',
   children: Node,
@@ -27,7 +25,9 @@ const ContentCard = ({
   className,
   appearance,
   children,
-  image,
+  imageName,
+  imageSrc,
+  imageStyle,
 }: Props) => {
   if (!title) {
     return <Placeholder appearance={appearance} className={className} />;
@@ -37,7 +37,9 @@ const ContentCard = ({
     <div className={cx(styles.root, className, styles[appearance])}>
       <Icon
         className={cx(styles.image)}
-        {...image}
+        name={imageName}
+        src={imageSrc}
+        style={imageStyle}
       >
         {children}
       </Icon>
@@ -60,11 +62,6 @@ ContentCard.defaultProps = {
   subTitle: '',
   className: '',
   appearance: 'big',
-  image: {
-    src: '',
-    name: '',
-    style: {},
-  },
   children: undefined,
 };
 

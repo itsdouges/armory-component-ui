@@ -1,6 +1,6 @@
 // @flow
 
-import type { Character, Items, Skins } from 'flowTypes';
+import type { Character } from 'flowTypes';
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -37,10 +37,8 @@ const selector = createSelector(
 const buildCardData = (character) => {
   if (character) {
     return {
-      image: {
-        name: `${character.profession.toLowerCase()}-icon-small.png`,
-      },
       title: character.guild_tag ? `${character.name || 'Api Error.'} [${character.guild_tag}]` : character.name || 'Api Error.',
+      imageName: `${character.profession.toLowerCase()}-icon-small.png`,
       subTitle: character.level ? `${character.level} ${character.race} ${character.eliteSpecialization}` : 'Api error.',
     };
   }
@@ -105,7 +103,7 @@ class CharacterPreview extends Component<Props> {
         </a>
 
         <div className={styles.equips}>
-          {leftItems.map((item) => {
+          {leftItems.concat(rightItems).map((item) => {
             const equip = equipment[item.key] || {};
             return (
               <Gw2Item
@@ -113,25 +111,6 @@ class CharacterPreview extends Component<Props> {
                 small
                 hide={includes(item.hideForClasses, profession)}
                 key={item.key}
-                upgradeCounts={equip.upgradeCounts}
-                upgrades={equip.upgrades}
-                infusions={equip.infusions}
-                id={equip.id}
-                skinId={equip.skin}
-                stats={equip.stats}
-                equipped
-              />
-            );
-          })}
-
-          {rightItems.map((item) => {
-            const equip = equipment[item.key] || {};
-            return (
-              <Gw2Item
-                {...item}
-                key={item.key}
-                small
-                hide={includes(item.hideForClasses, profession)}
                 upgradeCounts={equip.upgradeCounts}
                 upgrades={equip.upgrades}
                 infusions={equip.infusions}

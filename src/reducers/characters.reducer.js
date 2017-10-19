@@ -1,6 +1,6 @@
 import get from 'lodash/get';
 import lowerFirst from 'lodash/lowerFirst';
-import flowRight from 'lodash/flowRight';
+import flow from 'lodash/flow';
 import T from 'i18n-react';
 
 import {
@@ -102,11 +102,13 @@ function parseEquipment (character) {
 }
 
 function parseCharacter (character) {
-  let hey = parseCharacterUpgrades(character);
-  hey = parseEquipment(hey);
-  hey = parseWeaponSwap(hey);
+  const parse = flow([
+    parseCharacterUpgrades,
+    parseEquipment,
+    parseWeaponSwap,
+  ]);
 
-  return hey;
+  return parse(character);
 }
 
 function extractEliteSpecialization (character, mode) {

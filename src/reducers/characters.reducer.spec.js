@@ -1,87 +1,77 @@
 import proxyquire from 'proxyquire';
 import characterData from '../../test/data/character.json';
 
-const { minimalSelector, default: reducer } = proxyquire('./characters.reducer', {
+const { mergeEliteSpec, default: reducer } = proxyquire('./characters.reducer', {
   '../actions/gw2': {
     '@noCallThru': true,
   },
 });
 
 describe('characters.reducer.js', () => {
-  describe('selector', () => {
+  describe('elite spec extractor', () => {
     const mode = 'pve';
-    const name = 'Blastrn';
-
-    const buildState = (character) => ({
-      items: {},
-      skins: {},
-      characters: {
-        mode,
-        data: {
-          [name]: character,
-        },
-      },
-    });
 
     it('should map elite spec', () => {
-      const state = buildState({
+      const character = {
+        name: 'Blastrn',
         profession: 'Engineer',
         specializations: {
           [mode]: [{}, {}, { id: 60 }],
         },
-      });
+      };
 
-      const data = minimalSelector(state, { name: 'Blastrn' });
+      const data = mergeEliteSpec(character);
 
-      expect(data.character.eliteSpecialization).to.equal('classes.scourge');
+      expect(data.eliteSpecialization).to.equal('classes.scourge');
     });
 
     it('should default to profession name', () => {
-      const state = buildState({
+      const character = {
+        name: 'Blastrn',
         profession: 'Engineer',
         specializations: {
           [mode]: [{}, {}, {}],
         },
-      });
+      };
 
-      const data = minimalSelector(state, { name: 'Blastrn' });
+      const data = mergeEliteSpec(character);
 
-      expect(data.character.eliteSpecialization).to.equal('Engineer');
+      expect(data.eliteSpecialization).to.equal('Engineer');
+    });
+  });
+
+  it('should count total upgrades', () => {
+    const state = reducer({}, {
+      type: 'FETCH_CHARACTER_RESULT',
+      payload: {
+        name,
+        data: characterData,
+      },
     });
 
-    it('should count total upgrades', () => {
-      const state = reducer({}, {
-        type: 'FETCH_CHARACTER_RESULT',
-        payload: {
-          name,
-          data: characterData,
-        },
-      });
+    const upgradeCounts = Object.values(state.data[name].equipment).reduce((arr, value) => {
+      arr.push(value.upgradeCounts);
+      return arr;
+    }, []).filter(Boolean);
 
-      const upgradeCounts = Object.values(state.data[name].equipment).reduce((arr, value) => {
-        arr.push(value.upgradeCounts);
-        return arr;
-      }, []).filter(Boolean);
-
-      expect(upgradeCounts).to.eql([
-        { 24815: 7 },
-        { 24543: 6 },
-        { 24815: 7 },
-        { 24815: 7 },
-        { 24815: 7 },
-        { 24815: 7 },
-        { 24815: 7 },
-        { 24815: 7 },
-        { 24543: 6 },
-        { 24543: 6 },
-        { 24543: 6 },
-        { 24543: 6 },
-        { 24543: 6 },
-        { 24615: 4, 24618: 4 },
-        { 24615: 4, 24618: 4 },
-        { 24615: 4, 24618: 4 },
-        { 24615: 4, 24618: 4 },
-      ]);
-    });
+    expect(upgradeCounts).to.eql([
+      { 24815: 7 },
+      { 24543: 6 },
+      { 24815: 7 },
+      { 24815: 7 },
+      { 24815: 7 },
+      { 24815: 7 },
+      { 24815: 7 },
+      { 24815: 7 },
+      { 24543: 6 },
+      { 24543: 6 },
+      { 24543: 6 },
+      { 24543: 6 },
+      { 24543: 6 },
+      { 24615: 4, 24618: 4 },
+      { 24615: 4, 24618: 4 },
+      { 24615: 4, 24618: 4 },
+      { 24615: 4, 24618: 4 },
+    ]);
   });
 });
