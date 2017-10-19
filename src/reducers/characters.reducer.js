@@ -52,45 +52,39 @@ function parseWeaponSwap (character) {
 }
 
 function parseCharacterUpgrades (character) {
+  if (!character.equipment) {
+    return character;
+  }
+
   const char = {
     ...character,
   };
 
   const characterUpgrades = {};
 
-  if (!char.equipment) {
-    return char;
-  }
+  char.equipment.forEach((equip) => {
+    equip.upgrades && equip.upgrades.forEach((upgrade) => {
+      characterUpgrades[upgrade] = (characterUpgrades[upgrade] || 0) + 1;
+    });
+  });
 
   char.equipment = char.equipment.map((equip) => {
-    const equipWithUpgradeCount = {
+    if (!equip.upgrades) {
+      return equip;
+    }
+
+    const equipWithUpgradeCounts = {
       ...equip,
     };
 
-    if (!equipWithUpgradeCount.upgrades) {
-      return equipWithUpgradeCount;
-    }
-
-    let upgradeId;
-
-    equipWithUpgradeCount.upgrades.forEach((upgrade) => {
-      upgradeId = upgrade;
-
-      if (!characterUpgrades[upgradeId]) {
-        characterUpgrades[upgradeId] = {
-          count: 1,
-        };
-      } else {
-        characterUpgrades[upgradeId].count += 1;
-      }
-
-      equipWithUpgradeCount.upgradeCounts = {
-        ...equipWithUpgradeCount.upgradeCounts,
-        [upgradeId]: characterUpgrades[upgradeId],
+    equip.upgrades.forEach((upgrade) => {
+      equipWithUpgradeCounts.upgradeCounts = {
+        ...equipWithUpgradeCounts.upgradeCounts,
+        [upgrade]: characterUpgrades[upgrade],
       };
     });
 
-    return equipWithUpgradeCount;
+    return equipWithUpgradeCounts;
   });
 
   return char;

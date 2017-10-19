@@ -58,7 +58,30 @@ describe('characters.reducer.js', () => {
         },
       });
 
-      expect(state).to.eql({});
+      const upgradeCounts = Object.values(state.data[name].equipment).reduce((arr, value) => {
+        arr.push(value.upgradeCounts);
+        return arr;
+      }, []).filter(Boolean);
+
+      expect(upgradeCounts).to.eql([
+        { 24815: 7 },
+        { 24543: 6 },
+        { 24815: 7 },
+        { 24815: 7 },
+        { 24815: 7 },
+        { 24815: 7 },
+        { 24815: 7 },
+        { 24815: 7 },
+        { 24543: 6 },
+        { 24543: 6 },
+        { 24543: 6 },
+        { 24543: 6 },
+        { 24543: 6 },
+        { 24615: 4, 24618: 4 },
+        { 24615: 4, 24618: 4 },
+        { 24615: 4, 24618: 4 },
+        { 24615: 4, 24618: 4 },
+      ]);
     });
   });
 });
