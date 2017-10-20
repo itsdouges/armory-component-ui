@@ -10,13 +10,13 @@ import skillData from '../../../stories/data/skill.json';
 import achievementData from '../../../stories/data/achievement.json';
 import guildUpgradeData from '../../../stories/data/guildUpgrade.json';
 
-storiesOf('TooltipBasic', module)
+storiesOf('Tooltip/Basic', module)
   .add('text', () => <Tooltip tooltip={{ show: true, data: 'This is some text' }} />)
   .add('with badge', () => <Tooltip tooltip={{ show: true, data: 'This is some text' }} showBadge />)
   .add('error', () => <Tooltip tooltip={{ show: true, data: { error: 'An error happened!' } }} />)
   .add('empty', () => <Tooltip />);
 
-storiesOf('TooltipItems', module)
+storiesOf('Tooltip/Items', module)
   .add('default', () => <Tooltip tooltip={{ show: true, data: { item: itemData }, type: 'items' }} />)
   .add('equipped', () => <Tooltip tooltip={{ show: true, data: { item: itemData, equipped: true }, type: 'items' }} />)
   .add('with infusions', () =>
@@ -66,22 +66,22 @@ storiesOf('TooltipItems', module)
   )
   .add('with badge', () => <Tooltip tooltip={{ show: true, data: { item: itemData }, type: 'items' }} showBadge />);
 
-storiesOf('TooltipAmulets', module)
+storiesOf('Tooltip/Amulets', module)
   .add('default', () => <Tooltip tooltip={{ show: true, data: { item: amuletData }, type: 'amulets' }} />)
   .add('with badge', () => <Tooltip tooltip={{ show: true, data: { item: amuletData }, type: 'amulets' }} showBadge />);
 
-storiesOf('TooltipTraits', module)
+storiesOf('Tooltip/Traits', module)
   .add('default', () => <Tooltip tooltip={{ show: true, data: traitData, type: 'trait' }} />)
   .add('with badge', () => <Tooltip tooltip={{ show: true, data: traitData, type: 'trait' }} showBadge />);
 
-storiesOf('TooltipSkills', module)
+storiesOf('Tooltip/Skills', module)
   .add('default', () => <Tooltip tooltip={{ show: true, data: skillData, type: 'skill' }} />)
   .add('with badge', () => <Tooltip tooltip={{ show: true, data: skillData, type: 'skill' }} showBadge />);
 
-storiesOf('TooltipAchievements', module)
+storiesOf('Tooltip/Achievements', module)
   .add('default', () => <Tooltip tooltip={{ show: true, data: achievementData, type: 'achievement' }} />)
   .add('with badge', () => <Tooltip tooltip={{ show: true, data: achievementData, type: 'achievement' }} showBadge />);
 
-storiesOf('TooltipGuildUpgrades', module)
+storiesOf('Tooltip/GuildUpgrades', module)
   .add('default', () => <Tooltip tooltip={{ show: true, data: guildUpgradeData, type: 'guildUpgrade' }} />)
   .add('with badge', () => <Tooltip tooltip={{ show: true, data: guildUpgradeData, type: 'guildUpgrade' }} showBadge />);
