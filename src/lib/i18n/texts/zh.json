@@ -16,6 +16,26 @@
   "characters": {
     "noSkill": "没有技能被选择"
   },
+  "classes": {
+    "druid": "德鲁伊",
+    "daredevil": "独行侠",
+    "berserker": "狂战士",
+    "dragonhunter": "猎龙者",
+    "reaper": "死灵",
+    "chronomancer": "时空术士",
+    "scrapper": "机械师",
+    "tempest": "风暴使",
+    "herald": "预知者",
+    "soulbeast": "魂兽师",
+    "weaver": "编织者",
+    "holosmith": "全息师",
+    "deadeye": "神枪手",
+    "mirage": "幻象术士",
+    "scourge": "灾厄师",
+    "spellbreaker": "破法者",
+    "firebrand": "燃火者",
+    "renegade": "龙魂使"
+  },
   "itemAttributes": {
     "power": "力量",
     "precision": "精准",

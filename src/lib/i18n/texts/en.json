@@ -3,6 +3,26 @@
     "title": "Title",
     "objectives": "Objectives"
   },
+  "classes": {
+    "druid": "Druid",
+    "daredevil": "Daredevil",
+    "berserker": "Berserker",
+    "dragonhunter": "Dragonhunter",
+    "reaper": "Reaper",
+    "chronomancer": "Chronomancer",
+    "scrapper": "Scrapper",
+    "tempest": "Tempest",
+    "herald": "Herald",
+    "soulbeast": "Soulbeast",
+    "weaver": "Weaver",
+    "holosmith": "Holosmith",
+    "deadeye": "Deadeye",
+    "mirage": "Mirage",
+    "scourge": "Scourge",
+    "spellbreaker": "Spellbreaker",
+    "firebrand": "Firebrand",
+    "renegade": "Renegade"
+  },
   "items": {
     "currentlyEquipped": "Currently Equipped",
     "defense": "Defense",

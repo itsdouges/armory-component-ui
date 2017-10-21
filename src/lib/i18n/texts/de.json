@@ -13,6 +13,26 @@
     "accountBound": "Accountgebunden",
     "soulBound": "Seelengebunden"
   },
+  "classes": {
+    "druid": "Druide",
+    "daredevil": "Draufgänger",
+    "berserker": "Berserker",
+    "dragonhunter": "Drachenjäger",
+    "reaper": "Schnitter",
+    "chronomancer": "Chronomant",
+    "scrapper": "Schrotter",
+    "tempest": "Sturmbote",
+    "herald": "Herold",
+    "soulbeast": "Soulbeast",
+    "weaver": "Weaver",
+    "holosmith": "Holosmith",
+    "deadeye": "Deadeye",
+    "mirage": "Mirage",
+    "scourge": "Scourge",
+    "spellbreaker": "Spellbreaker",
+    "firebrand": "Firebrand",
+    "renegade": "Renegade"
+  },
   "characters": {
     "noSkill": "Keine Fertigkeit ausgewälht"
   },

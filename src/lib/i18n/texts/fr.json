@@ -16,6 +16,26 @@
   "characters": {
     "noSkill": "Aucune compétence choisie"
   },
+  "classes": {
+    "druid": "Druide",
+    "daredevil": "Fracasseur",
+    "berserker": "Berserker",
+    "dragonhunter": "Draconnier",
+    "reaper": "Faucheur",
+    "chronomancer": "Chronomancien",
+    "scrapper": "Mécatronicien",
+    "tempest": "Catalyste",
+    "herald": "Héraut",
+    "soulbeast": "Soulbeast",
+    "weaver": "Weaver",
+    "holosmith": "Holosmith",
+    "deadeye": "Deadeye",
+    "mirage": "Mirage",
+    "scourge": "Scourge",
+    "spellbreaker": "Spellbreaker",
+    "firebrand": "Firebrand",
+    "renegade": "Renegade"
+  },
   "itemAttributes": {
     "power": "Puissance",
     "precision": "Précision",

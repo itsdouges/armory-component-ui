@@ -16,6 +16,26 @@
   "characters": {
     "noSkill": "Habilidad no seleccionada"
   },
+  "classes": {
+    "druid": "Druida",
+    "daredevil": "Temerario",
+    "berserker": "Berserker",
+    "dragonhunter": "Cazadragones",
+    "reaper": "Segador",
+    "chronomancer": "Cronomante",
+    "scrapper": "Chatarrero",
+    "tempest": "Tempestad",
+    "herald": "Heraldo",
+    "soulbeast": "Soulbeast",
+    "weaver": "Weaver",
+    "holosmith": "Holosmith",
+    "deadeye": "Deadeye",
+    "mirage": "Mirage",
+    "scourge": "Scourge",
+    "spellbreaker": "Spellbreaker",
+    "firebrand": "Firebrand",
+    "renegade": "Renegade"
+  },
   "itemAttributes": {
     "power": "Potencia",
     "precision": "Precisión",
