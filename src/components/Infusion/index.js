@@ -35,7 +35,10 @@ const Infusion = ({ data }: Props) => {
         <span> {data.name}</span>
       </div>
 
-      <div>{get(data.details, 'infix_upgrade.buff.description', []).map((descrip) => <div key={descrip}>{descrip}</div>)}</div>
+      <div>
+        {get(data.details, 'infix_upgrade.buff.description', [])
+          .map((text) => <div key={text}>{text}</div>)}
+      </div>
     </div>
   );
 };
