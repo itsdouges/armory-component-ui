@@ -22,7 +22,7 @@ type Props = {
   count: number,
 };
 
-const ItemUpgrade = ({ data, count }: Props) => {
+const Upgrade = ({ data, count }: Props) => {
   const upgradeSlotUsed = !!data;
 
   if (!upgradeSlotUsed) {
@@ -64,9 +64,9 @@ const ItemUpgrade = ({ data, count }: Props) => {
   );
 };
 
-ItemUpgrade.defaultProps = {
+Upgrade.defaultProps = {
   count: 0,
   data: undefined,
 };
 
-export default ItemUpgrade;
+export default Upgrade;

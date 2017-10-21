@@ -19,7 +19,7 @@ export type Props = {
   children: Node,
 };
 
-const ContentCard = ({
+const ResourceCard = ({
   title,
   subTitle,
   className,
@@ -57,7 +57,7 @@ const ContentCard = ({
   );
 };
 
-ContentCard.defaultProps = {
+ResourceCard.defaultProps = {
   title: '',
   subTitle: '',
   className: '',
@@ -65,4 +65,4 @@ ContentCard.defaultProps = {
   children: undefined,
 };
 
-export default ContentCard;
+export default ResourceCard;
