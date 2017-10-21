@@ -29,6 +29,14 @@ class Gw2Infusion extends Component<*> {
     this.props.fetch([this.props.id]);
   }
 
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.id === this.props.id) {
+      return;
+    }
+
+    this.props.fetch([nextProps.id]);
+  }
+
   render () {
     if ((!this.props.data || this.props.data.error) && this.props.id) {
       return <PlaceholderInfusion />;
