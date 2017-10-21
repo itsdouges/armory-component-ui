@@ -105,11 +105,10 @@ class CharacterPreview extends Component<Props> {
         <div className={styles.equips}>
           {leftItems.concat(rightItems).map((item) => {
             const equip = equipment[item.key] || {};
-            return (
+            return includes(item.hideForClasses, profession) ? null : (
               <Gw2Item
                 {...item}
                 small
-                hide={includes(item.hideForClasses, profession)}
                 key={item.key}
                 upgradeCounts={equip.upgradeCounts}
                 upgrades={equip.upgrades}
