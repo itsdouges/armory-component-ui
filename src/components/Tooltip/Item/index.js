@@ -14,8 +14,8 @@ import { markup, attributeToName } from '../../../lib/gw2/parse';
 import Icon from '../../Icon';
 import ItemHeader from '../ItemHeader';
 import Gold from '../../Gold';
-import Upgrade from '../Upgrade';
-import Infusion from '../Infusion';
+import Gw2Upgrade from '../../Gw2Upgrade';
+import Gw2Infusion from '../../Gw2Infusion';
 import Background from '../Background';
 
 const addCount = (str, count) => (count > 1 ? `${count} ${str}` : str);
@@ -32,10 +32,13 @@ function buildName (item, skin, upgrades, count) {
     const prefix = regex.exec(item.name);
     const prefixedName = `${prefix} ${skin.name}`;
 
-    const [upgradeOne] = upgrades;
-    if (upgradeOne && prefixedName.indexOf(upgradeOne.details.suffix)) {
-      name = `${prefixedName} ${upgradeOne.details.suffix}`;
-    }
+    // const [firstUpgradeId] = upgrades;
+
+    // TODO: Need to dip into the redux store and get the firstUpgrade
+    // from the firstUpgradeId.
+    // if (upgradeOne && prefixedName.indexOf(upgradeOne.details.suffix)) {
+    //   name = `${prefixedName} ${upgradeOne.details.suffix}`;
+    // }
 
     name = prefixedName;
   }
@@ -48,9 +51,9 @@ type Props = {
   count: number,
   item: Object,
   skin: Object,
-  upgrades: Array<*>,
+  upgrades: Array<number>,
   upgradeCounts: Object,
-  infusions: Array<*>,
+  infusions: Array<number>,
   stats: Object,
   equipped?: boolean,
 };
@@ -136,16 +139,17 @@ const ItemsTooltip = ({
 
         <br />
 
-        {upgrades.map((upgrade) =>
-          <span key={upgrade.id}>
-            <Upgrade data={upgrade} count={upgradeCounts[upgrade.id]} /><br />
+        {upgrades.map((id, index) =>
+          // eslint-disable-next-line react/no-array-index-key
+          <span key={index}>
+            <Gw2Upgrade id={id} count={upgradeCounts[id]} /><br />
           </span>
         )}
 
-        {infusions.map((infusion, index) =>
+        {infusions.map((id, index) =>
           // eslint-disable-next-line react/no-array-index-key
           <span key={index}>
-            <Infusion data={infusion} /><br />
+            <Gw2Infusion id={id} /><br />
           </span>
         )}
 
@@ -180,6 +184,7 @@ ItemsTooltip.defaultProps = {
   count: 0,
   skin: {},
   upgrades: [],
+  upgradeCounts: {},
   infusions: [],
 };
 

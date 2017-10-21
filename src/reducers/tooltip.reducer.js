@@ -1,4 +1,4 @@
-import { SHOW_TOOLTIP } from './actions';
+import { SHOW_TOOLTIP } from '../actions/gw2';
 
 export const defaultState = {
   show: false,

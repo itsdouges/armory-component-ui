@@ -4,7 +4,7 @@ import type { InjectedProps } from 'react-debounce-decorator';
 import { Component, cloneElement } from 'react';
 import { connect } from 'react-redux';
 import tooltipDebounce from 'react-debounce-decorator';
-import { showTooltip } from '../../reducers/actions';
+import { showTooltip } from '../../actions/gw2';
 
 type Props = {
   data?: string | Object,

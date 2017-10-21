@@ -76,6 +76,19 @@ If rendering on the server you'll have to fake the `document` global variable.
 
 ### Components
 
+#### `<CharacterPreview />`
+
+```javascript
+import { CharacterPreview } from 'armory-component-ui';
+
+() => <CharacterPreview name="Quatermile" />
+```
+
+| prop | type | description | required |
+|-|-|-|-|
+| name | `string` | n/a | yes |
+| className | `string` | n/a | no |
+
 #### `<Gw2Skin />`
 
 ```javascript
@@ -124,11 +137,13 @@ import { Gw2Item } from 'armory-component-ui';
 
 () =>
   <Gw2Item
+    equipped
     id={23}
     count={4}
     size={64}
     inlineText="wiki"
-    equipped
+    upgrades={[24815]}
+    infusions={[49426]}
   />
 ```
 
@@ -142,10 +157,11 @@ import { Gw2Item } from 'armory-component-ui';
 | inlineText | `'gw2Spidy'`, `'wiki'`, `string` | Will show text next to the icon that links to somewhere. Passing in any string will result in linking to that string. | no |
 | className | `string` | n/a | no |
 | equipped | `boolean` | Shows 'Equipped' text at the top of the `<Tooltip />`. | no |
-| upgrades | `Array` | TODO: BETTER DESCRIPTION | no |
-| infusions | `Array` | TODO: BETTER DESCRIPTION | no |
-| stats | `Array` | TODO: BETTER DESCRIPTION | no |
-| upgradeCounts | `Object` | TODO: BETTER DESCRIPTION | no |
+| upgrades | `Array<number>` | Array of upgrade ids (`v2/items`). | no |
+| infusions | `Array<number>` | Array of infusion ids (`v2/items`). | no |
+| stats | `{ attributes: Array<{ [attribute]: string }> }` | Static stats usually passed from `v2/characters`. See: https://wiki.guildwars2.com/wiki/API:2/characters. Generally better to just use `statsId`. | no |
+| upgradeCounts | `{ [upgradeId]: number }` | Consolidation of total upgrade counts. | no |
+| onClick | Function | n/a | no |
 
 #### `<Gw2Map />`
 
@@ -159,6 +175,30 @@ import { Gw2Map } from 'armory-component-ui';
 |-|-|-|-|
 | id | `number` | n/a | yes |
 | className | `string` | n/a | no |
+
+#### `<Gw2Infusion />`
+
+```javascript
+import { Gw2Infusion } from 'armory-component-ui';
+
+() => <Gw2Infusion id={49426} />
+```
+
+| prop | type | description | required |
+|-|-|-|-|
+| id | `number` | n/a | yes |
+
+#### `<Gw2Upgrade />`
+
+```javascript
+import { Gw2Upgrade } from 'armory-component-ui';
+
+() => <Gw2Upgrade id={24615} />
+```
+
+| prop | type | description | required |
+|-|-|-|-|
+| id | `number` | n/a | yes |
 
 #### `<Gw2Skill />`
 

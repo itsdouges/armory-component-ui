@@ -6,7 +6,7 @@ import { createSelector } from 'reselect';
 import type { Traits, Specialization as SpecializationType } from 'flowTypes';
 
 import Specialization from '../Specialization';
-import actions from '../../reducers/actions';
+import actions from '../../actions/gw2';
 
 const selector = createSelector(
   (state, props) => state.specializations[props.id],

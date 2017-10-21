@@ -8,7 +8,7 @@ const fetchSkins = sandbox.stub().resolves();
 const fetchCalculatedItemStats = sandbox.stub().resolves();
 
 const Gw2Item = proxyquire.noPreserveCache()('./', {
-  '../../reducers/actions': {
+  '../../actions/gw2': {
     fetchItems,
     fetchSkins,
     fetchCalculatedItemStats,

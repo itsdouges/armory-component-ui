@@ -6,7 +6,7 @@ import { createSelector } from 'reselect';
 
 import TooltipTrigger from '../TooltipTrigger';
 import Icon from '../Icon';
-import actions from '../../reducers/actions';
+import actions from '../../actions/gw2';
 import T from 'i18n-react';
 
 const selector = createSelector(

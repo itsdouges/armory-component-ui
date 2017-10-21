@@ -13,19 +13,6 @@ export type Character = {
   privacy: Array<string>,
 };
 
-export const defaultCharacter: Character = {
-  race: '',
-  alias: '',
-  name: '',
-  guild: '',
-  guild_tag: '',
-  guild_name: '',
-  profession: '',
-  eliteSpecialization: '',
-  level: 0,
-  privacy: [],
-};
-
 type PvpGame = {
   id: string,
 };

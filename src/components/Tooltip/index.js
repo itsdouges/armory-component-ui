@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import cx from 'classnames';
 
-import { showTooltip } from '../../reducers/actions';
+import { showTooltip } from '../../actions/gw2';
 import ArmoryBadge from '../ArmoryBadge';
 import MouseFollow from '../MouseFollow';
 import AmuletTooltip from './Amulet';
@@ -26,18 +26,22 @@ const selector = createSelector(
 
 type TooltipData = {
   show: boolean,
-  type: string,
-  data: Object,
+  data: Object | string,
+  type?: string,
 };
 
 type BaseProps = {
-  tooltip: TooltipData,
-  showTooltip: (boolean) => void,
-  showBadge: boolean,
-  className: string,
+  tooltip?: TooltipData,
+  showTooltip?: (boolean) => void,
+  showBadge?: boolean,
+  className?: string,
 };
 
 export const BaseTooltip = (props: BaseProps) => {
+  if (!props.tooltip) {
+    return null;
+  }
+
   const { tooltip, showBadge, className } = props;
 
   let content;
@@ -89,6 +93,10 @@ export default connect(selector, {
 })(
   class ConnectedTooltip extends Component<Props> {
     props: Props;
+
+    static defaultProps = {
+      tooltip: {},
+    };
 
     close = () => {
       this.props.showTooltip && this.props.showTooltip(false);

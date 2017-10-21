@@ -16,11 +16,11 @@ import './styles/fonts/opensans-semibold.ttf';
 import { initialise as initialiseLs } from './lib/localStorage';
 
 export { default as reducers } from './reducers/index';
-export { default as actions } from './reducers/actions';
+export { default as actions } from './actions/gw2';
 export { persistToLocalStorage } from './reducers/reducerFactory';
 export { markup } from './lib/gw2/parse';
 
-// Connected GW2 Components
+// Connected Components
 export { default as Gw2Skin } from './components/Gw2Skin';
 export { default as Gw2Title } from './components/Gw2Title';
 export { default as Gw2GuildUpgrade } from './components/Gw2GuildUpgrade';
@@ -30,13 +30,18 @@ export { default as Gw2Map } from './components/Gw2Map';
 export { default as Gw2Skill } from './components/Gw2Skill';
 export { default as Gw2Specialization } from './components/Gw2Specialization';
 export { default as Gw2Trait } from './components/Gw2Trait';
+export { default as Gw2Upgrade } from './components/Gw2Upgrade';
+export { default as Gw2Infusion } from './components/Gw2Infusion';
+export { default as CharacterPreview } from './components/CharacterPreview';
 
-// Stateless GW2 Components
+// Stateless Components
 export { default as Item } from './components/Item';
 export { default as Map } from './components/Map';
 export { default as Skill } from './components/Skill';
 export { default as Specialization } from './components/Specialization';
 export { default as Trait } from './components/Trait';
+export { default as ResourceCard } from './components/ResourceCard';
+export { default as CharacterPortrait } from './components/CharacterPortrait';
 
 // Utility Components
 export { default as ArmoryBadge } from './components/ArmoryBadge';

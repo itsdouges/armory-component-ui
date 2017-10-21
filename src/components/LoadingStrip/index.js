@@ -7,7 +7,7 @@ import React from 'react';
 import styles from './styles.less';
 
 type Props = {
-  children: Node,
+  children?: Node,
   long?: boolean,
   appearance?: 'default' | 'white',
 };

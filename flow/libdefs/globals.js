@@ -1,8 +1,11 @@
 // @flow
 
+import type { Component } from 'react';
+
 declare var __DEVELOPMENT__: boolean;
 declare var __webpack_public_path__: string;
-declare function proxyquire (path: string, stubs?: {}): any;
+declare function storiesOf (string, any): any;
+declare var App: Component<*, *>;
 
 import type { Paginated, PvpStanding, User } from 'flowTypes';
 

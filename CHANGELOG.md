@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
+### Changed
+- Move stories next to components
+- Upgrade counts usage
+
+### Fixed
+- Gw2Item not fetching when id changes
+
+### Added
+- ResourceCard component
+- CharacterPortrait component
+- CharacterPreview component
+- Gw2Infusion component
+- Gw2Upgrade component
+- Ability to select infusions/upgrades for items
+- Ability to fetch character data
 
 ## [0.4.3][] - 2017-10-12
 ### Fixed

@@ -8,7 +8,7 @@ import { createSelector } from 'reselect';
 import get from 'lodash/get';
 
 import Item from '../Item';
-import actions from '../../reducers/actions';
+import actions from '../../actions/gw2';
 
 const selector = createSelector(
   (state, props) => {
@@ -68,10 +68,24 @@ class Gw2Item extends Component<*> {
   };
 
   componentDidMount () {
-    this.props.skinId && this.props.fetchSkins([this.props.skinId]);
-    this.props.fetch([this.props.id])
+    this.load(this.props);
+  }
+
+  componentWillReceiveProps (nextProps) {
+    const { id, skinId } = this.props;
+    const { id: nextId, skinId: nextSkinId } = nextProps;
+
+    if (id !== nextId || skinId !== nextSkinId) {
+      this.load({ id: nextId, skinId: nextSkinId });
+    }
+  }
+
+  load ({ id, skinId }) {
+    skinId && this.props.fetchSkins([skinId]);
+
+    this.props.fetch([id])
       .then(() => {
-        const { item, id, statsId, fetchCalculatedItemStats } = this.props;
+        const { item, statsId, fetchCalculatedItemStats } = this.props;
         if (!item || !statsId) {
           return;
         }

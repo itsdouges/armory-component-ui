@@ -1,7 +1,7 @@
 // @flow
 
 import type { Item as ItemType } from 'flowTypes';
-import React, { PureComponent } from 'react';
+import React from 'react';
 import cx from 'classnames';
 
 import TooltipTrigger from '../TooltipTrigger';
@@ -33,7 +33,6 @@ type Props = {
   infusions?: [],
   stats?: {},
   upgradeCounts?: {},
-  hide?: boolean,
   small?: boolean,
   tooltipType?: string,
   className?: string,
@@ -46,85 +45,78 @@ type Props = {
   inlineText?: string,
 };
 
-export default class Item extends PureComponent<Props> {
-  props: Props;
+const Item = ({
+  type = '',
+  busy,
+  name,
+  item,
+  skin,
+  upgrades,
+  infusions,
+  stats,
+  upgradeCounts,
+  small,
+  tooltipType,
+  className,
+  inline,
+  tooltipTextOverride,
+  equipped,
+  count,
+  onClick,
+  size,
+  inlineText,
+  ...props
+}: Props) => {
+  // $FlowFixMe
+  const error = item && item.error;
+  const itemLoaded = !error && item && !!Object.keys(item).length;
 
-  render () {
-    const {
-      type = '',
-      busy,
+  let tooltipData;
+
+  if (error) {
+    tooltipData = error;
+  } else if (itemLoaded) {
+    tooltipData = {
       name,
-      item = {},
-      skin = {},
-      upgrades = [],
-      infusions = [],
-      stats = {},
-      upgradeCounts = {},
-      hide,
-      small,
-      tooltipType,
-      className,
-      inline,
-      tooltipTextOverride,
+      item,
+      skin,
+      infusions,
+      upgrades,
+      upgradeCounts,
+      stats,
       equipped,
       count,
-      onClick,
-      size,
-      inlineText,
-      ...props
-    } = this.props;
-
-    if (hide) return null;
-    // $FlowFixMe
-    const error = item && item.error;
-    const itemLoaded = !error && !!Object.keys(item).length;
-
-    let tooltipData;
-
-    if (error) {
-      tooltipData = error;
-    } else if (itemLoaded) {
-      tooltipData = {
-        name,
-        item,
-        skin,
-        infusions,
-        upgrades,
-        upgradeCounts,
-        stats,
-        equipped,
-        count,
-      };
-    } else {
-      tooltipData = name;
-    }
-
-    return (
-      <TooltipTrigger
-        type={tooltipType || 'items'}
-        data={tooltipTextOverride || tooltipData}
-        {...props}
-      >
-        <ResourceLink text={item.name} href={buildLink(inlineText, item)}>
-          <Icon
-            name={type && `${type}-slot-icon.png`}
-            className={cx(styles.root, className, {
-              [styles.busy]: busy,
-              [styles.small]: small,
-              [styles.emptyBg]: !type && !itemLoaded,
-              [styles.inline]: inline,
-            })}
-            onClick={onClick}
-            sizePx={size}
-          >
-            <Gw2Icon
-              count={count}
-              className={styles.item}
-              src={skin.icon || item.icon || ''}
-            />
-          </Icon>
-        </ResourceLink>
-      </TooltipTrigger>
-    );
+    };
+  } else {
+    tooltipData = name;
   }
-}
+
+  return (
+    <TooltipTrigger
+      type={tooltipType || 'items'}
+      data={tooltipTextOverride || tooltipData}
+      {...props}
+    >
+      <ResourceLink text={item && item.name} href={item && buildLink(inlineText, item)}>
+        <Icon
+          name={type && `${type}-slot-icon.png`}
+          className={cx(styles.root, className, {
+            [styles.small]: small,
+            [styles.emptyBg]: !type && !itemLoaded,
+            [styles.inline]: inline,
+          })}
+          onClick={onClick}
+          sizePx={size}
+        >
+          <Gw2Icon
+            count={count}
+            className={styles.item}
+            src={(skin && skin.icon) || (item && item.icon) || ''}
+          />
+        </Icon>
+      </ResourceLink>
+    </TooltipTrigger>
+  );
+};
+
+export default Item;
