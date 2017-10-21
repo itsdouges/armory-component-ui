@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased][]
 ### Changed
 - Move stories next to components
+- Upgrade counts usage
 
 ### Fixed
 - Gw2Item not fetching when id changes
