@@ -16,7 +16,8 @@
     "webpack.config.js",
     ".storybook",
     ".postcssrc.js",
-    ".eslintrc.js"
+    ".eslintrc.js",
+    "src/**/*.stories.js"
   ],
   "require": [
     "babel-register"
