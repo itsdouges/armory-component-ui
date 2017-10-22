@@ -4,11 +4,11 @@
     "objectives": "目标"
   },
   "items": {
-    "transmuted": "蜕变",
-    "skinLocked": "锁定肌肤",
+    "transmuted": "幻化",
+    "skinLocked": "皮肤锁定",
     "requiredLevel": "需要等级",
-    "weaponStrength": "武器力量",
-    "defense": "防卫力",
+    "weaponStrength": "武器威力",
+    "defense": "防御力",
     "currentlyEquipped": "目前装备",
     "accountBound": "账户绑定",
     "soulBound": "角色绑定"
@@ -37,13 +37,13 @@
     "renegade": "龙魂使"
   },
   "itemAttributes": {
-    "power": "力量",
+    "power": "威力",
     "precision": "精准",
-    "toughness": "耐性",
+    "toughness": "坚韧",
     "vitality": "体力",
-    "boonDuration": "增益持续",
+    "boonDuration": "增益持续时间",
     "conditionDamage": "症状伤害",
-    "conditionDuration": "症状持续",
+    "conditionDuration": "症状持续时间",
     "ferocity": "暴击效果",
     "healingPower": "治疗效果",
     "armor": "护甲",
@@ -51,10 +51,10 @@
     "critDamage": "暴击伤害",
     "health": "血量",
     "healing": "治疗量",
-    "expertise": "延迟症状持续",
-    "concentration": "延迟增益持续",
+    "expertise": "症状效果",
+    "concentration": "增益效果",
     "agonyResistance": "痛苦抗性",
-    "magic": "掉宝率"
+    "magic": "宝物寻获率"
   },
   "messages": {
     "gw2ApiDown": "Guild Wars 2 官方API现在遇到问题。你的连接可能会受到影响!",
