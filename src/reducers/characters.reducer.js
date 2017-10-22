@@ -13,24 +13,24 @@ const eliteSpecMap = {
   // When you assign a elite spec in game, all it does is
   // set a specialization. We extract out if there is an elite
   // spec assigned, and then set it accordingly.
-  5: T.translate('classes.druid'),
-  7: T.translate('classes.daredevil'),
-  18: T.translate('classes.berserker'),
-  27: T.translate('classes.dragonhunter'),
-  34: T.translate('classes.reaper'),
-  40: T.translate('classes.chronomancer'),
-  43: T.translate('classes.scrapper'),
-  48: T.translate('classes.tempest'),
-  52: T.translate('classes.herald'),
-  55: T.translate('classes.soulbeast'),
-  56: T.translate('classes.weaver'),
-  57: T.translate('classes.holosmith'),
-  58: T.translate('classes.deadeye'),
-  59: T.translate('classes.mirage'),
-  60: T.translate('classes.scourge'),
-  61: T.translate('classes.spellbreaker'),
-  62: T.translate('classes.firebrand'),
-  63: T.translate('classes.renegade'),
+  5: 'classes.druid',
+  7: 'classes.daredevil',
+  18: 'classes.berserker',
+  27: 'classes.dragonhunter',
+  34: 'classes.reaper',
+  40: 'classes.chronomancer',
+  43: 'classes.scrapper',
+  48: 'classes.tempest',
+  52: 'classes.herald',
+  55: 'classes.soulbeast',
+  56: 'classes.weaver',
+  57: 'classes.holosmith',
+  58: 'classes.deadeye',
+  59: 'classes.mirage',
+  60: 'classes.scourge',
+  61: 'classes.spellbreaker',
+  62: 'classes.firebrand',
+  63: 'classes.renegade',
 };
 
 function parseWeaponSwap (character) {
@@ -113,7 +113,16 @@ function parseCharacter (character) {
 
 function extractEliteSpecialization (character, mode) {
   return get(character, `specializations[${mode}]`, [])
-    .reduce((acc, spec) => (spec && (eliteSpecMap[spec.id] || acc)), character.profession);
+    .reduce((acc, spec) => {
+      if (spec) {
+        const key = eliteSpecMap[spec.id];
+        if (key) {
+          return T.translate(key);
+        }
+      }
+
+      return acc;
+    }, character.profession);
 }
 
 const defaultCharacter = {

@@ -5,6 +5,11 @@ const { mergeEliteSpec, default: reducer } = proxyquire('./characters.reducer', 
   '../actions/gw2': {
     '@noCallThru': true,
   },
+  'i18n-react': {
+    default: {
+      translate: (str) => str,
+    },
+  },
 });
 
 describe('characters.reducer.js', () => {
