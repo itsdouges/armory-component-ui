@@ -7,10 +7,8 @@ import { createSelector } from 'reselect';
 import actions from '../../actions/gw2';
 import Item from '../Item';
 
-const defaultSkin = {};
-
 export const selector = createSelector(
-  (state, props) => state.skins[props.id] || defaultSkin,
+  (state, props) => state.skins[props.id],
   (skin) => ({
     skin,
   })
@@ -31,7 +29,7 @@ class Gw2Skin extends Component<*> {
   }
 
   render () {
-    return <Item {...this.props} />;
+    return <Item {...this.props} tooltipType="skins" />;
   }
 }
 );

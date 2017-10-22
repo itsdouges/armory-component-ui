@@ -13,6 +13,7 @@ import ItemTooltip from './Item';
 import SkillTooltip from './Skill';
 import SimpleTooltip from './Simple';
 import Background from './Background';
+import SkinTooltip from './Skin';
 import AchievementTooltip from './Achievement';
 import GuildUpgradeTooltip from './GuildUpgrade';
 import styles from './styles.less';
@@ -73,6 +74,11 @@ export const BaseTooltip = (props: BaseProps) => {
 
       case 'guildUpgrade':
         content = <GuildUpgradeTooltip {...tooltip.data} />;
+        break;
+
+      case 'skins':
+        content = <SkinTooltip {...tooltip.data} />;
+        break;
     }
   }
 
