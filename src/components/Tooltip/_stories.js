@@ -7,6 +7,8 @@ import itemData from '../../../stories/data/item.json';
 import amuletData from '../../../stories/data/amulet.json';
 import traitData from '../../../stories/data/trait.json';
 import skillData from '../../../stories/data/skill.json';
+import skinArmorData from '../../../stories/data/skin-armor.json';
+import skinWeaponData from '../../../stories/data/skin-weapon.json';
 import achievementData from '../../../stories/data/achievement.json';
 import guildUpgradeData from '../../../stories/data/guildUpgrade.json';
 
@@ -15,6 +17,10 @@ storiesOf('Tooltip/Basic', module)
   .add('with badge', () => <Tooltip tooltip={{ show: true, data: 'This is some text' }} showBadge />)
   .add('error', () => <Tooltip tooltip={{ show: true, data: { error: 'An error happened!' } }} />)
   .add('empty', () => <Tooltip />);
+
+storiesOf('Tooltip/Skin', module)
+  .add('weapon', () => <Tooltip tooltip={{ show: true, data: skinWeaponData, type: 'skins' }} />)
+  .add('armor', () => <Tooltip tooltip={{ show: true, data: skinArmorData, type: 'skins' }} />);
 
 storiesOf('Tooltip/Items', module)
   .add('default', () => <Tooltip tooltip={{ show: true, data: { item: itemData }, type: 'items' }} />)

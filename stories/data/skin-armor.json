@@ -1,0 +1,33 @@
+{
+  "name": "Lunatic Noble Boots",
+  "type": "Armor",
+  "flags": [
+    "ShowInWardrobe"
+  ],
+  "restrictions": [],
+  "rarity": "Basic",
+  "id": 7803,
+  "icon": "https://render.guildwars2.com/file/E45349D1EA3C7634AC5E63997FC5CEAD0A96A127/1862072.png",
+  "details": {
+    "type": "Boots",
+    "weight_class": "Medium",
+    "dye_slots": {
+      "default": [
+        {
+          "color_id": 1,
+          "material": "leather"
+        },
+        {
+          "color_id": 1,
+          "material": "leather"
+        },
+        null,
+        {
+          "color_id": 1,
+          "material": "metal"
+        }
+      ],
+      "overrides": {}
+    }
+  }
+}

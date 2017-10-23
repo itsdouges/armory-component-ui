@@ -34,7 +34,7 @@ type Props = {
   stats?: {},
   upgradeCounts?: {},
   small?: boolean,
-  tooltipType?: string,
+  tooltipType: string,
   className?: string,
   tooltipTextOverride?: string,
   equipped?: boolean,
@@ -67,33 +67,45 @@ const Item = ({
   inlineText,
   ...props
 }: Props) => {
-  // $FlowFixMe
-  const error = item && item.error;
-  const itemLoaded = !error && item && !!Object.keys(item).length;
-
   let tooltipData;
 
-  if (error) {
-    tooltipData = error;
-  } else if (itemLoaded) {
-    tooltipData = {
-      name,
-      item,
-      skin,
-      infusions,
-      upgrades,
-      upgradeCounts,
-      stats,
-      equipped,
-      count,
-    };
-  } else {
-    tooltipData = name;
+  switch (tooltipType) {
+    case 'items': {
+      // $FlowFixMe
+      const error = item && item.error;
+      const itemLoaded = !error && item && !!Object.keys(item).length;
+      if (error) {
+        tooltipData = error;
+      } else if (itemLoaded) {
+        tooltipData = {
+          name,
+          item,
+          skin,
+          infusions,
+          upgrades,
+          upgradeCounts,
+          stats,
+          equipped,
+          count,
+        };
+      } else {
+        tooltipData = name;
+      }
+      break;
+    }
+
+    case 'skins':
+      tooltipData = skin;
+      break;
+
+    default:
+      tooltipData = name;
+      break;
   }
 
   return (
     <TooltipTrigger
-      type={tooltipType || 'items'}
+      type={tooltipType}
       data={tooltipTextOverride || tooltipData}
       {...props}
     >
@@ -102,7 +114,7 @@ const Item = ({
           name={type && `${type}-slot-icon.png`}
           className={cx(styles.root, className, {
             [styles.small]: small,
-            [styles.emptyBg]: !type && !itemLoaded,
+            [styles.emptyBg]: !type,
             [styles.inline]: inline,
           })}
           onClick={onClick}
@@ -117,6 +129,10 @@ const Item = ({
       </ResourceLink>
     </TooltipTrigger>
   );
+};
+
+Item.defaultProps = {
+  tooltipType: 'items',
 };
 
 export default Item;

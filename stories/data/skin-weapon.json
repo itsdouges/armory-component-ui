@@ -1,0 +1,16 @@
+{
+  "name": "The Bifrost",
+  "type": "Weapon",
+  "flags": [
+    "ShowInWardrobe",
+    "OverrideRarity"
+  ],
+  "restrictions": [],
+  "rarity": "Legendary",
+  "id": 4683,
+  "icon": "https://render.guildwars2.com/file/FD221A90427ADBD29B7E2DF8BDAF98BB16391162/456025.png",
+  "details": {
+    "type": "Staff",
+    "damage_type": "Physical"
+  }
+}
