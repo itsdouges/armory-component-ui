@@ -5,34 +5,28 @@ import SkinTooltip from './';
 describe('<SkinTooltip />', () => {
   it('should render the detail type for weapons', () => {
     const testData = {
-      skin: {
-        type: 'Weapon',
-        details: {
-          type: 'Axe',
-        },
+      type: 'Weapon',
+      details: {
+        type: 'Axe',
       },
     };
 
-    const wrapper = shallow(<SkinTooltip data={testData} />);
-    expect(wrapper.find('span')).to.have.length(1);
-    expect(wrapper.find('span')).to.contain('Axe');
+    const wrapper = shallow(<SkinTooltip {...testData} />);
+
+    expect(wrapper.find('div').text()).to.equal('Axe');
   });
 
   it('should render the weight and detail type for armor', () => {
     const testData = {
-      skin: {
-        type: 'Armor',
-        details: {
-          type: 'Helm',
-          weight_class: 'Heavy',
-        },
+      type: 'Armor',
+      details: {
+        type: 'Helm',
+        weight_class: 'Heavy',
       },
     };
 
-    const wrapper = shallow(<SkinTooltip data={testData} />);
+    const wrapper = shallow(<SkinTooltip {...testData} />);
 
-    expect(wrapper.find('span')).to.have.length(2);
-    expect(wrapper.find('span').at(0)).to.contain('Heavy');
-    expect(wrapper.find('span').at(1)).to.contain('Helm');
+    expect(wrapper.find('div').html()).to.contain('Heavy<br/>Helm');
   });
 });

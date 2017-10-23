@@ -190,6 +190,7 @@ describe('<Gw2Item />', () => {
     const moreProps = {
       item: {},
       skin: {},
+      tooltipType: 'items',
       yolo: false,
     };
 

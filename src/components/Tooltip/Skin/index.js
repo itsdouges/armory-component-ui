@@ -25,14 +25,12 @@ const SkinTooltip = (skin: Props) => {
       />
 
       <div className={styles.skinTypeText}>
-        {skin.type === 'Weapon' && (
-          <span className={styles.skinTypeText}>{skin.details.type}</span>
-        )}
+        {skin.type === 'Weapon' && skin.details.type}
 
         {skin.type === 'Armor' && [
-          <span key="weight">{skin.details.weight_class}</span>,
+          skin.details.weight_class,
           <br key="br" />,
-          <span key="type" className={styles.skinTypeText}>{skin.details.type}</span>,
+          skin.details.type,
         ]}
       </div>
 

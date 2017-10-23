@@ -88,6 +88,8 @@ const Item = ({
           equipped,
           count,
         };
+      } else {
+        tooltipData = name;
       }
       break;
     }
