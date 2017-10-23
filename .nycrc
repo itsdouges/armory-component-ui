@@ -17,7 +17,7 @@
     ".storybook",
     ".postcssrc.js",
     ".eslintrc.js",
-    "src/**/*.stories.js"
+    "src/**/_stories.js"
   ],
   "require": [
     "babel-register"
