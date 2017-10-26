@@ -25,7 +25,9 @@
     "postversion": "git push && git push --tags",
     "build-storybook": "rm -rf docs && build-storybook --output-dir docs"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react-connect-the-dots": "^0.3.0"
+  },
   "peerDependencies": {
     "axios": "^0.16.x",
     "classnames": "^2.x.x",

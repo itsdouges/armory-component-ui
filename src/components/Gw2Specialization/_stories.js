@@ -9,7 +9,6 @@ storiesOf('Gw2Specialization', module)
   .add('not found', () =>
     <App>
       <Gw2Specialization id={112233} />
-      <Gw2Specialization id={57} />
     </App>
   )
   .add('loading', () => <App><Gw2Specialization /></App>);

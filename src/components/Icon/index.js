@@ -26,7 +26,7 @@ const buildStyle = ({ style, src, name, imageSrc, sizePx }) => {
   };
 };
 
-const Icon = ({ name, size, className, src, button, children, style, sizePx, ...props }: IconProps) => {
+const Icon = ({ name, size, className, src, button, children, style, sizePx, setRef, ...props }: IconProps) => {
   let imageSrc;
 
   try {
@@ -38,6 +38,7 @@ const Icon = ({ name, size, className, src, button, children, style, sizePx, ...
   return (
     <div
       {...props}
+      ref={setRef}
       className={cx(styles.container, styles[size], className, button && styles.button)}
       style={buildStyle({ style, src, name, imageSrc, sizePx })}
     >

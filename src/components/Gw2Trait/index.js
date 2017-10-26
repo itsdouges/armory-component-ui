@@ -27,8 +27,16 @@ class Gw2Trait extends Component<*> {
     this.props.fetch([this.props.id]);
   }
 
+  componentWillReceiveProps (nextProps) {
+    if (this.props.id !== nextProps.id) {
+      this.props.fetch([nextProps.id]);
+    }
+  }
+
   render () {
-    return <Trait {...this.props} />;
+    const { fetch, id, ...props } = this.props;
+
+    return <Trait {...props} />;
   }
 }
 );

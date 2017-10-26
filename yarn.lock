@@ -5851,6 +5851,10 @@ react-addons-test-utils@^15.6.0:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/react-addons-test-utils/-/react-addons-test-utils-15.6.2.tgz#c12b6efdc2247c10da7b8770d185080a7b047156"
 
+react-connect-the-dots@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/react-connect-the-dots/-/react-connect-the-dots-0.3.0.tgz#4da57f1dd976d2f0afaa59f808efca92170ccd26"
+
 react-debounce-decorator@^0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/react-debounce-decorator/-/react-debounce-decorator-0.1.3.tgz#88bc04fafc11bba85e7041f1b3bb5817ae817279"
