@@ -60,19 +60,19 @@ const Specialization = ({ activeTraits, specialization }: Props) => {
     firstActiveMajor = majorTraits.slice(0, 3).findIndex((id) => activeTraits.includes(id));
 
     const tempSecond = majorTraits.slice(3, 6).findIndex((id) => activeTraits.includes(id));
-    if (tempSecond > 0) {
+    if (tempSecond >= 0) {
       secondActiveMajor = tempSecond + 3;
     }
 
     const tempThird = majorTraits.slice(6, 9).findIndex((id) => activeTraits.includes(id));
-    if (tempThird) {
+    if (tempThird >= 0) {
       thirdActiveMajor = tempThird + 6;
     }
   }
 
   const buildFirstMajorPair = pairs(firstActiveMajor, 'minor-1', 'minor-2');
-  const buildSecondMajorPair = pairs(secondActiveMajor, 'minor-2', 'minor-3');
-  const buildThirdMajorPair = pairs(thirdActiveMajor, 'minor-3');
+  const buildSecondMajorPair = pairs(secondActiveMajor, 'minor-3', 'minor-4');
+  const buildThirdMajorPair = pairs(thirdActiveMajor, 'minor-5');
 
   return (
     <div className={styles.root}>
@@ -81,13 +81,18 @@ const Specialization = ({ activeTraits, specialization }: Props) => {
         style={getStyle(specialization)}
       />
 
-      <SpecializationIcon
-        {...specialization}
-        className={styles.bigIcon}
-      />
+      <TraitDots pairs={['minor-0']}>
+        {(setRef) => (
+          <SpecializationIcon
+            {...specialization}
+            setRef={setRef}
+            className={styles.bigIcon}
+          />
+        )}
+      </TraitDots>
 
       <div className={styles.traits}>
-        <TraitDots pairs={['minor-1']}>
+        <TraitDots pairs={['minor-0', 'minor-1']}>
           {(setRef) => (
             <Gw2Trait
               active
@@ -133,7 +138,7 @@ const Specialization = ({ activeTraits, specialization }: Props) => {
           </TraitDots>
         </div>
 
-        <TraitDots pairs={['minor-2']}>
+        <TraitDots pairs={['minor-2', 'minor-3']}>
           {(setRef) => (
             <Gw2Trait
               active
@@ -179,7 +184,7 @@ const Specialization = ({ activeTraits, specialization }: Props) => {
           </TraitDots>
         </div>
 
-        <TraitDots pairs={['minor-3']}>
+        <TraitDots pairs={['minor-4', 'minor-5']}>
           {(setRef) => (
             <Gw2Trait
               active

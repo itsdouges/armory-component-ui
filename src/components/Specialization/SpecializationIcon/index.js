@@ -12,9 +12,10 @@ type Props = {
   className?: string,
 };
 
-const SpecializationIcon = ({ error, name, background, className }: Props) => (
+const SpecializationIcon = ({ error, name, background, className, setRef }: Props) => (
   <TooltipTrigger data={error || name}>
     <div
+      ref={setRef}
       className={cx(styles.bigIcon, className)}
       style={{ backgroundImage: `url(${background || ''})` }}
     >
