@@ -10,22 +10,20 @@ import styles from './styles.less';
 import Gw2Trait from '../Gw2Trait';
 import SpecializationIcon from './SpecializationIcon';
 
-const TraitDots = ({ children, pairs = [] }) => {
+const TraitDots = ({ children, connector, pairs = [] }) => {
   if (!pairs.length) {
     return children();
   }
 
-  return pairs.reduce((component, pair) => {
-    return (
-      <Dot
-        height={10}
-        connector={(props) => <div {...props} className={styles.connector} />}
-        pair={pair}
-      >
-        {component}
-      </Dot>
-    );
-  }, children);
+  return pairs.reduce((child, pair) => (
+    <Dot
+      height={10}
+      connector={connector}
+      pair={pair}
+    >
+      {child}
+    </Dot>
+  ), children);
 };
 
 const getStyle = (spec) => ({
@@ -48,7 +46,7 @@ type Props = {
   specialization: SpecType,
 };
 
-const Specialization = ({ activeTraits, specialization }: Props) => {
+const Specialization = ({ activeTraits, specialization, onTraitClick }: Props) => {
   const minorTraits = specialization.minor_traits || emptyTraits;
   const majorTraits = specialization.major_traits || emptyTraits;
 
@@ -57,7 +55,10 @@ const Specialization = ({ activeTraits, specialization }: Props) => {
   let thirdActiveMajor;
 
   if (activeTraits.length) {
-    firstActiveMajor = majorTraits.slice(0, 3).findIndex((id) => activeTraits.includes(id));
+    const tempFirst = majorTraits.slice(0, 3).findIndex((id) => activeTraits.includes(id));
+    if (tempFirst >= 0) {
+      firstActiveMajor = tempFirst;
+    }
 
     const tempSecond = majorTraits.slice(3, 6).findIndex((id) => activeTraits.includes(id));
     if (tempSecond >= 0) {
@@ -92,7 +93,10 @@ const Specialization = ({ activeTraits, specialization }: Props) => {
       </TraitDots>
 
       <div className={styles.traits}>
-        <TraitDots pairs={['minor-0', 'minor-1']}>
+        <TraitDots
+          pairs={['minor-0', 'minor-1']}
+          connector={(props) => <div {...props} className={styles.connector} />}
+        >
           {(setRef) => (
             <Gw2Trait
               active
@@ -107,6 +111,7 @@ const Specialization = ({ activeTraits, specialization }: Props) => {
           <TraitDots pairs={buildFirstMajorPair(0)}>
             {(setRef) => (
               <Gw2Trait
+                onClick={() => onTraitClick(0, majorTraits[0])}
                 setRef={setRef}
                 id={majorTraits[0]}
                 active={activeTraits.includes(majorTraits[0])}
@@ -118,6 +123,7 @@ const Specialization = ({ activeTraits, specialization }: Props) => {
           <TraitDots pairs={buildFirstMajorPair(1)}>
             {(setRef) => (
               <Gw2Trait
+                onClick={() => onTraitClick(0, majorTraits[1])}
                 setRef={setRef}
                 id={majorTraits[1]}
                 active={activeTraits.includes(majorTraits[1])}
@@ -129,6 +135,7 @@ const Specialization = ({ activeTraits, specialization }: Props) => {
           <TraitDots pairs={buildFirstMajorPair(2)}>
             {(setRef) => (
               <Gw2Trait
+                onClick={() => onTraitClick(0, majorTraits[2])}
                 setRef={setRef}
                 id={minorTraits[2]}
                 active={activeTraits.includes(majorTraits[2])}
@@ -138,7 +145,10 @@ const Specialization = ({ activeTraits, specialization }: Props) => {
           </TraitDots>
         </div>
 
-        <TraitDots pairs={['minor-2', 'minor-3']}>
+        <TraitDots
+          pairs={['minor-2', 'minor-3']}
+          connector={(props) => <div {...props} className={styles.connector} />}
+        >
           {(setRef) => (
             <Gw2Trait
               active
@@ -153,6 +163,7 @@ const Specialization = ({ activeTraits, specialization }: Props) => {
           <TraitDots pairs={buildSecondMajorPair(3)}>
             {(setRef) => (
               <Gw2Trait
+                onClick={() => onTraitClick(1, majorTraits[3])}
                 setRef={setRef}
                 id={majorTraits[3]}
                 active={activeTraits.includes(majorTraits[3])}
@@ -164,6 +175,7 @@ const Specialization = ({ activeTraits, specialization }: Props) => {
           <TraitDots pairs={buildSecondMajorPair(4)}>
             {(setRef) => (
               <Gw2Trait
+                onClick={() => onTraitClick(1, majorTraits[4])}
                 setRef={setRef}
                 id={majorTraits[4]}
                 active={activeTraits.includes(majorTraits[4])}
@@ -175,6 +187,7 @@ const Specialization = ({ activeTraits, specialization }: Props) => {
           <TraitDots pairs={buildSecondMajorPair(5)}>
             {(setRef) => (
               <Gw2Trait
+                onClick={() => onTraitClick(1, majorTraits[5])}
                 setRef={setRef}
                 id={majorTraits[5]}
                 active={activeTraits.includes(majorTraits[5])}
@@ -184,7 +197,10 @@ const Specialization = ({ activeTraits, specialization }: Props) => {
           </TraitDots>
         </div>
 
-        <TraitDots pairs={['minor-4', 'minor-5']}>
+        <TraitDots
+          pairs={['minor-4', 'minor-5']}
+          connector={(props) => <div {...props} className={styles.connector} />}
+        >
           {(setRef) => (
             <Gw2Trait
               active
@@ -199,6 +215,7 @@ const Specialization = ({ activeTraits, specialization }: Props) => {
           <TraitDots pairs={buildThirdMajorPair(6)}>
             {(setRef) => (
               <Gw2Trait
+                onClick={() => onTraitClick(2, majorTraits[6])}
                 setRef={setRef}
                 id={majorTraits[6]}
                 active={activeTraits.includes(majorTraits[6])}
@@ -210,6 +227,7 @@ const Specialization = ({ activeTraits, specialization }: Props) => {
           <TraitDots pairs={buildThirdMajorPair(7)}>
             {(setRef) => (
               <Gw2Trait
+                onClick={() => onTraitClick(2, majorTraits[7])}
                 setRef={setRef}
                 id={majorTraits[7]}
                 active={activeTraits.includes(majorTraits[7])}
@@ -221,6 +239,7 @@ const Specialization = ({ activeTraits, specialization }: Props) => {
           <TraitDots pairs={buildThirdMajorPair(8)}>
             {(setRef) => (
               <Gw2Trait
+                onClick={() => onTraitClick(2, majorTraits[8])}
                 setRef={setRef}
                 id={majorTraits[8]}
                 active={activeTraits.includes(majorTraits[8])}

@@ -1,5 +1,4 @@
-import { configure } from '@storybook/react';
-import { storiesOf } from '@storybook/react';
+import { configure, storiesOf } from '@storybook/react';
 // eslint-disable-next-line
 import 'style-loader!css-loader!../stories/styles.css';
 import { persistToLocalStorage } from '../src';
