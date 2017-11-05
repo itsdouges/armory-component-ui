@@ -2,7 +2,10 @@ import 'babel-polyfill';
 import path from 'path';
 import { addPath } from 'app-module-path';
 import noop from 'lodash/noop';
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
+Enzyme.configure({ adapter: new Adapter() });
 global.React = require('react');
 
 require('jsdom-global')();

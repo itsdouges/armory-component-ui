@@ -7,6 +7,8 @@ const { default: Gw2Upgrade } = proxyquire('./', {
 });
 
 describe('<Gw2Upgrade />', () => {
+  const noop = () => {};
+
   it('should fetch on mount', () => {
     const fetch = sinon.spy();
 
@@ -29,7 +31,7 @@ describe('<Gw2Upgrade />', () => {
   });
 
   it('should render placeholder when id and no data', () => {
-    const wrapper = shallow(<Gw2Upgrade id={23} />);
+    const wrapper = shallow(<Gw2Upgrade id={23} fetch={noop} />);
 
     expect(wrapper.find('PlaceholderInfusion')).to.exist;
   });
@@ -41,13 +43,13 @@ describe('<Gw2Upgrade />', () => {
   });
 
   it('should render infusion when data', () => {
-    const wrapper = shallow(<Gw2Upgrade data={{}} />);
+    const wrapper = shallow(<Gw2Upgrade fetch={noop} data={{}} />);
 
     expect(wrapper.find('Upgrade')).to.exist;
   });
 
   it('should render placeholder when error', () => {
-    const wrapper = shallow(<Gw2Upgrade data={{ error: true }} id={23} />);
+    const wrapper = shallow(<Gw2Upgrade fetch={noop} data={{ error: true }} id={23} />);
 
     expect(wrapper.find('PlaceholderInfusion')).to.exist;
   });

@@ -7,6 +7,8 @@ const { default: Gw2Infusion } = proxyquire('./', {
 });
 
 describe('<Gw2Infusion />', () => {
+  const noop = () => {};
+
   it('should fetch on mount', () => {
     const fetch = sinon.spy();
 
@@ -29,7 +31,7 @@ describe('<Gw2Infusion />', () => {
   });
 
   it('should render placeholder when id and no data', () => {
-    const wrapper = shallow(<Gw2Infusion id={23} />);
+    const wrapper = shallow(<Gw2Infusion fetch={noop} id={23} />);
 
     expect(wrapper.find('PlaceholderInfusion')).to.exist;
   });
@@ -47,7 +49,7 @@ describe('<Gw2Infusion />', () => {
   });
 
   it('should render placeholder when error', () => {
-    const wrapper = shallow(<Gw2Infusion data={{ error: true }} id={23} />);
+    const wrapper = shallow(<Gw2Infusion fetch={noop} data={{ error: true }} id={23} />);
 
     expect(wrapper.find('PlaceholderInfusion')).to.exist;
   });

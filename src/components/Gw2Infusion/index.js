@@ -26,7 +26,7 @@ class Gw2Infusion extends Component<*> {
   };
 
   componentDidMount () {
-    this.props.fetch([this.props.id]);
+    this.props.id && this.props.fetch([this.props.id]);
   }
 
   componentWillReceiveProps (nextProps) {
