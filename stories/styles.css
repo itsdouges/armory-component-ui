@@ -31,3 +31,11 @@
   width: 200px;
   height: 100px;
 }
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-help {
+  cursor: help;
+}

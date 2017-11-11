@@ -54,6 +54,8 @@ module.exports = {
     }],
 
     'mocha/no-exclusive-tests': 'error',
+
+    'jsx-a11y/no-static-element-interactions': 'warn'
   },
   settings: {
     'import/resolver': 'webpack',

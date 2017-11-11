@@ -249,3 +249,10 @@ export type Notifications = {
 };
 
 export type UserAchievementsMap = {};
+
+export type TraitClick = {
+  id: number,
+  isMajorTrait: boolean,
+};
+
+export type TraitClickCallback = TraitClick => void;

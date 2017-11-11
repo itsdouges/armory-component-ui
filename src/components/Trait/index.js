@@ -20,9 +20,10 @@ type Props = {
   tooltipTextOverride?: string,
   size?: number,
   inlineText?: string,
+  onClick?: (SyntheticEvent<*>) => void,
 };
 
-const Trait = ({ data, className, active, tooltipTextOverride, size, inlineText }: Props) => (
+const Trait = ({ data, className, active, tooltipTextOverride, size, inlineText, onClick }: Props) => (
   <TooltipTrigger type="trait" data={tooltipTextOverride || data}>
     <ResourceLink text={data && data.name} href={buildLink(inlineText, data && data.name)}>
       <Icon
@@ -30,6 +31,7 @@ const Trait = ({ data, className, active, tooltipTextOverride, size, inlineText 
         src={data && data.icon}
         style={{ backgroundColor: data && data.icon && colours._black }}
         sizePx={size}
+        onClick={onClick}
       />
     </ResourceLink>
   </TooltipTrigger>
