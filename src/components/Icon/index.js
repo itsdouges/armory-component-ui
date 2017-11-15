@@ -35,15 +35,22 @@ const Icon = ({ name, size, className, src, button, children, style, sizePx, onC
   } catch (ex) {
     imageSrc = '';
   }
+  const cssProps = {};
+  cssProps.className = cx(styles.container, styles[size], className, button && styles.button);
+  cssProps.style = buildStyle({ style, src, name, imageSrc, sizePx });
 
-  return (
+  return onClick ? (
+    <a
+      {...props}
+      {...cssProps}
+      onClick={onClick}
+    >
+      {children}
+    </a>
+  ) : (
     <div
       {...props}
-      className={cx(styles.container, styles[size], className, button && styles.button)}
-      style={buildStyle({ style, src, name, imageSrc, sizePx })}
-      role="button"
-      tabIndex="0"
-      onClick={(event) => onClick && onClick(event)}
+      {...cssProps}
     >
       {children}
     </div>

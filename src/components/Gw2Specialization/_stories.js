@@ -2,11 +2,9 @@
 
 import React from 'react';
 import Gw2Specialization from './';
-import { decorateAction } from '@storybook/addon-actions';
+import { action } from '@storybook/addon-actions';
 
-const traitClick = decorateAction([
-  (args) => Object.values(args[0]),
-])('trait clicked');
+const traitClick = action('trait clicked');
 
 storiesOf('Gw2Specialization', module)
   .add('default', () => <App><Gw2Specialization id={57} /></App>)

@@ -11,16 +11,14 @@ import SpecializationIcon from './SpecializationIcon';
 
 const getTrait = (id, traits, error) => traits[id] || { error };
 const isActive = (id, activeTraits) => activeTraits.indexOf(id) >= 0;
-const getTraitClickCallback = (id, isMajorTrait, callback) => () => {
-  id && callback && callback({ id, isMajorTrait });
-};
+const getTraitClickCallback = (id, callback) => (id && callback ? () => { callback(id); } : undefined);
 const layoutTraits = (ids, traits, activeTraits, error, onTraitClick, majorTraitClass) => ids.map((id, index) =>
   <Trait
     key={id || index}
     className={cx(styles.minorTraitColumn, majorTraitClass)}
     data={getTrait(id, traits, error)}
     active={isActive(id, activeTraits)}
-    onClick={getTraitClickCallback(id, true, onTraitClick)}
+    onClick={getTraitClickCallback(id, onTraitClick)}
   />
 );
 
@@ -69,7 +67,7 @@ const Specialization = ({
           active
           className={cx(styles.minorTraitColumn, minorTraitClass)}
           data={getTrait(minorTraits[0], traits, error)}
-          onClick={getTraitClickCallback(minorTraits[0], false, onTraitClick)}
+          onClick={getTraitClickCallback(minorTraits[0], onTraitClick)}
         />
 
         <div className={styles.majorTraitColumn}>
@@ -80,7 +78,7 @@ const Specialization = ({
           active
           className={cx(styles.minorTraitColumn, minorTraitClass)}
           data={getTrait(minorTraits[1], traits, error)}
-          onClick={getTraitClickCallback(minorTraits[1], false, onTraitClick)}
+          onClick={getTraitClickCallback(minorTraits[1], onTraitClick)}
         />
 
         <div className={styles.majorTraitColumn}>
@@ -91,7 +89,7 @@ const Specialization = ({
           active
           className={cx(styles.minorTraitColumn, minorTraitClass)}
           data={getTrait(minorTraits[2], traits, error)}
-          onClick={getTraitClickCallback(minorTraits[2], false, onTraitClick)}
+          onClick={getTraitClickCallback(minorTraits[2], onTraitClick)}
         />
 
         <div className={styles.majorTraitColumn}>
