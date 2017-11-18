@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
+### Added
+- Traits class name
+- Traits on click handler
 
 ## [0.6.1][] - 2017-11-06
 ### Changed
