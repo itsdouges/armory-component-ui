@@ -249,3 +249,5 @@ export type Notifications = {
 };
 
 export type UserAchievementsMap = {};
+
+export type TraitClickCallback = number => void;

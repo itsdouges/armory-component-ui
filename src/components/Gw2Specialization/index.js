@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import type { Traits, Specialization as SpecializationType } from 'flowTypes';
+import type { Traits, Specialization as SpecializationType, TraitClickCallback } from 'flowTypes';
 
 import Specialization from '../Specialization';
 import actions from '../../actions/gw2';
@@ -28,6 +28,9 @@ class Gw2Specialization extends Component<*> {
     activeTraits?: Array<number>,
     fetch: ([number]) => void,
     specialization: SpecializationType,
+    onTraitClick?: TraitClickCallback,
+    minorTraitClass?: string,
+    majorTraitClass?: string,
   };
 
   componentDidMount () {

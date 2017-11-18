@@ -15,6 +15,7 @@ export type IconProps = {
   style?: {
     [string]: ?string,
   },
+  onClick?: (SyntheticEvent<*>) => void,
 };
 
 const buildStyle = ({ style, src, name, imageSrc, sizePx }) => {
@@ -26,7 +27,7 @@ const buildStyle = ({ style, src, name, imageSrc, sizePx }) => {
   };
 };
 
-const Icon = ({ name, size, className, src, button, children, style, sizePx, ...props }: IconProps) => {
+const Icon = ({ name, size, className, src, button, children, style, sizePx, onClick, ...props }: IconProps) => {
   let imageSrc;
 
   try {
@@ -34,12 +35,22 @@ const Icon = ({ name, size, className, src, button, children, style, sizePx, ...
   } catch (ex) {
     imageSrc = '';
   }
+  const cssProps = {};
+  cssProps.className = cx(styles.container, styles[size], className, button && styles.button);
+  cssProps.style = buildStyle({ style, src, name, imageSrc, sizePx });
 
-  return (
+  return onClick ? (
+    <a
+      {...props}
+      {...cssProps}
+      onClick={onClick}
+    >
+      {children}
+    </a>
+  ) : (
     <div
       {...props}
-      className={cx(styles.container, styles[size], className, button && styles.button)}
-      style={buildStyle({ style, src, name, imageSrc, sizePx })}
+      {...cssProps}
     >
       {children}
     </div>
