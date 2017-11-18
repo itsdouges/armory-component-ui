@@ -228,7 +228,7 @@ import { Gw2Specialization } from 'armory-component-ui';
 |-|-|-|-|
 | id | `number` | n/a | yes |
 | activeTraits | `Array<number>` | Major traits that are active. | no |
-| onTraitClick | `({ id: number; isMajorTrait: boolean; }) => void` | Callback function called when a trait icon is clicked. | no |
+| onTraitClick | `(id: number) => void` | Callback function called when a trait icon is clicked. | no |
 | minorTraitClass | `string` | Class name applied to the minor trait icons. | no |
 | majorTraitClass | `string` | Class name applied to the major trait icons. | no |
 
