@@ -466,6 +466,17 @@ persistToLocalStorage(false);
 // Local storage data persistence is now turned off.
 ```
 
+#### `forceCacheClearOnNextRun(string: key)`
+
+Will force api cache to be cleared next time the code executes.
+Use a unique key every time you want to clear the cache.
+
+```javascript
+import { forceCacheClearOnNextRun } from 'armory-component-ui;';
+
+forceCacheClearOnNextRun('1');
+```
+
 ## Local Development
 
 ```bash

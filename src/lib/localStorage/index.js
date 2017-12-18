@@ -5,6 +5,7 @@ import axios from 'axios';
 
 const GW2_BUILD_KEY = 'GW2_BUILD';
 const CLEAR_LS_NEXT_LOAD_KEY = 'CLEAR_LS_NEXT_LOAD';
+const FORCE_CLEAN_CACHE = 'FORCE_CLEAN_CACHE';
 
 const makeKey = (str) => `GW2A:${str.toUpperCase()}`;
 
@@ -30,6 +31,13 @@ export function get (key: string): ?string {
 
 export function clear (key: string) {
   localStorage.removeItem(makeKey(key));
+}
+
+export function forceCacheClearOnNextRun (clearKey: string) {
+  if (get(FORCE_CLEAN_CACHE) !== clearKey) {
+    set(FORCE_CLEAN_CACHE, clearKey);
+    set(CLEAR_LS_NEXT_LOAD_KEY, 'true');
+  }
 }
 
 export function clearIfNewBuild (key: string) {

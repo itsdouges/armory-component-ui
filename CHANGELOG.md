@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
+### Added
+- `forceCacheClearOnNextRun()` method to force clear the data cache, use cautiously.
 
 ## [0.7.0][] - 2017-11-18
 ### Added

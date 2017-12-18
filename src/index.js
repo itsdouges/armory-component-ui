@@ -13,12 +13,13 @@ import './styles/fonts/opensans-semibold.ttf';
 // Utility Functions
 // NOTE: Reducers have to be imported first as
 // they dynamically create the action creators.
-import { initialise as initialiseLs } from './lib/localStorage';
+import { initialise as initialiseLs, forceCacheClearOnNextRun } from './lib/localStorage';
 
 export { default as reducers } from './reducers/index';
 export { default as actions } from './actions/gw2';
 export { persistToLocalStorage } from './reducers/reducerFactory';
 export { markup } from './lib/gw2/parse';
+export { forceCacheClearOnNextRun };
 
 // Connected Components
 export { default as Gw2Skin } from './components/Gw2Skin';
@@ -52,4 +53,5 @@ export { default as Tooltip, BaseTooltip } from './components/Tooltip';
 export { default as TooltipTrigger } from './components/TooltipTrigger';
 export { default as Icon } from './components/Icon';
 
+forceCacheClearOnNextRun('1');
 initialiseLs();
