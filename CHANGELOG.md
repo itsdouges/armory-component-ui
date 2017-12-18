@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
+
+## [0.8.1][] - 2017-12-19
 ### Fixed
 - Amulet tooltips
 
@@ -114,7 +116,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Initial release
 
 
-[Unreleased]: https://github.com/madou/armory-component-ui/compare/v0.8.0...HEAD
+[Unreleased]: https://github.com/madou/armory-component-ui/compare/v0.8.1...HEAD
+[0.8.1]: https://github.com/madou/armory-component-ui/compare/v0.8.0...v0.8.1
 [0.8.0]: https://github.com/madou/armory-component-ui/compare/v0.7.0...v0.8.0
 [0.7.0]: https://github.com/madou/armory-component-ui/compare/v0.6.1...v0.7.0
 [0.6.1]: https://github.com/madou/armory-component-ui/compare/v0.6.0...v0.6.1
