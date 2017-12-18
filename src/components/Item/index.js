@@ -70,7 +70,8 @@ const Item = ({
   let tooltipData;
 
   switch (tooltipType) {
-    case 'items': {
+    case 'items':
+    case 'amulets': {
       // $FlowFixMe
       const error = item && item.error;
       const itemLoaded = !error && item && !!Object.keys(item).length;
