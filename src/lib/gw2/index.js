@@ -225,7 +225,7 @@ type StatDef = {
 };
 
 export const readCalculatedItemStats = (statDefs: Array<StatDef>) =>
-  axios.post('https://api.gw2armory.com/itemstats', statDefs, {
+  axios.post('https://gw2-itemstats.netlify.com/.netlify/functions/bulk_read', statDefs, {
     params: buildParams(),
   })
   .then(({ data }) => data.reduce((obj, itemStat, index) => {
