@@ -204,10 +204,9 @@ type StatDef = {
 };
 
 export const readCalculatedItemStats = (statDefs: Array<StatDef>) => {
-  const id = Math.ceil((Math.random() * 100) % 13);
   return axios
     .post(
-      `https://gw2-itemstats-${id}.netlify.com/.netlify/functions/bulk_read`,
+      `https://fh1ydk3yra.execute-api.us-east-1.amazonaws.com/default/bulk_read`,
       statDefs,
       {
         params: buildParams()
